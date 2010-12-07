@@ -1,2 +1,0 @@
-_objects/UserInfoHandler.o : makefile
-dep/apps/Internet/Bme/Bme/UserInfoHandler.d _objects/UserInfoHandler.o : UserInfoHandler.cpp ../Headers/UserInfoHandler.h   ../Headers/ServerHandler.h ../Headers/constants.h   ../Headers/ProtocolConstants.h ../Headers/Common.h   ../Headers/Contact.h ../Headers/IXMLFlattenable.h ../Headers/Status.h   ../Headers/Group.h ../Headers/Preferences.h   ../Headers/MessageFields.h

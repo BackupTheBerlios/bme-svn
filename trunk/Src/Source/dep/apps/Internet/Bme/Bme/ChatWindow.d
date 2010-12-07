@@ -1,2 +1,0 @@
-_objects/ChatWindow.o : makefile
-dep/apps/Internet/Bme/Bme/ChatWindow.d _objects/ChatWindow.o : ChatWindow.cpp ../Headers/ChatWindow.h   ../Headers/ConvLogView.h ../Headers/Contact.h   ../Headers/IXMLFlattenable.h ../Headers/Status.h ../Headers/Group.h   ../Headers/GradientView.h ../Headers/ContactPictureView.h   ../Headers/constants.h ../Headers/MessageFields.h   ../Headers/ContactDetailsItem.h ../Headers/Statusses.h   ../Headers/Common.h

@@ -1,2 +1,0 @@
-_objects/PrefsWindow.o : makefile
-dep/apps/Internet/Bme/Bme/PrefsWindow.d _objects/PrefsWindow.o : PrefsWindow.cpp ../Headers/PrefsWindow.h   ../Headers/UserPictView.h ../Headers/BitmapView.h   ../Headers/LayeredView.h ../Headers/constants.h ../Headers/Common.h   ../Headers/Contact.h ../Headers/IXMLFlattenable.h ../Headers/Status.h   ../Headers/Group.h ../Headers/PrefsBitmaps.h   ../Headers/BitmapListItem.h

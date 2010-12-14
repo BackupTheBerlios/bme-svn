@@ -450,10 +450,10 @@ bool MSNP12UserProtocol::SSLSend(std::string host, HTTPFormatter *send, HTTPForm
 	sslConnection->AddConnectionListener(this);
 	
 	bool sent = false;
-	if (sslConnection && sslConnection->IsConnected())
+	if (sslConnection)
 	{						
 		cout << "send: " << send->Flatten() << endl;
-		sslConnection->WriteBytes((uint8_t*)send->Flatten(), send->Length());		
+		sslConnection->WriteBytes((uint8_t*)send->Flatten(), send->Length());	//TODO:move to didconnect?
 	}
 	//delete sslConnection; //TODO: move elsewhere, in DidDisconnect?
 	
@@ -461,7 +461,7 @@ bool MSNP12UserProtocol::SSLSend(std::string host, HTTPFormatter *send, HTTPForm
 }
 
 void MSNP12UserProtocol::DidConnect()
-{
+{		
 }
 
 void MSNP12UserProtocol::BytesSent(IConnection* connection, size_t length)

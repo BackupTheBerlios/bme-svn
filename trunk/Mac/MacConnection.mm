@@ -145,33 +145,26 @@ void MacConnection::BytesRead(uint8_t* bytes, size_t length)
 			}
 			break;
 		}
-		
-		/*NSDictionary *settings = nil;
-		if (securityLevel != IConnection::K_NO_SECURITY)
-		{
-			[inputStream setProperty:socketSecurity forKey:NSStreamSocketSecurityLevelKey];
-			[outputStream setProperty:socketSecurity forKey:NSStreamSocketSecurityLevelKey];
-						
-			settings = [[NSDictionary alloc] initWithObjectsAndKeys:
-						[NSNumber numberWithBool:YES], kCFStreamSSLAllowsExpiredCertificates,
-						[NSNumber numberWithBool:YES], kCFStreamSSLAllowsAnyRoot,
-						[NSNumber numberWithBool:NO], kCFStreamSSLValidatesCertificateChain,
-						kCFNull,kCFStreamSSLPeerName,
-						nil];		
-									
-			if (settings)
-			{
-				CFReadStreamSetProperty((CFReadStreamRef)inputStream, kCFStreamPropertySSLSettings, (CFTypeRef)settings);
-				CFWriteStreamSetProperty((CFWriteStreamRef)outputStream, kCFStreamPropertySSLSettings, (CFTypeRef)settings);
-			}	
-			[settings release];
-		}*/
-		
+			
 		AsyncSocket* s = [[AsyncSocket alloc] initWithDelegate:self];
 		self.socket = s;
 		[s release];
 		
 		[socket connectToHost:url onPort:port error:nil];
+		
+		
+		NSDictionary *settings = nil;
+		if (securityLevel != IConnection::K_NO_SECURITY)
+		{						
+			settings = [[NSDictionary alloc] initWithObjectsAndKeys:
+						[NSNumber numberWithBool:NO], kCFStreamSSLAllowsExpiredCertificates,
+						[NSNumber numberWithBool:NO], kCFStreamSSLAllowsAnyRoot,
+						[NSNumber numberWithBool:NO], kCFStreamSSLValidatesCertificateChain,
+						url,kCFStreamSSLPeerName,
+						socketSecurity,kCFStreamSSLLevel,
+						nil];		
+			[self.socket startTLS:settings];
+		}
 	}
 
 	return self;

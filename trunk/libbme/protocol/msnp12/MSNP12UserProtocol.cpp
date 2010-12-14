@@ -442,52 +442,45 @@ std::string	MSNP12UserProtocol::TweenerAuthenticate(std::string challenge)
 	return ticket;
 }
 
-//inspired by IMkit code
+//inspired by IMkit code, TODO: drop this code and move it to the method above
 bool MSNP12UserProtocol::SSLSend(std::string host, HTTPFormatter *send, HTTPFormatter **recv) 
 {	
-	
-	int32_t port = 443;
-	bool sent = false;
-	
+	int32_t port = 443;	
 	ISSLConnection* sslConnection = PlatformSpecific::GetConnectionManager()->OpenSSLConnection(host, port, IConnection::K_SSL_V2_SECURITY);
+	sslConnection->AddConnectionListener(this);
 	
+	bool sent = false;
 	if (sslConnection && sslConnection->IsConnected())
 	{						
 		cout << "send: " << send->Flatten() << endl;
-		
-		
-		size_t sentBytes = sslConnection->WriteBytes((uint8_t*)send->Flatten(), send->Length());
-				
-		if (sentBytes > 0 && sentBytes == send->Length())
-		{
-			int received = 0;
-			int numRead = 0;
-			
-			std::string readString = "";
-			do 
-			{
-				int bufSize = 1024;
-				uint8_t buffer[bufSize];
-				
-	/*			numRead = sslConnection->ReadBytes(buffer, sizeof(buffer) - 1);
-				buffer[numRead] = '\0';
-			if (numRead > 0)
-				{					
-					readString += (char*)buffer;
-					received += numRead;
-				}*/
-			}
-			while (numRead <= 0); //!= 0);
-			*recv = new HTTPFormatter(readString.c_str(), received);	
-			
-			sent = true;
-		}
-		//close connection
-		sslConnection->Close();
+		sslConnection->WriteBytes((uint8_t*)send->Flatten(), send->Length());		
 	}
-	delete sslConnection;
+	//delete sslConnection; //TODO: move elsewhere, in DidDisconnect?
 	
 	return sent;
+}
+
+void MSNP12UserProtocol::DidConnect()
+{
+}
+
+void MSNP12UserProtocol::BytesSent(IConnection* connection, size_t length)
+{
+}
+
+void MSNP12UserProtocol::BytesRead(IConnection* connection, uint8_t* bytes, size_t length)
+{
+	std::string readString = "";
+	if (length > 0)
+	{					
+		readString += (char*)bytes;
+		readString += '\0'; //TODO:test!
+		HTTPFormatter* recv = new HTTPFormatter(readString.c_str(), length);	
+		//inform the class that we received bytes from the ssl connection
+		
+	}
+	//close connection
+	connection->Close(); 
 }
 
 //User protocol methods

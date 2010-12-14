@@ -14,7 +14,7 @@
 #include "Status.h"
 #include "HTTPFormatter.h"
 
-class MSNP12UserProtocol : public ProtocolHandler, public IUserProtocol
+class MSNP12UserProtocol : public ProtocolHandler, public IUserProtocol, public IConnectionListener
 {
 public:
 	MSNP12UserProtocol();
@@ -39,6 +39,11 @@ public:
 public:
 	virtual void SetUserProtocolDelegate(IUserProtocolDelegate* userProtocolDelegate);
 	virtual IUserProtocolDelegate* Delegate();	
+
+public:
+	virtual void DidConnect();
+	virtual void BytesSent(IConnection* connection, size_t length);
+	virtual void BytesRead(IConnection* connection, uint8_t* bytes, size_t length);
 	
 private:
 	std::string	TweenerAuthenticate(std::string challenge);

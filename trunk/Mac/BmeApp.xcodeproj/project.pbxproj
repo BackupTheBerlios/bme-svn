@@ -555,9 +555,9 @@
 		1C41476211EF37D7003A48F8 /* PlatformSpecific */ = {
 			isa = PBXGroup;
 			children = (
+				1C69505B12B0FF5E00BF536D /* IConnectionListener.h */,
 				1C69505A12B0FF5E00BF536D /* IConnection.h */,
 				1C69506012B0FF5E00BF536D /* ISSLConnection.h */,
-				1C69505B12B0FF5E00BF536D /* IConnectionListener.h */,
 				1C69505C12B0FF5E00BF536D /* IConnectionManager.h */,
 				1C69505E12B0FF5E00BF536D /* IImageManager.h */,
 				1C69506312B0FF5E00BF536D /* PlatformSpecific.h */,
@@ -651,8 +651,8 @@
 				1C69502012B0FE2F00BF536D /* MSNP12PingHandler.h */,
 				1C69502212B0FE2F00BF536D /* MSNP12Protocol.h */,
 				1C69502112B0FE2F00BF536D /* MSNP12Protocol.cpp */,
-				1C69502312B0FE2F00BF536D /* MSNP12UserProtocol.cpp */,
 				1C69502412B0FE2F00BF536D /* MSNP12UserProtocol.h */,
+				1C69502312B0FE2F00BF536D /* MSNP12UserProtocol.cpp */,
 			);
 			name = msnp12;
 			sourceTree = "<group>";

@@ -113,10 +113,26 @@ bool ServerConnection::RemoveMessageHandler(ProtocolHandler* handler)
 	return false;
 }
 
+void ServerConnection::AddServerConnectionListener(IServerConnectionListener* listener)
+{
+	m_serverConnectionListeners.push_back(listener);
+}
+
 void ServerConnection::ThreadStopped(IThread* thread)
 {
 	delete thread;
 	//m_connection->Close();
+}
+
+void ServerConnection::DidConnect()
+{	
+	//loop through all handlers here and see if they can handled the received message
+	typedef vector<IServerConnectionListener*>::const_iterator SI;
+	for (SI p = m_serverConnectionListeners.begin(); p != m_serverConnectionListeners.end();++p)
+	{
+		IServerConnectionListener* listener = *p;
+		listener->DidConnect();
+	}
 }
 
 void ServerConnection::BytesSent(IConnection* connection, size_t length)
@@ -216,7 +232,7 @@ bool ServerReceiverRunnable::Run()
 {	
 //	while (!connection->Lock());
 	//read bytes from the socket and store them in a byte buffer
-	uint8_t readBuffer[1024];
+/*	uint8_t readBuffer[1024];
 	size_t sizeRead = m_readConnection->ReadBytes(readBuffer,sizeof(readBuffer)/sizeof(uint8_t));
 	if (sizeRead > 0)
 	{
@@ -273,7 +289,7 @@ bool ServerReceiverRunnable::Run()
 		m_messageQueue.pop();
 		//clean up message
 		delete message;
-	}
+	}*/
 	
 	return m_readConnection->IsConnected();
 }

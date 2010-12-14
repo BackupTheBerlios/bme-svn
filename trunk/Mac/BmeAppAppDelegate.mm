@@ -9,6 +9,7 @@
 #import "BmeAppAppDelegate.h"
 #include "ProtocolConstants.h"
 #include "PlatformSpecific.h"
+#include "Password.h"
 
 @implementation BmeAppAppDelegate
 
@@ -19,7 +20,7 @@
 	// Insert code here to initialize your application 
 	PlatformSpecific::Init();
 	
-	bmeClient = BmeClient::ConnectWithUserDetails("obelmiks@hotmail.com", "tim2839", ProtocolConstants::K_PROTOCOL_VERSION);	
+	bmeClient = BmeClient::ConnectWithUserDetails(K_MESSENGER_ACCOUNT, K_MESSENGER_PASSWORD, ProtocolConstants::K_PROTOCOL_VERSION);	
 	[contactListController setContactList:bmeClient->GetContactList()];
 	
 	//[loginView setHidden:NO];

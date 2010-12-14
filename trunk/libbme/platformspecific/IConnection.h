@@ -38,7 +38,6 @@ public:
 	virtual std::string	URL() = 0;	
 	
 	virtual size_t WriteBytes(const uint8_t *bytes, uint32_t length) = 0;
-	virtual size_t ReadBytes(uint8_t *bytes, uint32_t length) = 0;
 	
 	virtual bool Lock() = 0;
 	virtual void Unlock() = 0;

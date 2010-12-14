@@ -16,6 +16,7 @@ class IConnectionListener
 public:
 	virtual ~IConnectionListener() {};
 	
+	virtual void DidConnect() = 0;
 	virtual void BytesSent(IConnection* connection, size_t length) = 0;
 	virtual void BytesRead(IConnection* connection, uint8_t* bytes, size_t length) = 0;
 };

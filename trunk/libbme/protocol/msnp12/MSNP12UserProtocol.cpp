@@ -469,13 +469,13 @@ bool MSNP12UserProtocol::SSLSend(std::string host, HTTPFormatter *send, HTTPForm
 				int bufSize = 1024;
 				uint8_t buffer[bufSize];
 				
-				numRead = sslConnection->ReadBytes(buffer, sizeof(buffer) - 1);
+	/*			numRead = sslConnection->ReadBytes(buffer, sizeof(buffer) - 1);
 				buffer[numRead] = '\0';
 			if (numRead > 0)
 				{					
 					readString += (char*)buffer;
 					received += numRead;
-				}
+				}*/
 			}
 			while (numRead <= 0); //!= 0);
 			*recv = new HTTPFormatter(readString.c_str(), received);	

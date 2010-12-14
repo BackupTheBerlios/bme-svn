@@ -230,6 +230,8 @@
 		1C41477A11EF37D8003A48F8 /* MacMD5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MacMD5.cpp; sourceTree = "<group>"; };
 		1C62E2C212B12D9C002F40B4 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
 		1C62E2C312B12D9C002F40B4 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		1C64454712B7BBCB00C227D9 /* Password.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Password.h; sourceTree = "<group>"; };
+		1C6445D512B7C7B600C227D9 /* IServerConnectionListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IServerConnectionListener.h; path = ../libbme/protocol/IServerConnectionListener.h; sourceTree = SOURCE_ROOT; };
 		1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MSNP12ContactListProtocol.cpp; path = ../libbme/protocol/msnp12/MSNP12ContactListProtocol.cpp; sourceTree = SOURCE_ROOT; };
 		1C69501E12B0FE2F00BF536D /* MSNP12ContactListProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSNP12ContactListProtocol.h; path = ../libbme/protocol/msnp12/MSNP12ContactListProtocol.h; sourceTree = SOURCE_ROOT; };
 		1C69501F12B0FE2F00BF536D /* MSNP12PingHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MSNP12PingHandler.cpp; path = ../libbme/protocol/msnp12/MSNP12PingHandler.cpp; sourceTree = SOURCE_ROOT; };
@@ -490,6 +492,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1C64454712B7BBCB00C227D9 /* Password.h */,
 				256AC3D80F4B6AC300CF3369 /* BmeAppAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* BmeAppAppDelegate.mm */,
 				1C41475411EF3749003A48F8 /* ContactListController.h */,
@@ -630,6 +633,7 @@
 				1C69504F12B0FF2600BF536D /* ProtocolHandler.cpp */,
 				1C69505212B0FF2600BF536D /* ProtocolMessage.h */,
 				1C69505112B0FF2600BF536D /* ProtocolMessage.cpp */,
+				1C6445D512B7C7B600C227D9 /* IServerConnectionListener.h */,
 				1C69505412B0FF2600BF536D /* ServerConnection.h */,
 				1C69505312B0FF2600BF536D /* ServerConnection.cpp */,
 				1C2B7A1312268B1F00AC489E /* xml */,
@@ -645,8 +649,8 @@
 				1C69501E12B0FE2F00BF536D /* MSNP12ContactListProtocol.h */,
 				1C69501F12B0FE2F00BF536D /* MSNP12PingHandler.cpp */,
 				1C69502012B0FE2F00BF536D /* MSNP12PingHandler.h */,
-				1C69502112B0FE2F00BF536D /* MSNP12Protocol.cpp */,
 				1C69502212B0FE2F00BF536D /* MSNP12Protocol.h */,
+				1C69502112B0FE2F00BF536D /* MSNP12Protocol.cpp */,
 				1C69502312B0FE2F00BF536D /* MSNP12UserProtocol.cpp */,
 				1C69502412B0FE2F00BF536D /* MSNP12UserProtocol.h */,
 			);

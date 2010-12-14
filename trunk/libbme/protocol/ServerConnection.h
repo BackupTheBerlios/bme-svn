@@ -18,6 +18,7 @@
 #include "IConnectionManager.h"
 #include "ProtocolMessage.h"
 #include "IConnectionListener.h"
+#include "IServerConnectionListener.h"
 
 class ProtocolHandler;
 
@@ -39,8 +40,11 @@ public:
 	virtual void AddMessageHandler(ProtocolHandler* handler);
 	virtual bool RemoveMessageHandler(ProtocolHandler* handler);
 	
+	virtual void AddServerConnectionListener(IServerConnectionListener* listener);
+	
 	virtual void ThreadStopped(IThread* thread);
 		
+	virtual void DidConnect();
 	virtual void BytesSent(IConnection* connection, size_t length);
 	virtual void BytesRead(IConnection* connection, uint8_t* bytes, size_t length);
 	
@@ -49,6 +53,7 @@ private:
 	IConnection*					m_connection;
 	IThread*						m_receiverThread;
 	vector<ProtocolHandler*>		m_protocolHandlers;
+	vector<IServerConnectionListener*> m_serverConnectionListeners;
 	
 	queue<ProtocolMessage*> m_messageQueue;
 	std::string				m_messageCacheString;

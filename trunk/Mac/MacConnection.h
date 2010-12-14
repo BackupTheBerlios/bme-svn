@@ -12,35 +12,29 @@
 #include <string>
 #include <vector>
 #import <Foundation/Foundation.h>
+#import "AsyncSocket.h"
 #include "IConnection.h"
 #include "IConnectionListener.h"
 #include "ISSLConnection.h"
 
 class MacConnection;
 
-@interface Connection : NSObject<NSStreamDelegate>
-{
-	NSMutableString* incomingData;
-	NSMutableString* outgoingData;
-	
-	NSInputStream* inputStream;
-	NSOutputStream* outputStream;
+@interface Connection : NSObject<AsyncSocketDelegate>
+{	
+	AsyncSocket* socket;
 	MacConnection* m_macConnection;
-	BOOL m_didNotWriteToOutputStream;
 }
 
-@property (nonatomic, retain) NSMutableString* incomingData;
-@property (nonatomic, retain) NSMutableString* outgoingData;
-@property (nonatomic, retain) NSInputStream* inputStream;
-@property (nonatomic, retain) NSOutputStream* outputStream;
+@property (nonatomic, retain) AsyncSocket* socket;
 
 -(id)initWithURL:(NSString*)url andPort:(NSInteger)port andSecurity:(IConnection::SecurityLevel)securityLevel withOwner:(MacConnection*)macConnection;
 -(void)writeBytes:(const uint8_t*)bytes maxLength:(NSUInteger)length;
--(size_t)readBytes:(uint8_t*) buffer maxLength:(NSUInteger)length;
 -(BOOL)isConnected;
 -(void)close;
--(void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent;
 
+-(void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag;
+-(void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port;
+-(void)onSocketDidDisconnect:(AsyncSocket *)sock;
 @end
 
 class MacConnection : public ISSLConnection
@@ -54,12 +48,12 @@ public:
 	virtual std::string	URL();	
 	
 	virtual size_t WriteBytes(const uint8_t *bytes, uint32_t length);
-	virtual size_t ReadBytes(uint8_t *bytes, uint32_t length);
 	
 	virtual bool Lock();
 	virtual void Unlock();
 	
 	virtual void AddConnectionListener(IConnectionListener* connectionListener);
+	virtual void DidConnect();
 	virtual void BytesSent(size_t length);
 	virtual void BytesRead(uint8_t* bytes, size_t length);
 		

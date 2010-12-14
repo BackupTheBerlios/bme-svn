@@ -14,11 +14,13 @@
 #include "MSNP12PingHandler.h"
 
 MSNP12Protocol::MSNP12Protocol()
-					:	Protocol()
+					:	Protocol(),
+						m_isAuthenticating(false)
 {
 	m_userProtocol = new MSNP12UserProtocol();
 	m_contactListProtocol = new MSNP12ContactListProtocol();
 	m_connection = new NSServerConnection(PlatformSpecific::GetConnectionManager());
+	m_connection->AddServerConnectionListener(this);
 }
 
 MSNP12Protocol::~MSNP12Protocol()
@@ -37,9 +39,13 @@ void MSNP12Protocol::Login(std::string username, std::string password)
 	m_userProtocol->SetLoginDetails(username, password);
 	m_userProtocol->SetProtocolDelegate(this);
 	m_contactListProtocol->SetProtocolDelegate(this);
+}
+
+void MSNP12Protocol::DidConnect()
+{
 	//start the login sequence
 	bool successful = false;	
-	if (m_connection->GetConnection()->IsConnected())
+	if (m_connection->GetConnection()->IsConnected() && !m_isAuthenticating)
 	{
 		//add the protocolhandles to the NSServerConnection
 		m_connection->AddMessageHandler(m_userProtocol);		
@@ -48,8 +54,10 @@ void MSNP12Protocol::Login(std::string username, std::string password)
 		message->AddParam(ProtocolConstants::K_PROTOCOL_VERSION);				
 		message->AddParam("CVR0");
 		m_connection->SendCommandMessage(message);
-		successful = true;			
-	}
+		successful = true;
+		//sometimes the didconnect is called twice? this prevents from sending the authentication message twice
+		m_isAuthenticating = true;
+	}	
 }
 
 IUserProtocol* MSNP12Protocol::GetUserProtocol()
@@ -77,7 +85,7 @@ void MSNP12Protocol::AuthenticationCompleted()
 	m_connection->AddMessageHandler(m_contactListProtocol);
 	m_contactListProtocol->SyncList();
 						
-	
+	m_isAuthenticating = false;
 	//call delegate here, to show that user logged in, show in interface!
 	//m_userProtocolDelegate->LoggedInWithStatus(m_initialStatus);
 }

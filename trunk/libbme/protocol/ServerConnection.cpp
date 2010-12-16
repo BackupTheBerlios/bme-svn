@@ -155,7 +155,7 @@ void ServerConnection::BytesRead(IConnection* connection, uint8_t* bytes, size_t
 		m_messageCacheString.append((char*)bytes, length);
 	}
 	
-	//if (m_messageCacheString.size() > 0)
+	size_t oldCacheSize = m_messageCacheString.size();
 	do
 	{
 		//check if there's already a message in the cache
@@ -190,16 +190,23 @@ void ServerConnection::BytesRead(IConnection* connection, uint8_t* bytes, size_t
 			//remove message string from cache
 			m_messageCacheString = m_messageCacheString.erase(0, messageEndPosition);
 			//add message to the message queue
-			m_messageQueue.push(message);					
+			m_messageQueue.push(message);	
+			//check if any commands have been parsed
+			if (m_messageCacheString.size() == oldCacheSize)
+			{
+				//if not cancel the loop
+				break;
+			}
+			else
+			{
+				//update the old cache size for the next run through the loop
+				oldCacheSize = m_messageCacheString.size();
+			}
 		}
 	}
 	while (m_messageCacheString.size() > 0);
-	
-	//	connection->Unlock();
-	
-	//Handle the next message in the queue
-	//if (!m_messageQueue.empty())
-	
+		
+	//Handle the messages in the queue
 	do
 	{
 		ProtocolMessage* message = m_messageQueue.front();

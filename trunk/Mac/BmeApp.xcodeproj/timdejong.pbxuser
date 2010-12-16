@@ -100,7 +100,7 @@
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
-	1C2922561206F63100392FEC /* ServerConnection.cpp:243 */ = {
+	1C2922561206F63100392FEC /* ServerConnection.cpp:250 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -112,7 +112,7 @@
 		functionName = "ServerReceiverThread::Run()";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 243;
+		lineNumber = 250;
 		location = BmeApp;
 		modificationTime = 314209999.62701;
 		originalNumberOfMultipleMatches = 1;
@@ -136,7 +136,7 @@
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
-	1C2922611206F71300392FEC /* ServerConnection.cpp:278 */ = {
+	1C2922611206F71300392FEC /* ServerConnection.cpp:285 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -148,7 +148,7 @@
 		functionName = "ServerReceiverThread::Run()";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 278;
+		lineNumber = 285;
 		location = BmeApp;
 		modificationTime = 314209999.627117;
 		originalNumberOfMultipleMatches = 1;
@@ -1731,9 +1731,9 @@
 	};
 	1C69505312B0FF2600BF536D /* ServerConnection.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1469, 4004}}";
-			sepNavSelRange = "{6403, 0}";
-			sepNavVisRange = "{4539, 2347}";
+			sepNavIntBoundsRect = "{{0, 0}, {1469, 4134}}";
+			sepNavSelRange = "{6327, 0}";
+			sepNavVisRange = "{3915, 2450}";
 		};
 	};
 	1C69505412B0FF2600BF536D /* ServerConnection.h */ = {
@@ -1836,9 +1836,9 @@
 	};
 	1C69507212B0FFC400BF536D /* BmeClient.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1469, 865}}";
-			sepNavSelRange = "{839, 0}";
-			sepNavVisRange = "{0, 1086}";
+			sepNavIntBoundsRect = "{{0, 0}, {1859, 754}}";
+			sepNavSelRange = "{273, 0}";
+			sepNavVisRange = "{0, 607}";
 		};
 	};
 	1C69507312B0FFC400BF536D /* BmeClient.h */ = {
@@ -1858,8 +1858,8 @@
 	1C69508012B0FFC400BF536D /* IconPrefs.cpp */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1469, 975}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1420}";
+			sepNavSelRange = "{250, 0}";
+			sepNavVisRange = "{0, 1486}";
 		};
 	};
 	1C69508112B0FFC400BF536D /* IconPrefs.h */ = {
@@ -1869,11 +1869,18 @@
 			sepNavVisRange = "{0, 611}";
 		};
 	};
+	1C69508212B0FFC400BF536D /* Preferences.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1859, 507}}";
+			sepNavSelRange = "{245, 0}";
+			sepNavVisRange = "{0, 680}";
+		};
+	};
 	1C69508412B0FFC400BF536D /* Status.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1469, 2288}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1858}";
+			sepNavIntBoundsRect = "{{0, 0}, {1859, 2327}}";
+			sepNavSelRange = "{595, 0}";
+			sepNavVisRange = "{1636, 725}";
 		};
 	};
 	1C69508612B0FFC400BF536D /* User.cpp */ = {
@@ -2133,7 +2140,7 @@
 		vrLen = 963;
 		vrLoc = 0;
 	};
-	1C69C8D3121ACAEC009967F5 /* ServerConnection.cpp:221 */ = {
+	1C69C8D3121ACAEC009967F5 /* ServerConnection.cpp:228 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -2145,7 +2152,7 @@
 		functionName = "ServerReceiverRunnable::ServerReceiverRunnable(ServerConnection* serverConnection)";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 221;
+		lineNumber = 228;
 		location = BmeApp;
 		modificationTime = 314209999.629397;
 		originalNumberOfMultipleMatches = 1;
@@ -3350,7 +3357,7 @@
 		fRef = 1C69505312B0FF2600BF536D /* ServerConnection.cpp */;
 		name = "ServerConnection.cpp: 183";
 		rLen = 0;
-		rLoc = 5570;
+		rLoc = 5582;
 		rType = 0;
 		vrLen = 2446;
 		vrLoc = 3915;
@@ -3398,7 +3405,7 @@
 		fRef = 1C69505312B0FF2600BF536D /* ServerConnection.cpp */;
 		name = "ServerConnection.cpp: 183";
 		rLen = 0;
-		rLoc = 5570;
+		rLoc = 5582;
 		rType = 0;
 		vrLen = 2446;
 		vrLoc = 3915;
@@ -3408,7 +3415,7 @@
 		fRef = 1C69505312B0FF2600BF536D /* ServerConnection.cpp */;
 		name = "ServerConnection.cpp: 183";
 		rLen = 0;
-		rLoc = 5570;
+		rLoc = 5582;
 		rType = 0;
 		vrLen = 2446;
 		vrLoc = 3915;
@@ -3448,7 +3455,7 @@
 		fRef = 1C69505312B0FF2600BF536D /* ServerConnection.cpp */;
 		name = "ServerConnection.cpp: 213";
 		rLen = 0;
-		rLoc = 6403;
+		rLoc = 6624;
 		rType = 0;
 		vrLen = 2347;
 		vrLoc = 4539;
@@ -3464,6 +3471,76 @@
 		vrLoc = 12497;
 	};
 	1C899DEE12BA776300EB63C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69502112B0FE2F00BF536D /* MSNP12Protocol.cpp */;
+		name = "MSNP12Protocol.cpp: 20";
+		rLen = 0;
+		rLoc = 376;
+		rType = 0;
+		vrLen = 1870;
+		vrLoc = 0;
+	};
+	1C899DF412BA78E100EB63C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 186";
+		rLen = 15;
+		rLoc = 5651;
+		rType = 0;
+		vrLen = 1617;
+		vrLoc = 4819;
+	};
+	1C899DF712BA7A0700EB63C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69508012B0FFC400BF536D /* IconPrefs.cpp */;
+		name = "IconPrefs.cpp: 13";
+		rLen = 0;
+		rLoc = 250;
+		rType = 0;
+		vrLen = 1486;
+		vrLoc = 0;
+	};
+	1C899DF812BA7A0700EB63C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69505412B0FF2600BF536D /* ServerConnection.h */;
+		name = "ServerConnection.h: 48";
+		rLen = 0;
+		rLoc = 1296;
+		rType = 0;
+		vrLen = 1948;
+		vrLoc = 0;
+	};
+	1C899DF912BA7A0700EB63C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69505312B0FF2600BF536D /* ServerConnection.cpp */;
+		name = "ServerConnection.cpp: 213";
+		rLen = 0;
+		rLoc = 6624;
+		rType = 0;
+		vrLen = 2347;
+		vrLoc = 4539;
+	};
+	1C899DFA12BA7A0700EB63C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69505312B0FF2600BF536D /* ServerConnection.cpp */;
+		name = "ServerConnection.cpp: 208";
+		rLen = 0;
+		rLoc = 6327;
+		rType = 0;
+		vrLen = 2450;
+		vrLoc = 3915;
+	};
+	1C899DFB12BA7A0700EB63C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69502312B0FE2F00BF536D /* MSNP12UserProtocol.cpp */;
+		name = "MSNP12UserProtocol.cpp: 425";
+		rLen = 0;
+		rLoc = 13670;
+		rType = 0;
+		vrLen = 2084;
+		vrLoc = 12497;
+	};
+	1C899DFC12BA7A0700EB63C0 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1C69502112B0FE2F00BF536D /* MSNP12Protocol.cpp */;
 		name = "MSNP12Protocol.cpp: 20";
@@ -3910,7 +3987,7 @@
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
-	1CDBF07A1212EBD80067CB41 /* ServerConnection.cpp:250 */ = {
+	1CDBF07A1212EBD80067CB41 /* ServerConnection.cpp:257 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -3922,13 +3999,13 @@
 		functionName = "ServerReceiverRunnable::Run()";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 250;
+		lineNumber = 257;
 		location = BmeApp;
 		modificationTime = 314209999.628932;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
-	1CDBF07C1212EBDB0067CB41 /* ServerConnection.cpp:256 */ = {
+	1CDBF07C1212EBDB0067CB41 /* ServerConnection.cpp:263 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -3940,13 +4017,13 @@
 		functionName = "ServerReceiverRunnable::Run()";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 256;
+		lineNumber = 263;
 		location = BmeApp;
 		modificationTime = 314209999.629066;
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
-	1CDBF08A1212EC2E0067CB41 /* ServerConnection.cpp:242 */ = {
+	1CDBF08A1212EC2E0067CB41 /* ServerConnection.cpp:249 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -3958,7 +4035,7 @@
 		functionName = "ServerReceiverRunnable::Run()";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 242;
+		lineNumber = 249;
 		location = BmeApp;
 		modificationTime = 314209999.629146;
 		originalNumberOfMultipleMatches = 1;
@@ -4036,7 +4113,7 @@
 		originalNumberOfMultipleMatches = 1;
 		state = 2;
 	};
-	1CEB118D11FDDB0C001A7DA4 /* ServerConnection.cpp:295 */ = {
+	1CEB118D11FDDB0C001A7DA4 /* ServerConnection.cpp:302 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
 		);
@@ -4048,7 +4125,7 @@
 		functionName = "ServerReceiverThread::Run()";
 		hitCount = 0;
 		ignoreCount = 0;
-		lineNumber = 295;
+		lineNumber = 302;
 		location = BmeApp;
 		modificationTime = 314209999.62638;
 		originalNumberOfMultipleMatches = 1;
@@ -4217,7 +4294,7 @@
 			1CEB117811FDDA6D001A7DA4 /* MacConnection.mm:44 */,
 			1CEB117A11FDDA72001A7DA4 /* MacConnection.mm:44 */,
 			1CEB117C11FDDA75001A7DA4 /* MacConnection.mm:44 */,
-			1CEB118D11FDDB0C001A7DA4 /* ServerConnection.cpp:295 */,
+			1CEB118D11FDDB0C001A7DA4 /* ServerConnection.cpp:302 */,
 			1CEB11AA11FDDD17001A7DA4 /* ServerConnection.cpp:63 */,
 			1CEB11DF11FDE1A6001A7DA4 /* ServerConnection.cpp:40 */,
 			1CEB120211FDE3D1001A7DA4 /* MacConnection.mm:17 */,
@@ -4228,9 +4305,9 @@
 			1CDDAEEF120191F700EB094F /* ServerConnection.cpp:51 */,
 			1C29223A1206F47700392FEC /* MacConnection.mm:54 */,
 			1C29223C1206F47B00392FEC /* MacConnection.mm:62 */,
-			1C2922561206F63100392FEC /* ServerConnection.cpp:243 */,
+			1C2922561206F63100392FEC /* ServerConnection.cpp:250 */,
 			1C29225F1206F6FB00392FEC /* MacConnection.mm:39 */,
-			1C2922611206F71300392FEC /* ServerConnection.cpp:278 */,
+			1C2922611206F71300392FEC /* ServerConnection.cpp:285 */,
 			1C2922631206F71A00392FEC /* ServerConnection.cpp:68 */,
 			1C2922901206FAC200392FEC /* MacThread.mm:32 */,
 			1C2922921206FAEC00392FEC /* MacThread.mm:72 */,
@@ -4261,10 +4338,10 @@
 			1C58A763120C2725000EC02C /* MSNP12PingHandler.cpp:104 */,
 			1C9497451211AB2E009F8D33 /* MSNP12PingHandler.cpp:132 */,
 			1C94974F1211AC6B009F8D33 /* MSNP12PingHandler.cpp:54 */,
-			1CDBF07A1212EBD80067CB41 /* ServerConnection.cpp:250 */,
-			1CDBF07C1212EBDB0067CB41 /* ServerConnection.cpp:256 */,
-			1CDBF08A1212EC2E0067CB41 /* ServerConnection.cpp:242 */,
-			1C69C8D3121ACAEC009967F5 /* ServerConnection.cpp:221 */,
+			1CDBF07A1212EBD80067CB41 /* ServerConnection.cpp:257 */,
+			1CDBF07C1212EBDB0067CB41 /* ServerConnection.cpp:263 */,
+			1CDBF08A1212EC2E0067CB41 /* ServerConnection.cpp:249 */,
+			1C69C8D3121ACAEC009967F5 /* ServerConnection.cpp:228 */,
 			1C69C8F6121ACE81009967F5 /* MSNP12UserProtocol.cpp:119 */,
 			1C69C955121AD381009967F5 /* MacConnection.mm:33 */,
 			1C19348312256FAC00B69835 /* MacConnection.mm:54 */,
@@ -4522,6 +4599,13 @@
 			1C899DEC12BA776300EB63C0 /* PBXTextBookmark */ = 1C899DEC12BA776300EB63C0 /* PBXTextBookmark */;
 			1C899DED12BA776300EB63C0 /* PBXTextBookmark */ = 1C899DED12BA776300EB63C0 /* PBXTextBookmark */;
 			1C899DEE12BA776300EB63C0 /* PBXTextBookmark */ = 1C899DEE12BA776300EB63C0 /* PBXTextBookmark */;
+			1C899DF412BA78E100EB63C0 /* PBXTextBookmark */ = 1C899DF412BA78E100EB63C0 /* PBXTextBookmark */;
+			1C899DF712BA7A0700EB63C0 /* PBXTextBookmark */ = 1C899DF712BA7A0700EB63C0 /* PBXTextBookmark */;
+			1C899DF812BA7A0700EB63C0 /* PBXTextBookmark */ = 1C899DF812BA7A0700EB63C0 /* PBXTextBookmark */;
+			1C899DF912BA7A0700EB63C0 /* PBXTextBookmark */ = 1C899DF912BA7A0700EB63C0 /* PBXTextBookmark */;
+			1C899DFA12BA7A0700EB63C0 /* PBXTextBookmark */ = 1C899DFA12BA7A0700EB63C0 /* PBXTextBookmark */;
+			1C899DFB12BA7A0700EB63C0 /* PBXTextBookmark */ = 1C899DFB12BA7A0700EB63C0 /* PBXTextBookmark */;
+			1C899DFC12BA7A0700EB63C0 /* PBXTextBookmark */ = 1C899DFC12BA7A0700EB63C0 /* PBXTextBookmark */;
 			1CAC868B122E917E00F81E37 = 1CAC868B122E917E00F81E37 /* PBXTextBookmark */;
 			1CAC86BA122E95A700F81E37 = 1CAC86BA122E95A700F81E37 /* PBXTextBookmark */;
 			1CAC86E0122E9B7E00F81E37 = 1CAC86E0122E9B7E00F81E37 /* PBXTextBookmark */;

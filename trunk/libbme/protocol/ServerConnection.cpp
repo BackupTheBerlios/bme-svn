@@ -155,7 +155,8 @@ void ServerConnection::BytesRead(IConnection* connection, uint8_t* bytes, size_t
 		m_messageCacheString.append((char*)bytes, length);
 	}
 	
-	if (m_messageCacheString.size() > 0)
+	//if (m_messageCacheString.size() > 0)
+	do
 	{
 		//check if there's already a message in the cache
 		std::string delimiter = "\r\n";
@@ -166,8 +167,8 @@ void ServerConnection::BytesRead(IConnection* connection, uint8_t* bytes, size_t
 			std::string messageString = m_messageCacheString.substr(0,delimiterPosition);
 			//enough bytes have been read turn it into a message
 			ProtocolMessage* message = ProtocolMessage::ProtocolMessageFromString(messageString);
-			//remove message string from cache
-			m_messageCacheString = m_messageCacheString.erase(0, delimiterPosition + delimiter.length());//TODO: check if this erases enough! 
+			
+			size_t messageEndPosition = delimiterPosition + delimiter.length();
 			//check if we have a payload message or a normal message, create array of payload commands
 			if (message->IsPayloadMessage())
 			{					
@@ -175,27 +176,31 @@ void ServerConnection::BytesRead(IConnection* connection, uint8_t* bytes, size_t
 				uint32_t payloadSize = message->PayloadSize();
 				size_t alreadyRead = m_messageCacheString.size();
 				//if more bytes are already read than the size of the payload, the readLength should be < 0
-				int32_t readLength = payloadSize - alreadyRead;
-				/*if (readLength > 0)
+				int32_t readLength = payloadSize - (alreadyRead - messageString.size());
+				if (readLength > 0)
 				{
-					uint8_t additionalBuffer[readLength];
-					//if not, read additional bytes
-					size_t readAdditional = m_readConnection->ReadBytes(additionalBuffer, sizeof(additionalBuffer)/sizeof(uint8_t));
-					m_messageCacheString.append((char*)additionalBuffer, readAdditional);
-				}*/
-				std::string payload = m_messageCacheString.substr(0,payloadSize); 					
+					//not enough of the payload has been read yet, leave the message in the cache 
+					//and parse it the next time data has been read
+					break;
+				}					
+				std::string payload = m_messageCacheString.substr(messageEndPosition,payloadSize); 					
 				message->SetPayloadString(payload);
-				m_messageCacheString.erase(0, payloadSize);
-			}				
+				m_messageCacheString.erase(messageEndPosition, payloadSize);
+			}			
+			//remove message string from cache
+			m_messageCacheString = m_messageCacheString.erase(0, messageEndPosition);
 			//add message to the message queue
 			m_messageQueue.push(message);					
 		}
 	}
+	while (m_messageCacheString.size() > 0);
 	
 	//	connection->Unlock();
 	
 	//Handle the next message in the queue
-	if (!m_messageQueue.empty())
+	//if (!m_messageQueue.empty())
+	
+	do
 	{
 		ProtocolMessage* message = m_messageQueue.front();
 		//handle message
@@ -205,7 +210,7 @@ void ServerConnection::BytesRead(IConnection* connection, uint8_t* bytes, size_t
 		//clean up message
 		delete message;
 	}
-	
+	while (!m_messageQueue.empty());
 }
 
 //=========ServerReceiverRunnable==========

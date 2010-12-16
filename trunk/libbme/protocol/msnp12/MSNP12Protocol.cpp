@@ -79,12 +79,13 @@ void MSNP12Protocol::AuthenticationCompleted()
 {
 	//add PingHandler to NSServerConnection
 	m_connection->AddMessageHandler(new MSNP12PingHandler());	
-	
-	m_userProtocol->SendInitialPresence();
+		
 	//synchronise lists, need some info here???
 	m_connection->AddMessageHandler(m_contactListProtocol);
 	m_contactListProtocol->SyncList();
-						
+	
+	m_userProtocol->SendInitialPresence();
+	
 	m_isAuthenticating = false;
 	//call delegate here, to show that user logged in, show in interface!
 	//m_userProtocolDelegate->LoggedInWithStatus(m_initialStatus);

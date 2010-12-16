@@ -287,7 +287,6 @@ void MSNP12ContactListProtocol::HandleMessage(ProtocolMessage* message)
 			
 		}		
 	}	
-	
 }
 
 void MSNP12ContactListProtocol::SetContactListProtocolDelegate(IContactListProtocolDelegate* userProtocolDelegate)

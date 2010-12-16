@@ -181,7 +181,7 @@ void MacConnection::BytesRead(uint8_t* bytes, size_t length)
 -(void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
 	size_t length = [data length];
-	uint8* bytes = new uint8[length];
+	uint8 bytes[length];
 	//copy read bytes into a buffer
 	[data getBytes:bytes length:length];
 	//inform our listeners bytes have been read

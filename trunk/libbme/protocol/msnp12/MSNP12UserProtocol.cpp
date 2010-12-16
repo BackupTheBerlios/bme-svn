@@ -232,8 +232,8 @@ void MSNP12UserProtocol::HandleMessage(ProtocolMessage* message)
 
 void MSNP12UserProtocol::SendInitialPresence()
 {
-	ProtocolMessage* pingMessage = new ProtocolMessage(NotificationMessages::K_CLIENT_PING);
-	SendCommandMessage(pingMessage);	
+	/*ProtocolMessage* pingMessage = new ProtocolMessage(NotificationMessages::K_CLIENT_PING);
+	SendCommandMessage(pingMessage);*/	
 	
 	//set initial presence
 	ProtocolMessage *initialPresenceMsg = new ProtocolMessage(NotificationMessages::K_CHANGE_STATUS);
@@ -281,7 +281,6 @@ void MSNP12UserProtocol::TweenerAuthenticate(std::string challenge)
 	std::string passPortNexusAddress = "nexus.passport.com";
 	
 	HTTPFormatter *send = new HTTPFormatter(passPortNexusAddress.c_str(),"/rdr/pprdr.asp");
-	m_requestNumber++;
 	this->SSLSend(passPortNexusAddress, send);		
 }
 
@@ -426,6 +425,7 @@ bool MSNP12UserProtocol::SSLSend(std::string host, HTTPFormatter *send)
 	IConnection* sslConnection = PlatformSpecific::GetConnectionManager()->OpenSSLConnection(host, port, IConnection::K_SSL_V2_SECURITY);
 	sslConnection->AddConnectionListener(this);
 	
+	m_requestNumber++;
 	bool sent = false;
 	if (sslConnection)
 	{						
@@ -443,7 +443,7 @@ void MSNP12UserProtocol::DidConnect(IConnection* connection)
 
 void MSNP12UserProtocol::DidDisconnect(IConnection* connection)
 {
-	delete connection;
+	//delete connection; //TODO:connection is leaked now, figure out where to delete it
 }
 
 void MSNP12UserProtocol::BytesSent(IConnection* connection, size_t length)

@@ -137,6 +137,7 @@ void ServerConnection::DidConnect(IConnection* connection)
 
 void ServerConnection::DidDisconnect(IConnection* connection)
 {
+	cout << "ServerConnection: DidDisconnect" << endl;
 }
 
 void ServerConnection::BytesSent(IConnection* connection, size_t length)

@@ -280,7 +280,6 @@
 		1C69505D12B0FF5E00BF536D /* ICrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICrypto.h; path = ../libbme/platformspecific/ICrypto.h; sourceTree = SOURCE_ROOT; };
 		1C69505E12B0FF5E00BF536D /* IImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IImageManager.h; path = ../libbme/platformspecific/IImageManager.h; sourceTree = SOURCE_ROOT; };
 		1C69505F12B0FF5E00BF536D /* IRunnable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IRunnable.h; path = ../libbme/platformspecific/IRunnable.h; sourceTree = SOURCE_ROOT; };
-		1C69506012B0FF5E00BF536D /* ISSLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISSLConnection.h; path = ../libbme/platformspecific/ISSLConnection.h; sourceTree = SOURCE_ROOT; };
 		1C69506112B0FF5E00BF536D /* IThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IThread.cpp; path = ../libbme/platformspecific/IThread.cpp; sourceTree = SOURCE_ROOT; };
 		1C69506212B0FF5E00BF536D /* IThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IThread.h; path = ../libbme/platformspecific/IThread.h; sourceTree = SOURCE_ROOT; };
 		1C69506312B0FF5E00BF536D /* PlatformSpecific.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlatformSpecific.h; path = ../libbme/platformspecific/PlatformSpecific.h; sourceTree = SOURCE_ROOT; };
@@ -557,7 +556,6 @@
 			children = (
 				1C69505B12B0FF5E00BF536D /* IConnectionListener.h */,
 				1C69505A12B0FF5E00BF536D /* IConnection.h */,
-				1C69506012B0FF5E00BF536D /* ISSLConnection.h */,
 				1C69505C12B0FF5E00BF536D /* IConnectionManager.h */,
 				1C69505E12B0FF5E00BF536D /* IImageManager.h */,
 				1C69506312B0FF5E00BF536D /* PlatformSpecific.h */,
@@ -624,8 +622,6 @@
 				1C69504112B0FE8E00BF536D /* IProtocolDelegate.h */,
 				1C69504212B0FE8E00BF536D /* IUserProtocol.h */,
 				1C69504312B0FE8E00BF536D /* IUserProtocolDelegate.h */,
-				1C69504B12B0FF2600BF536D /* NSServerConnection.h */,
-				1C69504A12B0FF2600BF536D /* NSServerConnection.cpp */,
 				1C69504D12B0FF2600BF536D /* Protocol.h */,
 				1C69504C12B0FF2600BF536D /* Protocol.cpp */,
 				1C69504E12B0FF2600BF536D /* ProtocolConstants.h */,
@@ -636,6 +632,8 @@
 				1C6445D512B7C7B600C227D9 /* IServerConnectionListener.h */,
 				1C69505412B0FF2600BF536D /* ServerConnection.h */,
 				1C69505312B0FF2600BF536D /* ServerConnection.cpp */,
+				1C69504B12B0FF2600BF536D /* NSServerConnection.h */,
+				1C69504A12B0FF2600BF536D /* NSServerConnection.cpp */,
 				1C2B7A1312268B1F00AC489E /* xml */,
 				1C41479411EF37D9003A48F8 /* msnp12 */,
 			);

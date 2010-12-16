@@ -15,7 +15,6 @@
 #import "AsyncSocket.h"
 #include "IConnection.h"
 #include "IConnectionListener.h"
-#include "ISSLConnection.h"
 
 class MacConnection;
 
@@ -37,7 +36,7 @@ class MacConnection;
 -(void)onSocketDidDisconnect:(AsyncSocket *)sock;
 @end
 
-class MacConnection : public ISSLConnection
+class MacConnection : public IConnection
 {
 public:
 	MacConnection(std::string url, unsigned short port, IConnection::ConnectionType connectionType, SecurityLevel securityLevel = K_NO_SECURITY);
@@ -49,11 +48,9 @@ public:
 	
 	virtual size_t WriteBytes(const uint8_t *bytes, uint32_t length);
 	
-	virtual bool Lock();
-	virtual void Unlock();
-	
 	virtual void AddConnectionListener(IConnectionListener* connectionListener);
 	virtual void DidConnect();
+	virtual void DidDisconnect();
 	virtual void BytesSent(size_t length);
 	virtual void BytesRead(uint8_t* bytes, size_t length);
 		
@@ -63,10 +60,7 @@ private:
 	
 	typedef std::vector<IConnectionListener*>::iterator CI;
 	std::vector<IConnectionListener*> m_connectionListeners;
-	
-	/*NSInputStream* m_inputStream;
-	NSOutputStream* m_outputStream;*/
-	NSLock* m_connectionLock;
+
 	IConnection::ConnectionType m_connectionType;
 		
 };

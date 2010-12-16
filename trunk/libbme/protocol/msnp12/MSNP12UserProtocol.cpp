@@ -11,7 +11,6 @@
 #include "ProtocolConstants.h"
 #include "Common.h"
 #include "PlatformSpecific.h"
-#include "ISSLConnection.h"
 #include <iostream>
 #include <sstream>
 
@@ -20,7 +19,8 @@ MSNP12UserProtocol::MSNP12UserProtocol()
 							IUserProtocol(),
 							m_username(""),
 							m_password(""),
-							m_initialStatus(new Status())
+							m_initialStatus(new Status()),
+							m_requestNumber(0)
 {
 }
 
@@ -30,7 +30,8 @@ MSNP12UserProtocol::MSNP12UserProtocol(std::string username, std::string passwor
 									IUserProtocol(),
 									m_username(username),
 									m_password(password),
-									m_initialStatus(new Status())
+									m_initialStatus(new Status()),
+									m_requestNumber(0)
 {
 }
 
@@ -140,26 +141,10 @@ void MSNP12UserProtocol::HandleMessage(ProtocolMessage* message)
 		
 		if (usrFirstString == "TWN")
 		{
-			std::string challenge = message->GetParam(2);
+			m_challenge = message->GetParam(2);
 								
 			//still authenticating 
-			std::string ticket = this->TweenerAuthenticate(challenge);
-			if	(!ticket.empty())
-			{
-				//respond to command with proper ticket						
-				ProtocolMessage *usrReply = new ProtocolMessage(NotificationMessages::K_NS_USR_COMMAND);
-								
-				usrReply->AddParam("TWN");
-				usrReply->AddParam("S");
-				usrReply->AddParam(ticket);							
-			
-				SendCommandMessageTrId(usrReply);		
-			}
-			else 
-			{
-				//error authenticating
-				cout << "Error authenticating: no ticket" << endl;
-			}
+			this->TweenerAuthenticate(m_challenge);			
 
 		}
 		else if (usrFirstString == "OK")
@@ -291,162 +276,154 @@ void MSNP12UserProtocol::SetLoginDetails(std::string username, std::string passw
 	m_password = password;
 }
 
-std::string	MSNP12UserProtocol::TweenerAuthenticate(std::string challenge)
-{
-	std::string ticket;	
+void MSNP12UserProtocol::TweenerAuthenticate(std::string challenge)
+{	
 	std::string passPortNexusAddress = "nexus.passport.com";
 	
 	HTTPFormatter *send = new HTTPFormatter(passPortNexusAddress.c_str(),"/rdr/pprdr.asp");
-	//cout << send->Flatten() << endl;
-	HTTPFormatter *recv = NULL;
-	
-	if (this->SSLSend(passPortNexusAddress, send, &recv))
-	{
-		//cout << "ssl connection" << endl;
-		//cout << recv->Flatten() << endl;
-		//check if reply is 200 OK
-		if (recv->Status() == 200)
+	m_requestNumber++;
+	this->SSLSend(passPortNexusAddress, send);		
+}
+
+void MSNP12UserProtocol::ParseFirstSSLResponse(HTTPFormatter* recv)
+{
+	int16_t status = recv->Status();
+	if (status == 200)
+	{	
+		std::string passportUrl = recv->HeaderContents("PassportURLs");		
+		std::string loginKey = "DALogin=";
+		size_t loginIndex = passportUrl.find(loginKey);
+		//find login url in received header
+		if (loginIndex != std::string::npos)
 		{
-			std::string passportUrl = recv->HeaderContents("PassportURLs");		
-			std::string loginKey = "DALogin=";
-			size_t loginIndex = passportUrl.find(loginKey);
-			//find login url in received header
-			if (loginIndex != std::string::npos)
+			loginIndex += loginKey.size();
+			size_t commaIndex = passportUrl.find_first_of(",",loginIndex);
+			if (commaIndex != std::string::npos)
 			{
-				loginIndex += loginKey.size();
-				size_t commaIndex = passportUrl.find_first_of(",",loginIndex);
-				if (commaIndex != std::string::npos)
+				std::string loginUrl = passportUrl.substr(loginIndex, commaIndex - loginIndex);				
+												
+				size_t slashIndex = loginUrl.find_first_of("/");
+				if (slashIndex != std::string::npos)
 				{
-					std::string loginUrl = passportUrl.substr(loginIndex, commaIndex - loginIndex);				
-					//we do not need the first answer of the server
-					delete recv;
-					//find host and document parts of login url					
-					int16_t status = 0;
-					do
+					std::string httpsString = "https://";
+					//find the index of the https:// in the loginUrl
+					size_t httpsIndex = loginUrl.find(httpsString);
+					size_t startIndex = 0;
+					if (httpsIndex != std::string::npos)
 					{
-						size_t slashIndex = loginUrl.find_first_of("/");
-						if (slashIndex != std::string::npos)
-						{
-							std::string httpsString = "https://";
-							//find the index of the https:// in the loginUrl
-							size_t httpsIndex = loginUrl.find(httpsString);
-							size_t startIndex = 0;
-							if (httpsIndex != std::string::npos)
-							{
-								//calculate the end of the https:// part of the message
-								startIndex = httpsIndex + httpsString.size();
-							}
-							
-							std::string hostString = loginUrl.substr(startIndex, slashIndex - startIndex);							
-							std::string documentString = loginUrl.substr(slashIndex, loginUrl.size() - slashIndex);							
-							//construct a new request to the passport nexus with necessary information
-							std::string authorisationHeader = "Passport1.4 OrgVerb=GET,OrgURL=http%3A%2F%2Fmessenger%2Emsn%2Ecom,sign-in=";
-							authorisationHeader += Common::encodeURL(m_username);
-							authorisationHeader += ",pwd=" + Common::encodeURL(m_password) + ",";
-							authorisationHeader += challenge;
-							//set new host for request
-							send->SetHost(hostString.c_str());
-							//set new document for request
-							send->SetDocument(documentString.c_str());
-							//add authorisation info to header
-							send->AddHeader("Authorization", authorisationHeader.c_str());	
-							/*send->AddHeader("User-Agent", "MSMSGS");
-							send->AddHeader("Connection", "Keep-Alive");
-							send->AddHeader("Cache-Control", "no-cache");*/
-							
-							if (this->SSLSend(hostString, send, &recv))
-							{
-								status = recv->Status();
-								//three possible answers from the server are possible
-								if (status == 200)
-								{
-									//response 200 OK, a header with the requested info has been sent back!
-									//get ticket
-									std::string authHeader = recv->HeaderContents("Authentication-Info");
-									//when authentication key field has not been found check for WWW-Authenticate!
-									if (authHeader == "")
-										authHeader = recv->HeaderContents("WWW-Authenticate");									
-									
-									size_t ticketIndex = authHeader.find_first_of("'");
-									if (ticketIndex != std::string::npos)
-									{							
-										ticketIndex++;
-										size_t ticketEndIndex = authHeader.find_first_of("'", ticketIndex);
-										ticket = authHeader.substr(ticketIndex, ticketEndIndex - ticketIndex);							
-									}
-									else
-									{
-										cout << "ticket not found" << endl;
-									}
-								}
-								else if (status == 302)
-								{
-									//client has to be redirected!																		
-									loginUrl = recv->HeaderContents("Location");//TODO: redirection?									
-								}
-								else if (status == 401)
-								{
-									//unauthorised, failure! 
-									std::string authHeader = recv->HeaderContents("Authentication-Info");
-									//when authentication key field has not been found check for WWW-Authenticate!
-									if (authHeader == "")
-										authHeader = recv->HeaderContents("WWW-Authenticate");
-									//Get error message!
-									std::string errTxtKey = "cbtxt=";
-									size_t errTxtIndex = authHeader.find_first_of(errTxtKey);
-									//cout << recv->Flatten() << endl;
-									if (errTxtIndex != std::string::npos)
-									{
-										errTxtIndex += errTxtKey.size();										
-										//get the error message
-										std::string errorMsg =	authHeader.substr(errTxtIndex, authHeader.size() - errTxtIndex);
-										errorMsg = Common::decodeURL(errorMsg);
-										//display alert with error!
-										/*BAlert *alert = new BAlert("A critical error occurred!",errorMsg.String(),"Ok", NULL, NULL, B_WIDTH_AS_USUAL, B_INFO_ALERT);
-										alert->Go();	*/	
-										//call authentication failed??
-									}									
-								}
-								else
-								{
-									cout << "error!" << endl;
-								}
-								//got the information we need
-								delete recv;
-							}							
-						}
+						//calculate the end of the https:// part of the message
+						startIndex = httpsIndex + httpsString.size();
 					}
-					while (status == 302);
-				}
-				else
-				{
-					cout << "comma not found" << endl;
+					
+					std::string hostString = loginUrl.substr(startIndex, slashIndex - startIndex);							
+					std::string documentString = loginUrl.substr(slashIndex, loginUrl.size() - slashIndex);							
+					//construct a new request to the passport nexus with necessary information
+					std::string authorisationHeader = "Passport1.4 OrgVerb=GET,OrgURL=http%3A%2F%2Fmessenger%2Emsn%2Ecom,sign-in=";
+					authorisationHeader += Common::encodeURL(m_username);
+					authorisationHeader += ",pwd=" + Common::encodeURL(m_password) + ",";
+					authorisationHeader += m_challenge;
+					//create new request for host
+					HTTPFormatter *send = new HTTPFormatter();
+					send->SetHost(hostString.c_str());
+					//set new document for request
+					send->SetDocument(documentString.c_str());
+					//add authorisation info to header
+					send->AddHeader("Authorization", authorisationHeader.c_str());	
+					/*send->AddHeader("User-Agent", "MSMSGS");
+					 send->AddHeader("Connection", "Keep-Alive");
+					 send->AddHeader("Cache-Control", "no-cache");*/
+					
+					this->SSLSend(hostString, send);
 				}			
 			}
-			else
+		}
+	}
+	//we do not need the first answer of the server anymore
+	delete recv;
+}
+
+void MSNP12UserProtocol::ParseSecondSSLResponse(HTTPFormatter* recv)
+{
+	int16_t status = recv->Status();
+	//three possible answers from the server are possible
+	if (status == 200)
+	{
+		//response 200 OK, a header with the requested info has been sent back!
+		//get ticket
+		std::string authHeader = recv->HeaderContents("Authentication-Info");
+		//when authentication key field has not been found check for WWW-Authenticate!
+		if (authHeader == "")
+			authHeader = recv->HeaderContents("WWW-Authenticate");									
+		
+		size_t ticketIndex = authHeader.find_first_of("'");
+		if (ticketIndex != std::string::npos)
+		{							
+			ticketIndex++;
+			size_t ticketEndIndex = authHeader.find_first_of("'", ticketIndex);
+			std::string ticket = authHeader.substr(ticketIndex, ticketEndIndex - ticketIndex);	
+			if	(!ticket.empty())
 			{
-				cout << "login url not found" << endl;
+				//respond to command with proper ticket						
+				ProtocolMessage *usrReply = new ProtocolMessage(NotificationMessages::K_NS_USR_COMMAND);
+				
+				usrReply->AddParam("TWN");
+				usrReply->AddParam("S");
+				usrReply->AddParam(ticket);							
+				
+				SendCommandMessageTrId(usrReply);		
+			}
+			else 
+			{
+				//error authenticating
+				cout << "Error authenticating: no ticket" << endl;
 			}
 		}
 		else
 		{
-			cout << "response isn't 200 OK " << endl;
+			cout << "ticket not found" << endl;
 		}
+	}
+	else if (status == 302)
+	{
+		//client has to be redirected!																		
+		std::string loginUrl = recv->HeaderContents("Location");//TODO: redirection?									
+	}
+	else if (status == 401)
+	{
+		//unauthorised, failure! 
+		std::string authHeader = recv->HeaderContents("Authentication-Info");
+		//when authentication key field has not been found check for WWW-Authenticate!
+		if (authHeader == "")
+			authHeader = recv->HeaderContents("WWW-Authenticate");
+		//Get error message!
+		std::string errTxtKey = "cbtxt=";
+		size_t errTxtIndex = authHeader.find_first_of(errTxtKey);
+		//cout << recv->Flatten() << endl;
+		if (errTxtIndex != std::string::npos)
+		{
+			errTxtIndex += errTxtKey.size();										
+			//get the error message
+			std::string errorMsg =	authHeader.substr(errTxtIndex, authHeader.size() - errTxtIndex);
+			errorMsg = Common::decodeURL(errorMsg);
+			//display alert with error!
+			/*BAlert *alert = new BAlert("A critical error occurred!",errorMsg.String(),"Ok", NULL, NULL, B_WIDTH_AS_USUAL, B_INFO_ALERT);
+			 alert->Go();	*/	
+			//call authentication failed??
+		}									
 	}
 	else
 	{
-		cout << "login error" << endl;
+		cout << "error!" << endl;
 	}
-	delete send;	
-	
-	return ticket;
+	//got the information we need
+	delete recv;	
 }
 
 //inspired by IMkit code, TODO: drop this code and move it to the method above
-bool MSNP12UserProtocol::SSLSend(std::string host, HTTPFormatter *send, HTTPFormatter **recv) 
+bool MSNP12UserProtocol::SSLSend(std::string host, HTTPFormatter *send) 
 {	
 	int32_t port = 443;	
-	ISSLConnection* sslConnection = PlatformSpecific::GetConnectionManager()->OpenSSLConnection(host, port, IConnection::K_SSL_V2_SECURITY);
+	IConnection* sslConnection = PlatformSpecific::GetConnectionManager()->OpenSSLConnection(host, port, IConnection::K_SSL_V2_SECURITY);
 	sslConnection->AddConnectionListener(this);
 	
 	bool sent = false;
@@ -455,13 +432,18 @@ bool MSNP12UserProtocol::SSLSend(std::string host, HTTPFormatter *send, HTTPForm
 		cout << "send: " << send->Flatten() << endl;
 		sslConnection->WriteBytes((uint8_t*)send->Flatten(), send->Length());	//TODO:move to didconnect?
 	}
-	//delete sslConnection; //TODO: move elsewhere, in DidDisconnect?
+	delete send;
 	
 	return sent;
 }
 
-void MSNP12UserProtocol::DidConnect()
+void MSNP12UserProtocol::DidConnect(IConnection* connection)
 {		
+}
+
+void MSNP12UserProtocol::DidDisconnect(IConnection* connection)
+{
+	delete connection;
 }
 
 void MSNP12UserProtocol::BytesSent(IConnection* connection, size_t length)
@@ -477,7 +459,24 @@ void MSNP12UserProtocol::BytesRead(IConnection* connection, uint8_t* bytes, size
 		readString += '\0'; //TODO:test!
 		HTTPFormatter* recv = new HTTPFormatter(readString.c_str(), length);	
 		//inform the class that we received bytes from the ssl connection
-		
+		switch (m_requestNumber)
+		{
+			case 1:
+			{
+				this->ParseFirstSSLResponse(recv);
+			}
+			break;
+			case 2:
+			{
+				this->ParseSecondSSLResponse(recv);
+			}
+			break;
+			default:
+			{
+				delete recv;
+			}
+			break;
+		}		
 	}
 	//close connection
 	connection->Close(); 

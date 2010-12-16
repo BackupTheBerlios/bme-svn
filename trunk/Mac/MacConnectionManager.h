@@ -11,7 +11,6 @@
 
 #include <vector>
 #include "IConnection.h"
-#include "ISSLConnection.h"
 #include "IConnectionManager.h"
 
 class MacConnectionManager : public IConnectionManager
@@ -21,7 +20,7 @@ public:
 	virtual ~MacConnectionManager();
 	
 	virtual IConnection* OpenConnection(std::string url, int32_t port, IConnection::ConnectionType connectionType = IConnection::K_READ_WRITE);
-	virtual ISSLConnection* OpenSSLConnection(std::string url, int32_t port, IConnection::SecurityLevel securityLevel, IConnection::ConnectionType connectionType = IConnection::K_READ_WRITE);
+	virtual IConnection* OpenSSLConnection(std::string url, int32_t port, IConnection::SecurityLevel securityLevel, IConnection::ConnectionType connectionType = IConnection::K_READ_WRITE);
 	virtual bool CloseConnection(IConnection* connection);
 	
 private:

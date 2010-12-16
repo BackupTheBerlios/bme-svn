@@ -44,7 +44,8 @@ public:
 	
 	virtual void ThreadStopped(IThread* thread);
 		
-	virtual void DidConnect();
+	virtual void DidConnect(IConnection* connection);
+	virtual void DidDisconnect(IConnection* connection);
 	virtual void BytesSent(IConnection* connection, size_t length);
 	virtual void BytesRead(IConnection* connection, uint8_t* bytes, size_t length);
 	

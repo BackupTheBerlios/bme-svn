@@ -41,21 +41,26 @@ public:
 	virtual IUserProtocolDelegate* Delegate();	
 
 public:
-	virtual void DidConnect();
+	virtual void DidConnect(IConnection* connection);
+	virtual void DidDisconnect(IConnection* connection);
 	virtual void BytesSent(IConnection* connection, size_t length);
 	virtual void BytesRead(IConnection* connection, uint8_t* bytes, size_t length);
 	
 private:
-	std::string	TweenerAuthenticate(std::string challenge);
-	bool		SSLSend(std::string host, HTTPFormatter *send, HTTPFormatter **recv);
+	void		TweenerAuthenticate(std::string challenge);
+	bool		SSLSend(std::string host, HTTPFormatter *send);
+	void		ParseFirstSSLResponse(HTTPFormatter* recv);
+	void		ParseSecondSSLResponse(HTTPFormatter* recv);
 	
 private:
 	std::string	m_username,
-				m_password
+				m_password,
+				m_challenge
 				;
 	Status*		m_initialStatus
 				;	
 	IUserProtocolDelegate* m_userProtocolDelegate;
+	int32_t		m_requestNumber;
 };
 
 #endif

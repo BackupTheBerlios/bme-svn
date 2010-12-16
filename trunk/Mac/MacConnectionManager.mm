@@ -24,7 +24,7 @@ IConnection* MacConnectionManager::OpenConnection(std::string url, int32_t port,
 	return new MacConnection(url, port, connectionType, IConnection::K_NO_SECURITY);
 }
 
-ISSLConnection* MacConnectionManager::OpenSSLConnection(std::string url, int32_t port, IConnection::SecurityLevel securityLevel, IConnection::ConnectionType connectionType)
+IConnection* MacConnectionManager::OpenSSLConnection(std::string url, int32_t port, IConnection::SecurityLevel securityLevel, IConnection::ConnectionType connectionType)
 {
 	return new MacConnection(url, port, connectionType, IConnection::K_SSL_V2_SECURITY);
 }

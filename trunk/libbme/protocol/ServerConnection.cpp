@@ -124,7 +124,7 @@ void ServerConnection::ThreadStopped(IThread* thread)
 	//m_connection->Close();
 }
 
-void ServerConnection::DidConnect()
+void ServerConnection::DidConnect(IConnection* connection)
 {	
 	//loop through all handlers here and see if they can handled the received message
 	typedef vector<IServerConnectionListener*>::const_iterator SI;
@@ -133,6 +133,10 @@ void ServerConnection::DidConnect()
 		IServerConnectionListener* listener = *p;
 		listener->DidConnect();
 	}
+}
+
+void ServerConnection::DidDisconnect(IConnection* connection)
+{
 }
 
 void ServerConnection::BytesSent(IConnection* connection, size_t length)

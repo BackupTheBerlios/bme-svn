@@ -10,7 +10,6 @@
 #define I_CONNECTION_MANAGER_H
 
 #include "IConnection.h"
-#include "ISSLConnection.h"
 
 class IConnectionManager
 {
@@ -19,7 +18,7 @@ public:
 	virtual ~IConnectionManager() {};
 	
 	virtual IConnection* OpenConnection(std::string url, int32_t port, IConnection::ConnectionType connectionType = IConnection::K_READ_WRITE) = 0;
-	virtual ISSLConnection* OpenSSLConnection(std::string url, int32_t port, IConnection::SecurityLevel securityLevel, IConnection::ConnectionType connectionType = IConnection::K_READ_WRITE) = 0;
+	virtual IConnection* OpenSSLConnection(std::string url, int32_t port, IConnection::SecurityLevel securityLevel, IConnection::ConnectionType connectionType = IConnection::K_READ_WRITE) = 0;
 	virtual bool CloseConnection(IConnection* connection) = 0;
 };
 

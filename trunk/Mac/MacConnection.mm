@@ -16,14 +16,8 @@ MacConnection::MacConnection(std::string url, unsigned short port, IConnection::
 	//convert the url string into an Objective C NSString
 	NSString* urlString = [[NSString alloc] initWithCString:m_url.c_str()];
 	//get input and output streams for the url, we can read from and write to	
-	NSInteger p = port;
-	
+	NSInteger p = port;	
 	m_connection = [[Connection alloc] initWithURL:urlString andPort:p andSecurity:securityLevel withOwner:this];	
-	
-	NSLock* lock = [[NSLock alloc] init];
-	this->m_connectionLock = [lock retain];
-	[lock release];
-	
 }
 
 MacConnection::~MacConnection()
@@ -36,24 +30,13 @@ MacConnection::~MacConnection()
 		delete connectionListener;
 	}
 
-	[m_connection release];
-	
-	while (!this->Lock());
-	this->Unlock();
-	[this->m_connectionLock release];
-	
+	[m_connection release];	
 }
 
 void MacConnection::Close()
 {
 	NSLog(@"Close");
-	
-	while (!this->Lock());
-	NSLog(@"Close has lock");
-	
 	[m_connection close];
-	this->Unlock();
-	NSLog(@"Close unlocked");
 }
 
 bool MacConnection::IsConnected()
@@ -72,16 +55,6 @@ size_t MacConnection::WriteBytes(const uint8_t *bytes, uint32_t length)
 	return length;
 }
 
-bool MacConnection::Lock()
-{
-	return [m_connectionLock tryLock] ? true : false;
-}
-
-void MacConnection::Unlock()
-{
-	[m_connectionLock unlock];
-}
-
 void MacConnection::AddConnectionListener(IConnectionListener* connectionListener)
 {
 	m_connectionListeners.push_back(connectionListener);
@@ -92,7 +65,16 @@ void MacConnection::DidConnect()
 	for (CI c = m_connectionListeners.begin(); c != m_connectionListeners.end(); ++c)
 	{
 		IConnectionListener* connectionListener = (IConnectionListener*)*c;
-		connectionListener->DidConnect();
+		connectionListener->DidConnect(this);
+	}
+}
+
+void MacConnection::DidDisconnect()
+{
+	for (CI c = m_connectionListeners.begin(); c != m_connectionListeners.end(); ++c)
+	{
+		IConnectionListener* connectionListener = (IConnectionListener*)*c;
+		connectionListener->DidDisconnect(this);
 	}
 }
 
@@ -199,9 +181,9 @@ void MacConnection::BytesRead(uint8_t* bytes, size_t length)
 -(void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
 	size_t length = [data length];
-	uint8 bytes[length];
+	uint8* bytes = new uint8[length];
 	//copy read bytes into a buffer
-	[data getBytes:&bytes length:length];
+	[data getBytes:bytes length:length];
 	//inform our listeners bytes have been read
 	m_macConnection->BytesRead(bytes, length);
 }
@@ -218,7 +200,7 @@ void MacConnection::BytesRead(uint8_t* bytes, size_t length)
 
 -(void)onSocketDidDisconnect:(AsyncSocket *)sock 
 {
-	NSLog(@"Socket disconnected");
+	m_macConnection->DidDisconnect();
 }
 
 @end

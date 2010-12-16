@@ -55,6 +55,11 @@ size_t MacConnection::WriteBytes(const uint8_t *bytes, uint32_t length)
 	return length;
 }
 
+void MacConnection::ReadBytes()
+{
+	[m_connection readBytes];
+}
+
 void MacConnection::AddConnectionListener(IConnectionListener* connectionListener)
 {
 	m_connectionListeners.push_back(connectionListener);
@@ -98,7 +103,7 @@ void MacConnection::BytesRead(uint8_t* bytes, size_t length)
 
 @implementation Connection
 
-@synthesize socket;
+@synthesize socket, readTimer, readingData;
 
 -(id)initWithURL:(NSString*)url andPort:(NSInteger)port andSecurity:(IConnection::SecurityLevel)securityLevel withOwner:(MacConnection*)macConnection
 {
@@ -128,6 +133,8 @@ void MacConnection::BytesRead(uint8_t* bytes, size_t length)
 			break;
 		}
 			
+		self.readingData = NO;
+				
 		AsyncSocket* s = [[AsyncSocket alloc] initWithDelegate:self];
 		self.socket = s;
 		[s release];
@@ -147,6 +154,8 @@ void MacConnection::BytesRead(uint8_t* bytes, size_t length)
 						nil];		
 			[self.socket startTLS:settings];
 		}
+		
+		self.readTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(readFromServerInTimer) userInfo:nil repeats:YES];
 	}
 
 	return self;
@@ -155,6 +164,7 @@ void MacConnection::BytesRead(uint8_t* bytes, size_t length)
 -(void)dealloc
 {
 	[socket release];
+	[readTimer release];
 	[super dealloc];
 }
 
@@ -164,7 +174,21 @@ void MacConnection::BytesRead(uint8_t* bytes, size_t length)
 	NSData* data = [NSData dataWithBytes:bytes length:length];
 	[self.socket writeData:data withTimeout:-1 tag:0];
 	//start reading for received data at the same time
+	//[self.socket readDataWithTimeout:-1 tag:0];
+}
+
+-(void)readBytes
+{
 	[self.socket readDataWithTimeout:-1 tag:0];
+	self.readingData = YES;
+}
+
+-(void)readFromServerInTimer
+{
+	if (!self.readingData)
+	{
+		[self readBytes];
+	}
 }
 
 -(BOOL)isConnected
@@ -186,6 +210,8 @@ void MacConnection::BytesRead(uint8_t* bytes, size_t length)
 	[data getBytes:bytes length:length];
 	//inform our listeners bytes have been read
 	m_macConnection->BytesRead(bytes, length);
+	
+	readingData = NO;
 }
 
 -(void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag
@@ -201,6 +227,12 @@ void MacConnection::BytesRead(uint8_t* bytes, size_t length)
 -(void)onSocketDidDisconnect:(AsyncSocket *)sock 
 {
 	m_macConnection->DidDisconnect();
+}
+
+-(NSTimeInterval)onSocket:(AsyncSocket *)sock shouldTimeoutReadWithTag:(long)tag elapsed:(NSTimeInterval)elapsed bytesDone:(NSUInteger)length
+{
+	readingData = NO;
+	return -1;
 }
 
 @end

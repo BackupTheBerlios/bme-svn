@@ -21,13 +21,20 @@ class MacConnection;
 @interface Connection : NSObject<AsyncSocketDelegate>
 {	
 	AsyncSocket* socket;
-	MacConnection* m_macConnection;
+	NSTimer* readTimer;
+	BOOL readingData;
+	
+	MacConnection* m_macConnection;	
 }
 
 @property (nonatomic, retain) AsyncSocket* socket;
+@property (nonatomic, retain) NSTimer* readTimer;
+@property BOOL readingData;
 
 -(id)initWithURL:(NSString*)url andPort:(NSInteger)port andSecurity:(IConnection::SecurityLevel)securityLevel withOwner:(MacConnection*)macConnection;
 -(void)writeBytes:(const uint8_t*)bytes maxLength:(NSUInteger)length;
+-(void)readBytes;
+-(void)readFromServerInTimer;
 -(BOOL)isConnected;
 -(void)close;
 
@@ -47,6 +54,7 @@ public:
 	virtual std::string	URL();	
 	
 	virtual size_t WriteBytes(const uint8_t *bytes, uint32_t length);
+	virtual void ReadBytes();
 	
 	virtual void AddConnectionListener(IConnectionListener* connectionListener);
 	virtual void DidConnect();

@@ -38,6 +38,7 @@ public:
 	virtual std::string	URL() = 0;	
 	
 	virtual size_t WriteBytes(const uint8_t *bytes, uint32_t length) = 0;	
+	virtual void ReadBytes() = 0;
 	virtual void AddConnectionListener(IConnectionListener* connectionListener) = 0;
 };
 

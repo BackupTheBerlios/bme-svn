@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1C4245D412D2010000A9F1D4</string>
+						<string>1C42461B12D2069B00A9F1D4</string>
 						<key>history</key>
 						<array>
 							<string>1C89A00912BA7F8100EB63C0</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1C4245D512D2010000A9F1D4</string>
+						<string>1C42461C12D2069B00A9F1D4</string>
 						<key>history</key>
 						<array>
 							<string>1C89A00A12BA7F8100EB63C0</string>
@@ -358,12 +358,13 @@
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>1C37FAAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>103</integer>
+									<integer>115</integer>
 									<integer>98</integer>
 									<integer>88</integer>
 									<integer>7</integer>
@@ -372,7 +373,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 1134}, {368, 998}}</string>
+							<string>{{0, 1433}, {368, 998}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -409,7 +410,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MacConnection.mm</string>
+								<string>MacPath.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -417,11 +418,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MacConnection.mm</string>
+										<string>MacPath.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1C4245D312D2010000A9F1D4</string>
+										<string>1C42461A12D2069B00A9F1D4</string>
 										<key>history</key>
 										<array>
 											<string>1C4148F411EF512F003A48F8</string>
@@ -432,7 +433,6 @@
 											<string>1CC5C35E120B154800F728F4</string>
 											<string>1C19347412256D1100B69835</string>
 											<string>1C36903E122D45C6008FFF7C</string>
-											<string>1CAC86BA122E95A700F81E37</string>
 											<string>1CAC86E2122E9B7E00F81E37</string>
 											<string>1CAC86FC122EA19400F81E37</string>
 											<string>1CAC8735122EAAE900F81E37</string>
@@ -478,13 +478,10 @@
 											<string>1C54A65312BA633300C7546F</string>
 											<string>1C54A65712BA633300C7546F</string>
 											<string>1C54A6A612BA6E5000C7546F</string>
-											<string>1C899D8912BA707600EB63C0</string>
 											<string>1C899DA912BA71A400EB63C0</string>
 											<string>1C899DD412BA76AC00EB63C0</string>
 											<string>1C899E0412BA7D0100EB63C0</string>
-											<string>1C899FF412BA7E7B00EB63C0</string>
 											<string>1C89A00212BA7F7E00EB63C0</string>
-											<string>1C42458912D1FB1700A9F1D4</string>
 											<string>1C42458B12D1FB1700A9F1D4</string>
 											<string>1C42458C12D1FB1700A9F1D4</string>
 											<string>1C42458E12D1FB1700A9F1D4</string>
@@ -492,19 +489,23 @@
 											<string>1C42459012D1FB1700A9F1D4</string>
 											<string>1C42459112D1FB1700A9F1D4</string>
 											<string>1C42459612D1FB1700A9F1D4</string>
-											<string>1C42459712D1FB1700A9F1D4</string>
 											<string>1C4245A812D1FCBA00A9F1D4</string>
 											<string>1C4245A912D1FCBA00A9F1D4</string>
 											<string>1C4245AA12D1FCBA00A9F1D4</string>
-											<string>1C4245B812D1FE1200A9F1D4</string>
 											<string>1C4245C412D2009200A9F1D4</string>
-											<string>1C4245C512D2009200A9F1D4</string>
 											<string>1C4245C612D2009200A9F1D4</string>
 											<string>1C4245C712D2009200A9F1D4</string>
-											<string>1C4245C812D2009200A9F1D4</string>
-											<string>1C4245C912D2009200A9F1D4</string>
 											<string>1C4245CA12D2009200A9F1D4</string>
-											<string>1C4245CB12D2009200A9F1D4</string>
+											<string>1C4245E312D201D800A9F1D4</string>
+											<string>1C4245E412D201D800A9F1D4</string>
+											<string>1C4245F212D204E700A9F1D4</string>
+											<string>1C4245F312D204E700A9F1D4</string>
+											<string>1C42460812D2057E00A9F1D4</string>
+											<string>1C42460912D2057E00A9F1D4</string>
+											<string>1C42460A12D2057E00A9F1D4</string>
+											<string>1C42460B12D2057E00A9F1D4</string>
+											<string>1C42461112D2067B00A9F1D4</string>
+											<string>1C42461212D2067B00A9F1D4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -702,14 +703,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C4245D612D2010000A9F1D4</string>
-		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>1C42461D12D2069B00A9F1D4</string>
 		<string>1C42456212D1F5E600A9F1D4</string>
 		<string>1C42456312D1F5E600A9F1D4</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C41474F11EF3701003A48F8</string>
 		<string>1C6452AA12BA449000CD66F1</string>
 		<string>1C6452FB12BA47F200CD66F1</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/Mac/BmeApp.xcodeproj</string>
 	</array>
@@ -951,7 +952,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MSNP12UserProtocol.cpp</string>
+										<string>MSNP12ContactListProtocol.cpp</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -1019,7 +1020,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D57069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

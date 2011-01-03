@@ -44,11 +44,8 @@ IPath* MacPath::Append(std::string path)
 	
 	NSString* newPath = [m_path stringByAppendingPathComponent:dir];
 	[dir release];
-	
-	[m_path release];
-	m_path = newPath;
-	
-	const char* cPath = [m_path cStringUsingEncoding:NSASCIIStringEncoding];
+		
+	const char* cPath = [newPath cStringUsingEncoding:NSASCIIStringEncoding];
 	if (cPath)
 	{
 		this->SetPath(cPath);
@@ -73,5 +70,7 @@ bool MacPath::operator== (const IPath& path) const
 	NSString* dir = [[NSString alloc] initWithCString:path.ToString().c_str() encoding:NSASCIIStringEncoding];
 	
 	BOOL equal = [m_path isEqualToString:dir];
+	[dir release];
+	
 	return (equal == YES) ? true : false;
 }

@@ -43,6 +43,8 @@ IPath* MacPath::Append(std::string path)
 	NSString* dir = [[NSString alloc] initWithCString:path.c_str() encoding:NSASCIIStringEncoding];
 	
 	NSString* newPath = [m_path stringByAppendingPathComponent:dir];
+	[dir release];
+	
 	[m_path release];
 	m_path = newPath;
 	

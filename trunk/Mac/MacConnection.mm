@@ -18,6 +18,7 @@ MacConnection::MacConnection(std::string url, unsigned short port, IConnection::
 	//get input and output streams for the url, we can read from and write to	
 	NSInteger p = port;	
 	m_connection = [[Connection alloc] initWithURL:urlString andPort:p andSecurity:securityLevel withOwner:this];	
+	[urlString release];
 }
 
 MacConnection::~MacConnection()
@@ -153,6 +154,7 @@ void MacConnection::BytesRead(uint8_t* bytes, size_t length)
 						socketSecurity,kCFStreamSSLLevel,
 						nil];		
 			[self.socket startTLS:settings];
+			[settings release];
 		}
 		
 		self.readTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(readFromServerInTimer) userInfo:nil repeats:YES];

@@ -24,11 +24,11 @@ MacConnection::~MacConnection()
 {
 	NSLog(@"in MacConnection");
 	//delete connection listeners
-	for (CI c = m_connectionListeners.begin(); c != m_connectionListeners.end(); ++c)
+	/*for (CI c = m_connectionListeners.begin(); c != m_connectionListeners.end(); ++c)
 	{
 		IConnectionListener* connectionListener = (IConnectionListener*)*c;
 		delete connectionListener;
-	}
+	}*/
 
 	[m_connection release];	
 }

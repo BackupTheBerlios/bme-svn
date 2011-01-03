@@ -430,7 +430,7 @@ bool MSNP12UserProtocol::SSLSend(std::string host, HTTPFormatter *send)
 	if (sslConnection)
 	{						
 		cout << "send: " << send->Flatten() << endl;
-		sslConnection->WriteBytes((uint8_t*)send->Flatten(), send->Length());	//TODO:move to didconnect?
+		sslConnection->WriteBytes((uint8_t*)send->Flatten(), send->Length());
 	}
 	delete send;
 	
@@ -443,7 +443,7 @@ void MSNP12UserProtocol::DidConnect(IConnection* connection)
 
 void MSNP12UserProtocol::DidDisconnect(IConnection* connection)
 {
-	//delete connection; //TODO:connection is leaked now, figure out where to delete it
+	delete connection; //TODO:connection is leaked now, figure out where to delete it
 }
 
 void MSNP12UserProtocol::BytesSent(IConnection* connection, size_t length)

@@ -15,12 +15,14 @@
 #include "ProtocolConstants.h"
 
 Contact::Contact()
-			:	m_hasPersonalMessage(false)
+			:		KeyValueCollection(),
+					m_hasPersonalMessage(false)
 {
 }
 
 Contact::Contact(std::string passport, std::string friendlyName, std::string guid, int32_t partOfLists, Status *status)
-			:	m_passport(passport),
+			:	KeyValueCollection(),
+				m_passport(passport),
 				m_friendlyName(friendlyName),
 				m_guid(guid),
 				m_hasPersonalMessage(false),

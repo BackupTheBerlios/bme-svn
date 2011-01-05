@@ -45,9 +45,26 @@ uint32_t ContactList::Count()
 	return m_contacts.size();
 }
 
+void ContactList::Sort(Sorter sorter)
+{
+	//sort the contactlist using the sorter
+	std::sort(m_contacts.begin(), m_contacts.end(), sorter);
+}
+
 std::vector<Contact*> ContactList::GetContactsForList(std::string contactListType)
 {
 	return m_contactLists[contactListType];
+}
+
+std::vector<Contact*> ContactList::GetSortedContactList(Sorter sorter)
+{
+	std::vector<Contact*> sortedContacts;
+	//create a copy of the contact list to sort 
+	std::copy(m_contacts.begin(), m_contacts.end(), sortedContacts.begin());
+	//sort the contactlist using the sorter
+	std::sort(sortedContacts.begin(), sortedContacts.end(), sorter);
+	
+	return sortedContacts;
 }
 
 void ContactList::SetInformUserUponAddContact(bool informUser)
@@ -167,76 +184,3 @@ void ContactList::ContactMSNDirectCapableSettingFound(bool msnDirectCapable)
 	Contact *contact = m_contacts.back();
 	contact->SetMsnDirectCapable(msnDirectCapable);
 }
-
-/** ====sorter example =====
-
-//TODO: create a sorter class that makes it possible to sort on a combination of values 
- 
- int comparefunc(const void *arg1, const void *arg2);
- 
- 
- 
- int main(void) {
- 
- MyDate dates[MAXDATES];
- 
- // Set up some initial date values here
- 
- 
- 
- // Now sort them                                      
- 
- qsort(dates, MAXDATES, sizeof(MyDate), comparefunc);
- 
- 
- 
- return 0;
- 
- }
- 
- 
- 
- int comparefunc(const void *arg1, const void *arg2) {
- 
- const MyDate *date1 = (MyDate *)arg1;
- 
- const MyDate *date2 = (MyDate *)arg2;
- 
- 
- 
- if (date1->year < date2->year)
- 
- return -1;
- 
- else if (date1->year > date2->year)
- 
- return 1;
- 
- else {
- 
- if (date1->month < date2->month)
- 
- return -1;
- 
- else if (date1->month > date2->month)
- 
- return 1;
- 
- else {
- 
- if (date1->day < date2->day)
- 
- return -1;
- 
- else if (date1->day > date2->day)
- 
- return 1;
- 
- }
- 
- }
- 
- return 0;
-}
- 
-*/ 

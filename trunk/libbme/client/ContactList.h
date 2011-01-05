@@ -16,6 +16,7 @@
 #include "IContactListProtocol.h"
 #include "IUIContactListListener.h"
 #include "UIEventProvider.h"
+#include "Sorter.h"
 
 class ContactList : public IContactListProtocolDelegate, public UIEventProvider
 {
@@ -30,7 +31,9 @@ public:
 	virtual Contact* GetContact(uint32_t contactIndex);
 	uint32_t Count();
 	
+	virtual void Sort(Sorter sorter);	
 	virtual std::vector<Contact*> GetContactsForList(std::string contactListType);
+	virtual std::vector<Contact*> GetSortedContactList(Sorter sorter);
 	
 	virtual void SetInformUserUponAddContact(bool informUser);
 	virtual bool InformUserUponAddContact();

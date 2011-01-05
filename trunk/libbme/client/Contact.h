@@ -16,8 +16,9 @@
 #include <map>
 #include <string>
 #include "Status.h"
+#include "KeyValueCollection.h"
 
-class Contact //: public IXMLFlattenable
+class Contact : public KeyValueCollection
 {
 public:
 	Contact();//IContactProtocol?

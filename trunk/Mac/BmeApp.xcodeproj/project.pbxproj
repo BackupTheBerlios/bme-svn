@@ -49,6 +49,9 @@
 		1C69509112B0FFC400BF536D /* Status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C69508412B0FFC400BF536D /* Status.cpp */; };
 		1C69509212B0FFC400BF536D /* User.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C69508612B0FFC400BF536D /* User.cpp */; };
 		1C899FEC12BA7E4100EB63C0 /* Graphics in Resources */ = {isa = PBXBuildFile; fileRef = 1C899F4612BA7E4000EB63C0 /* Graphics */; };
+		1CC0CB2612D4C86000AEF7DE /* Sorter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0CB2412D4C86000AEF7DE /* Sorter.cpp */; };
+		1CC0CB2912D4C86A00AEF7DE /* KeyValueCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0CB2712D4C86A00AEF7DE /* KeyValueCollection.cpp */; };
+		1CC0CB2C12D4C87500AEF7DE /* ValueItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0CB2A12D4C87500AEF7DE /* ValueItem.cpp */; };
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* BmeAppAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* BmeAppAppDelegate.mm */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -167,6 +170,12 @@
 		1C69508612B0FFC400BF536D /* User.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = User.cpp; path = ../libbme/client/User.cpp; sourceTree = SOURCE_ROOT; };
 		1C69508712B0FFC400BF536D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../libbme/client/User.h; sourceTree = SOURCE_ROOT; };
 		1C899F4612BA7E4000EB63C0 /* Graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Graphics; path = ../Graphics; sourceTree = SOURCE_ROOT; };
+		1CC0CB2412D4C86000AEF7DE /* Sorter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Sorter.cpp; path = "/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/libbme/client/Sorter.cpp"; sourceTree = "<absolute>"; };
+		1CC0CB2512D4C86000AEF7DE /* Sorter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sorter.h; path = "/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/libbme/client/Sorter.h"; sourceTree = "<absolute>"; };
+		1CC0CB2712D4C86A00AEF7DE /* KeyValueCollection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = KeyValueCollection.cpp; path = "/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/libbme/client/KeyValueCollection.cpp"; sourceTree = "<absolute>"; };
+		1CC0CB2812D4C86A00AEF7DE /* KeyValueCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyValueCollection.h; path = "/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/libbme/client/KeyValueCollection.h"; sourceTree = "<absolute>"; };
+		1CC0CB2A12D4C87500AEF7DE /* ValueItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ValueItem.cpp; path = "/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/libbme/client/ValueItem.cpp"; sourceTree = "<absolute>"; };
+		1CC0CB2B12D4C87500AEF7DE /* ValueItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ValueItem.h; path = "/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/libbme/client/ValueItem.h"; sourceTree = "<absolute>"; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		256AC3D80F4B6AC300CF3369 /* BmeAppAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BmeAppAppDelegate.h; sourceTree = "<group>"; };
 		256AC3D90F4B6AC300CF3369 /* BmeAppAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BmeAppAppDelegate.mm; sourceTree = "<group>"; };
@@ -360,6 +369,12 @@
 		1C41479F11EF37DA003A48F8 /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				1CC0CB2B12D4C87500AEF7DE /* ValueItem.h */,
+				1CC0CB2A12D4C87500AEF7DE /* ValueItem.cpp */,
+				1CC0CB2812D4C86A00AEF7DE /* KeyValueCollection.h */,
+				1CC0CB2712D4C86A00AEF7DE /* KeyValueCollection.cpp */,
+				1CC0CB2512D4C86000AEF7DE /* Sorter.h */,
+				1CC0CB2412D4C86000AEF7DE /* Sorter.cpp */,
 				1C69508112B0FFC400BF536D /* IconPrefs.h */,
 				1C69508012B0FFC400BF536D /* IconPrefs.cpp */,
 				1C69508512B0FFC400BF536D /* Status.h */,
@@ -550,6 +565,9 @@
 				1C69509112B0FFC400BF536D /* Status.cpp in Sources */,
 				1C69509212B0FFC400BF536D /* User.cpp in Sources */,
 				1C62E2C412B12D9C002F40B4 /* AsyncSocket.m in Sources */,
+				1CC0CB2612D4C86000AEF7DE /* Sorter.cpp in Sources */,
+				1CC0CB2912D4C86A00AEF7DE /* KeyValueCollection.cpp in Sources */,
+				1CC0CB2C12D4C87500AEF7DE /* ValueItem.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

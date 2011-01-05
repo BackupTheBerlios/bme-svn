@@ -10,6 +10,7 @@
 #define KEY_VALUE_COLLECTION_H
 
 #include <map>
+#include <vector>
 #include <stdint.h>
 #include "ValueItem.h"
 
@@ -18,6 +19,9 @@ class KeyValueCollection
 public:
 	KeyValueCollection();
 	virtual ~KeyValueCollection();
+	
+	virtual std::vector<std::string> Keys();
+	virtual std::vector<ValueItem*> Values();
 	
 	virtual void AddString(std::string key, std::string value);
 	

@@ -15,6 +15,15 @@ KeyValueCollection::KeyValueCollection()
 
 KeyValueCollection::~KeyValueCollection()
 {
+	//TODO: delete all objects here???
+}
+
+std::vector<std::string> KeyValueCollection::Keys()
+{
+}
+
+std::vector<ValueItem*> KeyValueCollection::Values()
+{
 }
 
 void KeyValueCollection::AddString(std::string key, std::string value)
@@ -54,6 +63,23 @@ void KeyValueCollection::AddDouble(std::string key, double value)
 
 void KeyValueCollection::AddValueItemForKey(std::string key, ValueItem* item)
 {
+	ValueItem* oldItem = this->GetValueForKey(key);
+	//not too sure about this...this means object ownership...
+	if (oldItem)
+	{
+		//the object is already part of the collection
+		if (oldItem == item)
+		{
+			return;
+		}
+		else 
+		{
+			//a different value will be stored under this key, delete the old item
+			delete oldItem;
+		}
+	}
+	//store a reference to the new item in the collection
+	m_keyValueCollection[key] = item;
 }
 
 ValueItem* KeyValueCollection::GetValueForKey(std::string key)

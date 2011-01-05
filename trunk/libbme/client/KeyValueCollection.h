@@ -38,7 +38,7 @@ public:
 	virtual void AddDouble(std::string key, double value);
 	
 	virtual void AddValueItemForKey(std::string key, ValueItem* item);
-	virtual ValueItem* GetValueForKey(std::string key);	
+	virtual ValueItem* FindValueForKey(std::string key);	
 	
 private:
 	std::map<std::string, ValueItem*> m_keyValueCollection;

@@ -63,7 +63,7 @@ void KeyValueCollection::AddDouble(std::string key, double value)
 
 void KeyValueCollection::AddValueItemForKey(std::string key, ValueItem* item)
 {
-	ValueItem* oldItem = this->GetValueForKey(key);
+	ValueItem* oldItem = this->FindValueForKey(key);
 	//not too sure about this...this means object ownership...
 	if (oldItem)
 	{
@@ -82,7 +82,7 @@ void KeyValueCollection::AddValueItemForKey(std::string key, ValueItem* item)
 	m_keyValueCollection[key] = item;
 }
 
-ValueItem* KeyValueCollection::GetValueForKey(std::string key)
+ValueItem* KeyValueCollection::FindValueForKey(std::string key)
 {
 	return m_keyValueCollection[key];
 }

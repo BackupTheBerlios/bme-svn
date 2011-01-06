@@ -47,9 +47,20 @@ void StringItem::operator=(const std::string value)
 	m_value = value;
 }
 
-bool StringItem::Compare(ValueItem* other)
+int StringItem::Compare(ValueItem* other)
 {
-	return false;
+	if (other->Type() == K_STRING_VALUE_TYPE)
+	{
+		StringItem* stringValue = dynamic_cast<StringItem*> (other);
+		
+		if (stringValue)
+		{
+			std::string otherString = stringValue->StringValue();
+			return m_value.compare(otherString);
+		}
+	}
+	
+	return K_COMPARE_ERROR;
 }
 
 //===NumberItem===
@@ -65,6 +76,33 @@ ValueItem::valueType NumberItem::Type()
 {
 	return K_NUMBER_VALUE_TYPE;
 }
+
+int NumberItem::Compare(ValueItem* other)
+{
+	if (other->Type() == K_NUMBER_VALUE_TYPE)
+	{
+		NumberItem* numberValue = dynamic_cast<NumberItem*> (other);
+		if (numberValue)
+		{
+			double doubleValue = numberValue->DoubleValue();
+			
+			if (this->DoubleValue() < doubleValue)
+			{
+				return -1;
+			}
+			else if (this->DoubleValue() > doubleValue)
+			{
+				return 1;
+			}
+			else if (this->DoubleValue() == doubleValue) 
+			{
+				return 0;
+			}			
+		}
+	}
+	return K_COMPARE_ERROR;
+}
+
 
 //===BoolItem===
 BoolItem::BoolItem()
@@ -95,9 +133,18 @@ void BoolItem::operator=(const bool value)
 	m_value = value;
 }
 
-bool BoolItem::Compare(ValueItem* other)
+int BoolItem::Compare(ValueItem* other)
 {
-	return false;
+	if (other->Type() == K_NUMBER_VALUE_TYPE)
+	{
+		NumberItem* numberValue = dynamic_cast<NumberItem*> (other);
+		if (numberValue)
+		{
+			bool boolValue = (bool)numberValue->DoubleValue();
+			return (m_value != boolValue);
+		}
+	}
+	return K_COMPARE_ERROR;
 }
 
 //===DoubleItem===
@@ -122,11 +169,6 @@ double DoubleItem::DoubleValue()
 void DoubleItem::operator=(const double value)
 {
 	m_value = value;
-}
-
-bool DoubleItem::Compare(ValueItem* other)
-{
-	return false;
 }
 
 //===Int8Item===
@@ -158,11 +200,6 @@ void Int8Item::operator=(const int8_t value)
 	m_value = value;
 }
 
-bool Int8Item::Compare(ValueItem* other)
-{
-	return false;
-}
-
 //===Int16Item===
 Int16Item::Int16Item()
 {
@@ -190,11 +227,6 @@ double Int16Item::DoubleValue()
 void Int16Item::operator=(const int16_t value)
 {
 	m_value = value;
-}
-
-bool Int16Item::Compare(ValueItem* other)
-{
-	return false;
 }
 
 //===Int32Item===
@@ -226,11 +258,6 @@ void Int32Item::operator=(const int32_t value)
 	m_value = value;
 }
 
-bool Int32Item::Compare(ValueItem* other)
-{
-	return false;
-}
-
 //===Int64Item===
 Int64Item::Int64Item()
 {
@@ -260,7 +287,3 @@ void Int64Item::operator=(const int64_t value)
 	m_value = value;
 }
 
-bool Int64Item::Compare(ValueItem* other)
-{
-	return false;
-}

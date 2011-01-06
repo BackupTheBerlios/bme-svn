@@ -12,6 +12,8 @@
 #include <string>
 #include <stdint.h>
 
+const int K_COMPARE_ERROR = -1000;
+
 class ValueItem
 {
 public:
@@ -41,7 +43,7 @@ public:
 	
 	virtual void operator=(const std::string value);
 	
-	virtual bool Compare(ValueItem* other);
+	virtual int Compare(ValueItem* other);
 	
 private:
 	std::string m_value;
@@ -55,7 +57,7 @@ public:
 	
 	virtual valueType Type();
 	virtual double DoubleValue() = 0;
-	
+	virtual int Compare(ValueItem* other);
 };
 
 class BoolItem : public NumberItem
@@ -69,7 +71,7 @@ public:
 	virtual double DoubleValue();
 		
 	virtual void operator=(const bool value);
-	virtual bool Compare(ValueItem* other);
+	virtual int Compare(ValueItem* other);
 	
 private:
 	bool m_value;
@@ -85,7 +87,6 @@ public:
 	virtual double DoubleValue();
 	
 	virtual void operator=(const double value);
-	virtual bool Compare(ValueItem* other);
 	
 private:
 	double m_value;
@@ -102,7 +103,6 @@ public:
 	virtual double DoubleValue();
 	
 	virtual void operator=(const int8_t value);
-	virtual bool Compare(ValueItem* other);
 	
 private:
 	int8_t m_value;
@@ -119,7 +119,6 @@ public:
 	virtual double DoubleValue();
 	
 	virtual void operator=(const int16_t value);
-	virtual bool Compare(ValueItem* other);
 	
 private:
 	int16_t m_value;
@@ -136,7 +135,6 @@ public:
 	virtual double DoubleValue();
 	
 	virtual void operator=(const int32_t value);
-	virtual bool Compare(ValueItem* other);
 	
 private:
 	int32_t m_value;
@@ -153,8 +151,7 @@ public:
 	virtual double DoubleValue();
 	
 	virtual void operator=(const int64_t value);
-	virtual bool Compare(ValueItem* other);
-	
+		
 private:
 	int64_t m_value;
 };

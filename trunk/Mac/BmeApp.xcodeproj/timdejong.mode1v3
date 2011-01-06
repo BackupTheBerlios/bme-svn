@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1CBCBA1F12D5FCF80003C9D2</string>
+						<string>1CBCBA3512D604A70003C9D2</string>
 						<key>history</key>
 						<array>
 							<string>1C7624B612D4CFCD00C4CEB8</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1CBCBA2012D5FCF80003C9D2</string>
+						<string>1CBCBA3612D604A70003C9D2</string>
 						<key>history</key>
 						<array>
 							<string>1C7624B712D4CFCD00C4CEB8</string>
@@ -296,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1CBCBA2112D5FCF80003C9D2</string>
+						<string>1CBCBA3712D604A70003C9D2</string>
 						<key>history</key>
 						<array>
 							<string>1C7624B812D4CFCD00C4CEB8</string>
@@ -404,7 +404,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>22</integer>
+									<integer>20</integer>
 									<integer>19</integer>
 									<integer>7</integer>
 									<integer>1</integer>
@@ -449,7 +449,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>KeyValueCollection.cpp</string>
+								<string>ContactListController.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -457,11 +457,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>KeyValueCollection.cpp</string>
+										<string>ContactListController.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1CBCBA1E12D5FCF80003C9D2</string>
+										<string>1CBCBA3412D604A70003C9D2</string>
 										<key>history</key>
 										<array>
 											<string>1C4148F411EF512F003A48F8</string>
@@ -549,11 +549,11 @@
 											<string>1CB6F9F912D4BFA9003A7748</string>
 											<string>1C7624AC12D4CFCD00C4CEB8</string>
 											<string>1C7624AD12D4CFCD00C4CEB8</string>
-											<string>1C7624AE12D4CFCD00C4CEB8</string>
-											<string>1C7624AF12D4CFCD00C4CEB8</string>
-											<string>1C7624B012D4CFCD00C4CEB8</string>
-											<string>1CBCBA1D12D5FCF80003C9D2</string>
-											<string>1CBCBA1512D5FC620003C9D2</string>
+											<string>1CBCBA2F12D604A70003C9D2</string>
+											<string>1CBCBA3012D604A70003C9D2</string>
+											<string>1CBCBA3112D604A70003C9D2</string>
+											<string>1CBCBA3212D604A70003C9D2</string>
+											<string>1CBCBA3312D604A70003C9D2</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -779,7 +779,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>ContactListController.mm</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -796,6 +796,8 @@
 							<string>772pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

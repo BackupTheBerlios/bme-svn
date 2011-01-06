@@ -22,20 +22,28 @@ public:
 	
 	virtual std::vector<std::string> Keys();
 	virtual std::vector<ValueItem*> Values();
+	virtual bool IsEmpty();	
 	
 	virtual void AddString(std::string key, std::string value);
+	virtual bool FindString(std::string key, std::string* value);
 	
 	virtual void AddBool(std::string key, bool value);
+	virtual bool FindBool(std::string key, bool* value);
 	
 	virtual void AddInt8(std::string key, int8_t value);
+	virtual bool FindInt8(std::string key, int8_t* value);
 	
 	virtual void AddInt16(std::string key, int16_t value);
+	virtual bool FindInt16(std::string key, int16_t* value);
 	
 	virtual void AddInt32(std::string key, int32_t value);
+	virtual bool FindInt32(std::string key, int32_t* value);
 	
 	virtual void AddInt64(std::string key, int64_t value);
+	virtual bool FindInt64(std::string key, int64_t* value);
 	
 	virtual void AddDouble(std::string key, double value);
+	virtual bool FindDouble(std::string key, double* value);
 	
 	virtual void AddValueItemForKey(std::string key, ValueItem* item);
 	virtual ValueItem* FindValueForKey(std::string key);	

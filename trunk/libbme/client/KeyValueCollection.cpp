@@ -217,6 +217,10 @@ void KeyValueCollection::AddValueItemForKey(std::string key, ValueItem* item)
 
 ValueItem* KeyValueCollection::FindValueForKey(std::string key)
 {
-	return m_keyValueCollection[key];
+	if (m_keyValueCollection.find(key) != m_keyValueCollection.end())
+	{
+		return m_keyValueCollection[key];
+	}
+	return NULL;
 }
 

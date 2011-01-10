@@ -18,6 +18,13 @@
 #include "Status.h"
 #include "KeyValueCollection.h"
 
+#define K_PASSPORT_KEY			"passport"
+#define K_FRIENDLY_NAME_KEY		"friendlyName"
+#define K_GUID_KEY				"guid"
+#define K_PERSONAL_MESSAGE_KEY	"personalMessage"
+#define K_ONLINE_STATUS_KEY		"onlineStatus"
+#define K_ON_FORWARD_LIST_KEY	"onForwardList"
+
 class Contact : public KeyValueCollection
 {
 public:

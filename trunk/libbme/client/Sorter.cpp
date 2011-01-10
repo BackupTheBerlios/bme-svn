@@ -22,8 +22,42 @@ void Sorter::AddCompareKey(std::string key, bool ascending)
 	m_compareKeys[key] = ascending;
 }
 
+int Sorter::compare(KeyValueCollection* collection1, KeyValueCollection* collection2)
+{
+	typedef std::map<std::string, bool>::const_iterator MI;
+	//loop through all the key which should be taken into account in the comparison
+	for (MI p = m_compareKeys.begin(); p != m_compareKeys.end(); ++p)
+	{
+		std::string key = p->first;
+		bool ascending = p->second;
+				
+		ValueItem* vi1 = collection1->FindValueForKey(key);
+		ValueItem* vi2 = collection2->FindValueForKey(key);
+		if (vi1 && vi2)
+		{
+			int compare = vi1->Compare(vi2);
+			//if one of the values for a key is smaller than the other return true
+			//else compare the next two key-value pairs with each other
+			if (ascending && compare != 0)
+			{
+				return compare;
+			}
+			else if (!ascending && compare != 0)
+			{
+				return -compare;
+			}			
+		}
+	}
+	return 0;
+}
+
 bool Sorter::operator() (KeyValueCollection* collection1, KeyValueCollection* collection2)
 {
+	if (collection1 && collection2)
+	{
+		return (this->compare(collection1, collection2) < 0);
+	}	
+	return false;
 }
 
 /** ====sorter example =====

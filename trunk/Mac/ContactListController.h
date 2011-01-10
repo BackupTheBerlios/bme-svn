@@ -27,6 +27,7 @@ class MacUIContactListListener;
 @property BOOL contactListAvailable;
 
 -(id)initWithContactList:(ContactList*)contactList;
+-(void)sortList;
 
 @end
 

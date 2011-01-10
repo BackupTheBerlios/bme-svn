@@ -29,6 +29,11 @@ Contact::Contact(std::string passport, std::string friendlyName, std::string gui
 				m_partOfLists(partOfLists),
 				m_status(status)
 {
+	this->AddString(K_PASSPORT_KEY, passport);
+	this->AddString(K_FRIENDLY_NAME_KEY, friendlyName);
+	this->AddString(K_GUID_KEY, guid);
+	this->AddBool(K_ONLINE_STATUS_KEY, status->IsOnline());
+	this->AddBool(K_ON_FORWARD_LIST_KEY, this->IsOnForwardList());
 }
 
 Contact::~Contact()
@@ -38,6 +43,7 @@ Contact::~Contact()
 void Contact::SetPassport(std::string passport)
 {
 	m_passport = passport;
+	this->AddString(K_PASSPORT_KEY, passport);
 }
 
 std::string Contact::Passport()
@@ -48,6 +54,7 @@ std::string Contact::Passport()
 void Contact::SetFriendlyName(std::string friendlyName)
 {
 	m_friendlyName = friendlyName;
+	this->AddString(K_FRIENDLY_NAME_KEY, friendlyName);
 }
 
 std::string Contact::FriendlyName()
@@ -58,6 +65,7 @@ std::string Contact::FriendlyName()
 void Contact::SetGUID(std::string guid)
 {
 	m_guid = guid;
+	this->AddString(K_GUID_KEY, guid);
 }
 
 std::string Contact::GUID()
@@ -92,6 +100,7 @@ std::vector<std::string> Contact::Groups()
 void Contact::SetPartOfLists(int32_t partOfLists)
 {
 	m_partOfLists = partOfLists;
+	this->AddBool(K_ON_FORWARD_LIST_KEY, this->IsOnForwardList());
 }
 
 int32_t Contact::PartOfLists()
@@ -102,6 +111,7 @@ int32_t Contact::PartOfLists()
 void Contact::SetStatus(Status *status)
 {
 	m_status = status;
+	this->AddBool(K_ONLINE_STATUS_KEY, status->IsOnline());
 }
 
 Status* Contact::GetStatus()
@@ -135,7 +145,7 @@ bool Contact::IsBlocked()
 
 bool Contact::IsOnline()
 {
-	return (m_status->GetAbbreviation() != Statusses::K_OFFLINE);
+	return m_status->IsOnline();
 }
 
 bool Contact::HasPersonalMessage()

@@ -29,6 +29,7 @@ public:
 	virtual ~ValueItem();
 	
 	virtual valueType Type() = 0;
+	virtual int Compare(ValueItem* other) = 0;
 };
 
 class StringItem : public ValueItem

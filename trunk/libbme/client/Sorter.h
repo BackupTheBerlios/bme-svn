@@ -20,6 +20,7 @@ public:
 	
 	virtual void AddCompareKey(std::string key, bool ascending);
 	
+	int compare(KeyValueCollection* collection1, KeyValueCollection* collection2);
 	bool operator() (KeyValueCollection* collection1, KeyValueCollection* collection2);	//Check!
 		
 private:

@@ -7,6 +7,8 @@
 //
 
 #import "ContactListController.h"
+#import "Sorter.h"
+#import "Contact.h"
 #import <iostream>
 
 @implementation ContactListController
@@ -24,6 +26,15 @@
 		self.contactList->AddUIListener(self.contactListListener);
 	}
 	return self;
+}
+
+-(void)sortList
+{
+	Sorter sorter;
+	sorter.AddCompareKey(K_ON_FORWARD_LIST_KEY, true);
+	sorter.AddCompareKey(K_ONLINE_STATUS_KEY, false);
+	sorter.AddCompareKey(K_PASSPORT_KEY,true);	
+	contactList->Sort(sorter);
 }
 
 -(void)setContactList:(ContactList *)cList
@@ -106,6 +117,8 @@ void MacUIContactListListener::SyncListStarted()
 void MacUIContactListListener::SyncListEnded()
 {
 	NSLog(@"SyncListEnded()");
+	//list synching has finished, sort the list with contacts
+	[m_contactListController sortList];
 	m_contactListController.contactListAvailable = YES;
 	[m_contactListController.tableView reloadData];	
 }
@@ -117,6 +130,8 @@ void MacUIContactListListener::ContactAdded(Contact* contact)
 
 void MacUIContactListListener::ContactStatusChanged(Contact* contact)
 {
+	//list synching has finished, sort the list with contacts
+	[m_contactListController sortList];
 }
 
 void MacUIContactListListener::GroupAdded(std::string groupId, std::string groupName)

@@ -89,8 +89,8 @@ void ContactList::SyncListStarted()
 }
 
 void ContactList::SyncListEnded()
-{
-	//inform UI about the contact that has been added
+{	
+	//inform UI that synching the list has finished
 	std::vector<IUIListener*> m_uiContactListListeners = this->GetAllListeners();
 	for (UI c = m_uiContactListListeners.begin(); c != m_uiContactListListeners.end(); ++c) 
 	{

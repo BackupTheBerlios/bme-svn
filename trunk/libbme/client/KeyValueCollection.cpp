@@ -200,16 +200,13 @@ void KeyValueCollection::AddValueItemForKey(std::string key, ValueItem* item)
 	//not too sure about this...this means object ownership...
 	if (oldItem)
 	{
-		//the object is already part of the collection
-		if (oldItem == item)
-		{
-			return;
-		}
-		else 
-		{
+		//the object is noty already part of the collection
+		if (oldItem != item)
+		{			
 			//a different value will be stored under this key, delete the old item
 			delete oldItem;
 		}
+		m_keyValueCollection.erase(key);
 	}
 	//store a reference to the new item in the collection
 	m_keyValueCollection[key] = item;

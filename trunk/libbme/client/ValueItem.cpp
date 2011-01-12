@@ -20,11 +20,13 @@ ValueItem::~ValueItem()
 
 //===StringItem===
 StringItem::StringItem()
+				:	ValueItem()
 {
 }
 
 StringItem::StringItem(std::string value)
-				:	m_value(value)
+				:	ValueItem(),
+					m_value(value)
 {
 }
 
@@ -65,6 +67,7 @@ int StringItem::Compare(ValueItem* other)
 
 //===NumberItem===
 NumberItem::NumberItem()
+				:	ValueItem()
 {
 }
 
@@ -106,11 +109,13 @@ int NumberItem::Compare(ValueItem* other)
 
 //===BoolItem===
 BoolItem::BoolItem()
+			:	NumberItem()
 {
 }
 
 BoolItem::BoolItem(bool value)
-			:	m_value(value)
+			:	NumberItem(),
+				m_value(value)
 {
 }
 
@@ -149,11 +154,13 @@ int BoolItem::Compare(ValueItem* other)
 
 //===DoubleItem===
 DoubleItem::DoubleItem()
+				:	NumberItem()
 {
 }
 
 DoubleItem::DoubleItem(double value)
-				:	m_value(value)
+				:	NumberItem(),
+					m_value(value)
 {
 }
 
@@ -173,11 +180,13 @@ void DoubleItem::operator=(const double value)
 
 //===Int8Item===
 Int8Item::Int8Item()
+			:	NumberItem()
 {
 }
 
 Int8Item::Int8Item(int8_t value)
-		:	m_value(value)
+		:	NumberItem(),
+			m_value(value)
 {
 }
 
@@ -202,11 +211,13 @@ void Int8Item::operator=(const int8_t value)
 
 //===Int16Item===
 Int16Item::Int16Item()
+			:	NumberItem()
 {
 }
 
 Int16Item::Int16Item(int16_t value)
-				:	m_value(value)
+				:		NumberItem(),
+						m_value(value)
 {
 }
 
@@ -231,11 +242,13 @@ void Int16Item::operator=(const int16_t value)
 
 //===Int32Item===
 Int32Item::Int32Item()
+			:	NumberItem()
 {
 }
 
 Int32Item::Int32Item(int32_t value)
-				:	m_value(value)
+				:	NumberItem(),
+					m_value(value)
 {
 }
 
@@ -260,11 +273,13 @@ void Int32Item::operator=(const int32_t value)
 
 //===Int64Item===
 Int64Item::Int64Item()
+			:	NumberItem()
 {
 }
 
 Int64Item::Int64Item(int64_t value)
-:	m_value(value)
+			:	NumberItem(),
+				m_value(value)
 {
 }
 

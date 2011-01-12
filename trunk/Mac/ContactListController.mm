@@ -31,7 +31,7 @@
 -(void)sortList
 {
 	Sorter sorter;
-	sorter.AddCompareKey(K_ON_FORWARD_LIST_KEY, true);
+	//sorter.AddCompareKey(K_ON_FORWARD_LIST_KEY, true);
 	sorter.AddCompareKey(K_ONLINE_STATUS_KEY, false);
 	sorter.AddCompareKey(K_PASSPORT_KEY,true);	
 	contactList->Sort(sorter);

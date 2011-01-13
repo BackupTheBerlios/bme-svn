@@ -14,6 +14,9 @@
 class IUIUserListener : public IUIListener
 {
 public:	
+	IUIUserListener();
+	virtual ~IUIUserListener(); 
+	
 	virtual void UsernameFound(std::string username); 
 };
 

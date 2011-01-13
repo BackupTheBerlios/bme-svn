@@ -8,6 +8,7 @@
  */
 
 #include "ContactList.h"
+#include <algorithm>
 
 ContactList::ContactList(IContactListProtocol* contactListProtocol)
 				:	IContactListProtocolDelegate(),

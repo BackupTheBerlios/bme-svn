@@ -316,7 +316,8 @@ void ParsedPayload::AddParamForKey(std::string key, std::string param)
 
 std::string ParsedPayload::GetParamForKey(std::string key, int32_t index)
 {
-	return m_parsedPayload[key].at(index);
+	std::vector<std::string> line = m_parsedPayload[key];
+	return line[index];
 }
 
 std::vector<std::string> ParsedPayload::GetParamLine(std::string key)

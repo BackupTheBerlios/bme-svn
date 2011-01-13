@@ -9,12 +9,15 @@
 
 #include "Common.h"
 #include <cctype>
+#include <stdint.h>
 
-bool Common::is_number(const std::string s)
+using namespace std;
+
+bool Common::is_number(const string s)
 {
 	for (int i = 0; i < s.length(); i++) 
 	{
-		if (!std::isdigit(s[i]))
+		if (!isdigit(s[i]))
 			return false;
 	}	
 	return true;

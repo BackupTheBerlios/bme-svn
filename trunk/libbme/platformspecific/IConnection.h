@@ -10,6 +10,7 @@
 #define CONNECTION_H
 
 #include <string>
+#include <stdint.h>
 
 class IConnectionListener;
 

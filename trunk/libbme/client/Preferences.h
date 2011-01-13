@@ -10,6 +10,7 @@
 #define PREFERENCES_H
 
 #include "IconPrefs.h"
+#include <string>
 
 class Preferences
 {

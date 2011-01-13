@@ -13,6 +13,9 @@
 
 class IUIConversationListener : public IUIListener
 {
+public:
+	IUIConversationListener();
+	virtual ~IUIConversationListener();
 };
 
 #endif

@@ -17,6 +17,7 @@
 
 #include <string>
 #include <map>
+#include <stdint.h>
 #include "Color.h"
 #include "Image.h"
 #include "ProtocolConstants.h"

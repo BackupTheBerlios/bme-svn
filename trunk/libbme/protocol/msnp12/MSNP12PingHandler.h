@@ -10,7 +10,7 @@
 #define MSNP12_PING_HANDLER_H
 
 #include "ProtocolHandler.h"
-#include <string>NotificationMessages::K_CLIENT_PONG
+#include <string>//NotificationMessages::K_CLIENT_PONG
 
 class MSNP12PingHandler : public ProtocolHandler 
 {

@@ -8,6 +8,7 @@
 #define PROTOCOL_CONSTANTS_H
 
 #include <string>
+#include <stdint.h>
 
 typedef enum PhoneNumberType
 {

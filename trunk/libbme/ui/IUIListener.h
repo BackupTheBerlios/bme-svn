@@ -10,6 +10,7 @@
 #define I_UI_LISTENER
 
 #include <string>
+#include <stdint.h>
 
 class IUIListener
 {

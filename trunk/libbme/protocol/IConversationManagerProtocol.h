@@ -10,6 +10,9 @@
 #define I_CONVERSATION_MANAGER_PROTOCOL_H
 
 #include "IConversationManagerProtocolDelegate.h"
+#include "Contact.h"
+#include "Conversation.h"
+#include "IConversationManagerProtocol.h"
 
 class IConversationManagerProtocol
 {
@@ -17,7 +20,9 @@ public:
 	IConversationManagerProtocol() {};
 	virtual ~IConversationManagerProtocol() {};
 	
-	virtual IConversationProtocol* GetConversationProtocol() = 0;
+	virtual void StartConversation(Contact* contact) = 0;
+	virtual void EndConversation(Conversation* conversation) = 0;
+	
 public:
 	virtual void SetConversationManagerProtocolDelegate(IConversationManagerProtocolDelegate* converationManagerProtocolDelegate) = 0;
 	virtual IConversationManagerProtocolDelegate *Delegate() = 0;

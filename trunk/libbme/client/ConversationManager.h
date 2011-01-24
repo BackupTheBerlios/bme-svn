@@ -9,18 +9,29 @@
 #ifndef CONVERSATION_MANAGER_H
 #define CONVERSATION_MANAGER_H
 
+#include <vector>
 #include "Contact.h"
 #include "Conversation.h"
 #include "IConversationManagerProtocol.h"
+#include "IConversationManagerProtocolDelegate.h"
 
-class ConversationManager
+class ConversationManager : public IConversationManagerProtocolDelegate
 {
 public:
 	ConversationManager(IConversationManagerProtocol *conversationProtocol);
 	virtual ~ConversationManager();
 	
-	Conversation* StartConversation(Contact* contact);	
+	void StartConversation(Contact* contact);
 	void EndConversation(Conversation* conversation);
+	
+	std::vector<Conversation*> ActiveConversations();
+	//IConversationManagerProtocolDelegate methods
+	void ConversationStarted(Conversation* conversation, bool startedByUser);
+	void ConversationEnded(Conversation* conversation);
+	
+private:
+	IConversationManagerProtocol* m_conversationManagerProtocol;
+	std::vector<Conversation*> m_conversations;
 };
 
 #endif

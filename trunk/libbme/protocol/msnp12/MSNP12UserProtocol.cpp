@@ -42,9 +42,24 @@ MSNP12UserProtocol::~MSNP12UserProtocol()
 bool MSNP12UserProtocol::IsHandlerForMessage(ProtocolMessage* message)
 {
 	std::string command = message->CommandType();
+	
+	if (command == NotificationMessages::K_NS_DOWN)
+	{
+		//check if this XFR command is a redirection for the notification server or a switchboard specific message
+		std::string nsString = message->GetParam(0);
+		if (nsString == "NS")
+		{
+			//we only handle messages for the notification server here
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}	
+	
 	return (	command == NotificationMessages::K_PROTOCOLS_SUPPORTED ||
 				command == NotificationMessages::K_CLIENT_INFORMATION ||
-				command == NotificationMessages::K_NS_DOWN ||
 				command == NotificationMessages::K_NS_USR_COMMAND ||
 				command == NotificationMessages::K_PHONE_NUMBERS ||
 				command == NotificationMessages::K_NS_PAYLOAD_MSG);
@@ -126,13 +141,7 @@ void MSNP12UserProtocol::HandleMessage(ProtocolMessage* message)
 				serverConnection->Connect(nsServerAddress,nsPort);
 				StartLogin(m_username, m_password);				
 			}
-		}
-		else if (nsString == "SB")
-		{
-			//TODO: create a new SBServerConnection here???
-			//HandleSwitchboard(message);
-			//connect to new server suggested
-		}	
+		}		
 	}
 	else if (command == NotificationMessages::K_NS_USR_COMMAND)
 	{

@@ -42,6 +42,7 @@ void MSNP12ContactListProtocol::SyncList()
 bool MSNP12ContactListProtocol::IsHandlerForMessage(ProtocolMessage* message)
 {
 	std::string command = message->CommandType();
+		
 	return	(command == NotificationMessages::K_ADD_BEHAVIOUR_MSG) ||
 			(command == NotificationMessages::K_DEFAULT_CONTACT_LIST_MSG) ||
 			(command == NotificationMessages::K_CONTACT_LIST_MSG) ||

@@ -9,6 +9,7 @@
 
 #include "MSNP12ConversationManagerProtocol.h"
 #include "ProtocolConstants.h"
+#include "Conversation.h"
 
 MSNP12ConversationManagerProtocol::MSNP12ConversationManagerProtocol()
 									:	IConversationManagerProtocol()
@@ -70,8 +71,17 @@ void MSNP12ConversationManagerProtocol::HandleMessage(ProtocolMessage* message)
 				Contact* contact = m_contactsForConversations.front();
 				m_contactsForConversations.pop();
 				//retrieve switchboard server address, port
-				
-				//connect to the requested switchboard connection
+				std::string address = message->GetParam(1);
+				//split address in an ip-address and a port part
+				//std::string ip = ;
+				//int16_t port = ;
+				//check the authentication type is CKI
+				std::string cki = message->GetParam(2);
+				if (cki == "CKI")
+				{
+					std::string authenticationString = message->GetParam(3);
+					//connect to the requested switchboard connection
+				}
 			}
 			else 
 			{
@@ -81,7 +91,10 @@ void MSNP12ConversationManagerProtocol::HandleMessage(ProtocolMessage* message)
 	}
 	else if (command == NotificationMessages::K_INVITED_FOR_SWITCHBOARD)
 	{	
+		//RNG 11752013 207.46.108.38:1863 CKI 849102291.520491113 example@passport.com Example%20Name\r\n
+		std::string switchboardId = message->GetParam(0);
 		//someone invited us for a conversation
+		//m_conversationManagerDelegate->
 	}	
 }
 

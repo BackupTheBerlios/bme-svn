@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1C6192EB12EDE69C00307652</string>
+						<string>1C61930612EDEB3D00307652</string>
 						<key>history</key>
 						<array>
 							<string>1C6192B412EDE36E00307652</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1C6192EC12EDE69C00307652</string>
+						<string>1C61930712EDEB3D00307652</string>
 						<key>history</key>
 						<array>
 							<string>1C29CB6A12DF65920007B5B4</string>
@@ -364,7 +364,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>71</integer>
+									<integer>95</integer>
+									<integer>85</integer>
 									<integer>48</integer>
 									<integer>7</integer>
 									<integer>1</integer>
@@ -421,7 +422,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1C6192EA12EDE69C00307652</string>
+										<string>1C61930512EDEB3D00307652</string>
 										<key>history</key>
 										<array>
 											<string>1C4148F411EF512F003A48F8</string>
@@ -496,8 +497,6 @@
 											<string>1C629B8F12DB59DA008F28B7</string>
 											<string>1C514B6912DDCC4900CFD3B9</string>
 											<string>1C514B7412DDCDEA00CFD3B9</string>
-											<string>1C514BAD12DDD27500CFD3B9</string>
-											<string>1C514BAE12DDD27500CFD3B9</string>
 											<string>1C514BD212DDD40B00CFD3B9</string>
 											<string>1C514BDE12DDD46300CFD3B9</string>
 											<string>1C514BF012DDD5DE00CFD3B9</string>
@@ -515,7 +514,6 @@
 											<string>1C6192BC12EDE38A00307652</string>
 											<string>1C6192BD12EDE38A00307652</string>
 											<string>1C6192BE12EDE38A00307652</string>
-											<string>1C6192BF12EDE38A00307652</string>
 											<string>1C6192C012EDE38A00307652</string>
 											<string>1C6192C112EDE38A00307652</string>
 											<string>1C6192C212EDE38A00307652</string>
@@ -525,7 +523,11 @@
 											<string>1C6192C612EDE38A00307652</string>
 											<string>1C6192C712EDE38A00307652</string>
 											<string>1C6192C812EDE38A00307652</string>
-											<string>1C6192C912EDE38A00307652</string>
+											<string>1C6192F712EDE9CD00307652</string>
+											<string>1C6192F812EDE9CD00307652</string>
+											<string>1C6192F912EDE9CD00307652</string>
+											<string>1C6192FA12EDE9CD00307652</string>
+											<string>1C6192FB12EDE9CD00307652</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -723,10 +725,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C514BB212DDD27500CFD3B9</string>
-		<string>/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/Mac/BmeApp.xcodeproj</string>
-		<string>1C6192CB12EDE38A00307652</string>
 		<string>1C41474F11EF3701003A48F8</string>
+		<string>1C514BB212DDD27500CFD3B9</string>
+		<string>1C6192CB12EDE38A00307652</string>
+		<string>/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/Mac/BmeApp.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 121 1920 1057 0 0 1920 1178 </string>
@@ -821,7 +823,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C41474F11EF3701003A48F8</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

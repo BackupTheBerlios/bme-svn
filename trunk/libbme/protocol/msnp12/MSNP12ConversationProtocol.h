@@ -12,18 +12,25 @@
 #include "IConversationProtocol.h"
 #include "SBServerConnection.h"
 #include "IConversationProtocolDelegate.h"
+#include "ProtocolHandler.h"
 
-class MSNP12ConversationProtocol : public IConversationProtocol
+class MSNP12ConversationProtocol : public IConversationProtocol, public ProtocolHandler
 {
 public:
 	MSNP12ConversationProtocol(SBServerConnection* sbServerConnection);
 	virtual ~MSNP12ConversationProtocol();
 	
+	virtual bool IsHandlerForMessage(ProtocolMessage* message);
+	virtual void HandleMessage(ProtocolMessage* message);
+	
+	void StartSession(std::string userPassport);
+	void AnswerInvitation(std::string userPassport);
+	
 	void SetAuthenticationString(std::string authenticationString);
 	std::string AuthenticationString();
 	
 	void SetSwitchBoardId(std::string switchBoardId);
-	std::string SwitchBoardId();
+	std::string SwitchBoardId();		
 	
 	virtual void SetConversationProtocolDelegate(IConversationProtocolDelegate* userProtocolDelegate);
 	virtual IConversationProtocolDelegate* Delegate();

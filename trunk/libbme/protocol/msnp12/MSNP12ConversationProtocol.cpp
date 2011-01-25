@@ -8,15 +8,47 @@
  */
 
 #include "MSNP12ConversationProtocol.h"
+#include "ProtocolConstants.h"
 
 MSNP12ConversationProtocol::MSNP12ConversationProtocol(SBServerConnection* sbServerConnection)
 								:	IConversationProtocol(),
 									m_sbServerConnection(sbServerConnection)
 {
+	//make this class a protocol handler for the messages received on the switchboard session
+	m_sbServerConnection->AddMessageHandler(this);
 }
 
 MSNP12ConversationProtocol::~MSNP12ConversationProtocol()
 {
+	m_sbServerConnection->Close();//TODO: move somewhere else?
+}
+
+bool MSNP12ConversationProtocol::IsHandlerForMessage(ProtocolMessage* message)
+{
+	return false;
+}
+
+void MSNP12ConversationProtocol::HandleMessage(ProtocolMessage* message)
+{
+}
+
+void MSNP12ConversationProtocol::StartSession(std::string userPassport)
+{
+	ProtocolMessage* startSessionMessage = new ProtocolMessage(SwitchboardMessages::K_SB_USR_COMMAND);
+	startSessionMessage->AddParam(userPassport);
+	startSessionMessage->AddParam(this->AuthenticationString());
+	
+	SendCommandMessageTrId(startSessionMessage);
+}
+
+void MSNP12ConversationProtocol::AnswerInvitation(std::string userPassport)
+{
+	ProtocolMessage* answerInvitationMessage = new ProtocolMessage(SwitchboardMessages::K_ANSWER_SB_SESSION);
+	answerInvitationMessage->AddParam(userPassport);
+	answerInvitationMessage->AddParam(this->AuthenticationString());
+	answerInvitationMessage->AddParam(this->SwitchBoardId());
+	
+	SendCommandMessageTrId(answerInvitationMessage);
 }
 
 void MSNP12ConversationProtocol::SetAuthenticationString(std::string authenticationString)

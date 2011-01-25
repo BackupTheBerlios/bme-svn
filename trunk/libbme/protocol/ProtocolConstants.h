@@ -218,7 +218,7 @@ namespace SwitchboardMessages
 {
 	const std::string
 			K_SB_USR_COMMAND				= "USR",
-			K_OPEN_SB_SESSION				= "ANS",
+			K_ANSWER_SB_SESSION				= "ANS",
 			K_PRINCIPALS_IN_SESSION			= "IRO",
 			
 			K_INVITE_PRINCIPAL				= "CAL",

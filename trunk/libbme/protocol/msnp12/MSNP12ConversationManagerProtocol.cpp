@@ -65,6 +65,7 @@ void MSNP12ConversationManagerProtocol::HandleMessage(ProtocolMessage* message)
 		std::string nsString = message->GetParam(0);
 		if (nsString == "SB")
 		{
+			//XFR 15 SB 207.46.108.37:1863 CKI 17262740.1050826919.32308\r\n
 			if (!m_contactsForConversations.empty())
 			{
 				//get the first contact in the queue to start a conversation with
@@ -73,14 +74,22 @@ void MSNP12ConversationManagerProtocol::HandleMessage(ProtocolMessage* message)
 				//retrieve switchboard server address, port
 				std::string address = message->GetParam(1);
 				//split address in an ip-address and a port part
-				//std::string ip = ;
-				//int16_t port = ;
-				//check the authentication type is CKI
-				std::string cki = message->GetParam(2);
-				if (cki == "CKI")
-				{
-					std::string authenticationString = message->GetParam(3);
-					//connect to the requested switchboard connection
+				size_t colonPos = address.find(":");
+				if (colonPos != std::string::npos)
+				{				
+					std::string ipString = address.substr(0, colonPos - 1);
+					std::string portString = address.substr(colonPos + 1, address.size() - colonPos);
+					int32_t port = atoi(portString.c_str());
+				
+					//check the authentication type is CKI
+					std::string cki = message->GetParam(2);
+					if (cki == "CKI")
+					{
+						std::string authenticationString = message->GetParam(3);
+						//connect to the requested switchboard connection
+						
+						//m_conversationManagerDelegate->UserConversationStarted(contact, IConversationProtocol* conversation);
+					}
 				}
 			}
 			else 
@@ -94,7 +103,8 @@ void MSNP12ConversationManagerProtocol::HandleMessage(ProtocolMessage* message)
 		//RNG 11752013 207.46.108.38:1863 CKI 849102291.520491113 example@passport.com Example%20Name\r\n
 		std::string switchboardId = message->GetParam(0);
 		//someone invited us for a conversation
-		//m_conversationManagerDelegate->
+		std::string invitedByPassport = message->GetParam(5);
+		//m_conversationManagerDelegate->InvitedToConversation(invitedByPassport, IConversationProtocol* conversation)
 	}	
 }
 

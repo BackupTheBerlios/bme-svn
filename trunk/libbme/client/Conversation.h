@@ -13,6 +13,7 @@
 
 #include "ConversationItem.h"
 #include "IUIConversationListener.h"
+#include "Contact.h"
 
 class IConversationProtocol;
 
@@ -22,6 +23,7 @@ public:
 	Conversation(IConversationProtocol* conversationProtocol);
 	virtual ~Conversation();
 	
+	void AddContact(Contact* contact);
 	void AddConversationItem(ConversationItem* conversationItem);
 		
 	//UIListeners

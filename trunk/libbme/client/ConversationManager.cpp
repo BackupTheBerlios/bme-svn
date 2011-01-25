@@ -34,8 +34,16 @@ std::vector<Conversation*> ConversationManager::ActiveConversations()
 	return m_conversations;
 }
 
-void ConversationManager::ConversationStarted(Conversation* conversation, bool startedByUser)
+void ConversationManager::UserConversationStarted(Contact* withContact, IConversationProtocol* conversationProtocol)
 {
+	Conversation* conversation = new Conversation(conversationProtocol);
+	m_conversations.push_back(conversation);
+	//inform UI
+}
+
+void ConversationManager::InvitedToConversation(std::string invitedByPassport, IConversationProtocol* conversationProtocol)
+{
+	Conversation* conversation = new Conversation(conversationProtocol);
 	m_conversations.push_back(conversation);
 	//inform UI
 }

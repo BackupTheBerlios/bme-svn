@@ -18,7 +18,6 @@
 		1C4147BF11EF37DA003A48F8 /* MacCrypto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C41477811EF37D8003A48F8 /* MacCrypto.cpp */; };
 		1C4147C011EF37DA003A48F8 /* MacMD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C41477A11EF37D8003A48F8 /* MacMD5.cpp */; };
 		1C6192AE12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */; };
-		1C61931312EDEDB000307652 /* ServerConnection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C61931212EDEDB000307652 /* ServerConnection.cpp */; };
 		1C62E2C412B12D9C002F40B4 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C62E2C312B12D9C002F40B4 /* AsyncSocket.m */; };
 		1C69502512B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */; };
 		1C69502612B0FE2F00BF536D /* MSNP12PingHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C69501F12B0FE2F00BF536D /* MSNP12PingHandler.cpp */; };
@@ -54,6 +53,8 @@
 		1CC0CB2612D4C86000AEF7DE /* Sorter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0CB2412D4C86000AEF7DE /* Sorter.cpp */; };
 		1CC0CB2912D4C86A00AEF7DE /* KeyValueCollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0CB2712D4C86A00AEF7DE /* KeyValueCollection.cpp */; };
 		1CC0CB2C12D4C87500AEF7DE /* ValueItem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1CC0CB2A12D4C87500AEF7DE /* ValueItem.cpp */; };
+		1CCCE6D412EEFDC2001E7255 /* SBServerConnection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCE6D312EEFDC2001E7255 /* SBServerConnection.cpp */; };
+		1CCCE6E412EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */; };
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* BmeAppAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* BmeAppAppDelegate.mm */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -87,7 +88,6 @@
 		1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MSNP12ConversationManagerProtocol.cpp; path = ../libbme/protocol/msnp12/MSNP12ConversationManagerProtocol.cpp; sourceTree = SOURCE_ROOT; };
 		1C6192AD12EDDD9200307652 /* MSNP12ConversationManagerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSNP12ConversationManagerProtocol.h; path = ../libbme/protocol/msnp12/MSNP12ConversationManagerProtocol.h; sourceTree = SOURCE_ROOT; };
 		1C61931112EDEDA900307652 /* SBServerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBServerConnection.h; path = ../libbme/protocol/SBServerConnection.h; sourceTree = SOURCE_ROOT; };
-		1C61931212EDEDB000307652 /* ServerConnection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ServerConnection.cpp; path = ../libbme/protocol/ServerConnection.cpp; sourceTree = SOURCE_ROOT; };
 		1C62E2C212B12D9C002F40B4 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
 		1C62E2C312B12D9C002F40B4 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
 		1C64454712B7BBCB00C227D9 /* Password.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Password.h; sourceTree = "<group>"; };
@@ -182,6 +182,9 @@
 		1CC0CB2812D4C86A00AEF7DE /* KeyValueCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyValueCollection.h; path = "/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/libbme/client/KeyValueCollection.h"; sourceTree = "<absolute>"; };
 		1CC0CB2A12D4C87500AEF7DE /* ValueItem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ValueItem.cpp; path = "/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/libbme/client/ValueItem.cpp"; sourceTree = "<absolute>"; };
 		1CC0CB2B12D4C87500AEF7DE /* ValueItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ValueItem.h; path = "/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/libbme/client/ValueItem.h"; sourceTree = "<absolute>"; };
+		1CCCE6D312EEFDC2001E7255 /* SBServerConnection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SBServerConnection.cpp; path = ../libbme/protocol/SBServerConnection.cpp; sourceTree = SOURCE_ROOT; };
+		1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSNP12ConversationProtocol.h; path = ../libbme/protocol/msnp12/MSNP12ConversationProtocol.h; sourceTree = SOURCE_ROOT; };
+		1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MSNP12ConversationProtocol.cpp; path = ../libbme/protocol/msnp12/MSNP12ConversationProtocol.cpp; sourceTree = SOURCE_ROOT; };
 		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		256AC3D80F4B6AC300CF3369 /* BmeAppAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BmeAppAppDelegate.h; sourceTree = "<group>"; };
 		256AC3D90F4B6AC300CF3369 /* BmeAppAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BmeAppAppDelegate.mm; sourceTree = "<group>"; };
@@ -352,7 +355,7 @@
 				1C69504B12B0FF2600BF536D /* NSServerConnection.h */,
 				1C69504A12B0FF2600BF536D /* NSServerConnection.cpp */,
 				1C61931112EDEDA900307652 /* SBServerConnection.h */,
-				1C61931212EDEDB000307652 /* ServerConnection.cpp */,
+				1CCCE6D312EEFDC2001E7255 /* SBServerConnection.cpp */,
 				1C2B7A1312268B1F00AC489E /* xml */,
 				1C41479411EF37D9003A48F8 /* msnp12 */,
 			);
@@ -372,6 +375,8 @@
 				1C69502312B0FE2F00BF536D /* MSNP12UserProtocol.cpp */,
 				1C6192AD12EDDD9200307652 /* MSNP12ConversationManagerProtocol.h */,
 				1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */,
+				1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */,
+				1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */,
 			);
 			name = msnp12;
 			sourceTree = "<group>";
@@ -579,7 +584,8 @@
 				1CC0CB2912D4C86A00AEF7DE /* KeyValueCollection.cpp in Sources */,
 				1CC0CB2C12D4C87500AEF7DE /* ValueItem.cpp in Sources */,
 				1C6192AE12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp in Sources */,
-				1C61931312EDEDB000307652 /* ServerConnection.cpp in Sources */,
+				1CCCE6D412EEFDC2001E7255 /* SBServerConnection.cpp in Sources */,
+				1CCCE6E412EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

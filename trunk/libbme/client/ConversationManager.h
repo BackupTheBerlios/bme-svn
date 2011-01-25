@@ -26,7 +26,8 @@ public:
 	
 	std::vector<Conversation*> ActiveConversations();
 	//IConversationManagerProtocolDelegate methods
-	void ConversationStarted(Conversation* conversation, bool startedByUser);
+	void UserConversationStarted(Contact* withContact, IConversationProtocol* conversationProtocol);
+	void InvitedToConversation(std::string invitedByPassport, IConversationProtocol* conversationProtocol);
 	void ConversationEnded(Conversation* conversation);
 	
 private:

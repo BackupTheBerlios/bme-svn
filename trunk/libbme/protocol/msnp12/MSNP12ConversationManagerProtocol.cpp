@@ -10,6 +10,8 @@
 #include "MSNP12ConversationManagerProtocol.h"
 #include "ProtocolConstants.h"
 #include "Conversation.h"
+#include "SBServerConnection.h"
+#include "PlatformSpecific.h"
 
 MSNP12ConversationManagerProtocol::MSNP12ConversationManagerProtocol()
 									:	IConversationManagerProtocol()
@@ -71,25 +73,11 @@ void MSNP12ConversationManagerProtocol::HandleMessage(ProtocolMessage* message)
 				//get the first contact in the queue to start a conversation with
 				Contact* contact = m_contactsForConversations.front();
 				m_contactsForConversations.pop();
-				//retrieve switchboard server address, port
-				std::string address = message->GetParam(1);
-				//split address in an ip-address and a port part
-				size_t colonPos = address.find(":");
-				if (colonPos != std::string::npos)
-				{				
-					std::string ipString = address.substr(0, colonPos - 1);
-					std::string portString = address.substr(colonPos + 1, address.size() - colonPos);
-					int32_t port = atoi(portString.c_str());
 				
-					//check the authentication type is CKI
-					std::string cki = message->GetParam(2);
-					if (cki == "CKI")
-					{
-						std::string authenticationString = message->GetParam(3);
-						//connect to the requested switchboard connection
-						
-						//m_conversationManagerDelegate->UserConversationStarted(contact, IConversationProtocol* conversation);
-					}
+				MSNP12ConversationProtocol* msnp12ConversationProtocol = this->GetMSNP12ConversationProtocol(message);		
+				if (msnp12ConversationProtocol)
+				{
+					m_conversationManagerDelegate->UserConversationStarted(contact, msnp12ConversationProtocol);
 				}
 			}
 			else 
@@ -103,10 +91,44 @@ void MSNP12ConversationManagerProtocol::HandleMessage(ProtocolMessage* message)
 		//RNG 11752013 207.46.108.38:1863 CKI 849102291.520491113 example@passport.com Example%20Name\r\n
 		std::string switchboardId = message->GetParam(0);
 		//someone invited us for a conversation
-		std::string invitedByPassport = message->GetParam(5);
-		//m_conversationManagerDelegate->InvitedToConversation(invitedByPassport, IConversationProtocol* conversation)
+		std::string invitedByPassport = message->GetParam(4);
+		MSNP12ConversationProtocol* msnp12ConversationProtocol = this->GetMSNP12ConversationProtocol(message);		
+		if (msnp12ConversationProtocol)
+		{
+			msnp12ConversationProtocol->SetSwitchBoardId(switchboardId);
+			m_conversationManagerDelegate->InvitedToConversation(invitedByPassport, msnp12ConversationProtocol);
+		}
 	}	
 }
+
+MSNP12ConversationProtocol* MSNP12ConversationManagerProtocol::GetMSNP12ConversationProtocol(ProtocolMessage* message)
+{
+	//retrieve switchboard server address, port
+	std::string address = message->GetParam(1);
+	//split address in an ip-address and a port part
+	size_t colonPos = address.find(":");
+	if (colonPos != std::string::npos)
+	{				
+		std::string ipString = address.substr(0, colonPos - 1);
+		std::string portString = address.substr(colonPos + 1, address.size() - colonPos);
+		int32_t port = atoi(portString.c_str());
+		
+		//check the authentication type is CKI
+		std::string cki = message->GetParam(2);
+		if (cki == "CKI")
+		{
+			std::string authenticationString = message->GetParam(3);
+			//connect to the requested switchboard connection
+			SBServerConnection* sbServerConnection = new SBServerConnection(PlatformSpecific::GetConnectionManager(), ipString, port);
+			MSNP12ConversationProtocol* msnp12ConversationProtocol = new MSNP12ConversationProtocol(sbServerConnection);
+			msnp12ConversationProtocol->SetAuthenticationString(authenticationString);
+			
+			return msnp12ConversationProtocol;
+		}
+	}
+	return NULL;
+}
+
 
 void MSNP12ConversationManagerProtocol::SetConversationManagerProtocolDelegate(IConversationManagerProtocolDelegate* converationManagerProtocolDelegate)
 {

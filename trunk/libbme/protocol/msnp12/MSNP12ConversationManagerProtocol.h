@@ -16,6 +16,7 @@
 #include "Contact.h"
 #include "Conversation.h"
 #include "ProtocolMessage.h"
+#include "MSNP12ConversationProtocol.h"
 
 class MSNP12ConversationManagerProtocol : public ProtocolHandler, public IConversationManagerProtocol
 {
@@ -33,6 +34,9 @@ public:
 public:
 	virtual void SetConversationManagerProtocolDelegate(IConversationManagerProtocolDelegate* converationManagerProtocolDelegate);
 	virtual IConversationManagerProtocolDelegate *Delegate();
+	
+private:
+	MSNP12ConversationProtocol* GetMSNP12ConversationProtocol(ProtocolMessage* message);
 	
 private:
 	IConversationManagerProtocolDelegate* m_conversationManagerDelegate;

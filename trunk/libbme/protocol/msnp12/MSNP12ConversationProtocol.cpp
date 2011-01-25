@@ -18,3 +18,33 @@ MSNP12ConversationProtocol::MSNP12ConversationProtocol(SBServerConnection* sbSer
 MSNP12ConversationProtocol::~MSNP12ConversationProtocol()
 {
 }
+
+void MSNP12ConversationProtocol::SetAuthenticationString(std::string authenticationString)
+{
+	m_authenticationString = authenticationString;
+}
+
+std::string MSNP12ConversationProtocol::AuthenticationString()
+{
+	return m_authenticationString;
+}
+
+void MSNP12ConversationProtocol::SetSwitchBoardId(std::string switchBoardId)
+{
+	m_switchBoardId = switchBoardId;
+}
+
+std::string MSNP12ConversationProtocol::SwitchBoardId()
+{
+	return m_switchBoardId;
+}
+
+void MSNP12ConversationProtocol::SetConversationProtocolDelegate(IConversationProtocolDelegate* conversationProtocolDelegate)
+{
+	m_conversationProtocolDelegate = conversationProtocolDelegate;
+}
+
+IConversationProtocolDelegate* MSNP12ConversationProtocol::Delegate()
+{
+	return m_conversationProtocolDelegate;
+}

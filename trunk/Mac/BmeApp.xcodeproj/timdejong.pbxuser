@@ -1332,17 +1332,17 @@
 	};
 	1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1167, 1690}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1167, 2067}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 2116}";
+			sepNavVisRange = "{0, 2066}";
 			sepNavWindowFrame = "{{1935, 176}, {1226, 1024}}";
 		};
 	};
 	1C6192AD12EDDD9200307652 /* MSNP12ConversationManagerProtocol.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1469, 677}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1243}";
+			sepNavIntBoundsRect = "{{0, 0}, {1859, 740}}";
+			sepNavSelRange = "{507, 0}";
+			sepNavVisRange = "{0, 1380}";
 		};
 	};
 	1C6192B712EDE38A00307652 /* PBXTextBookmark */ = {
@@ -1620,7 +1620,7 @@
 		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
 		name = "MSNP12ConversationManagerProtocol.cpp: 12";
 		rLen = 0;
-		rLoc = 265;
+		rLoc = 327;
 		rType = 0;
 		vrLen = 1809;
 		vrLoc = 1618;
@@ -2268,6 +2268,13 @@
 			sepNavVisRange = "{0, 784}";
 		};
 	};
+	1C69503D12B0FE8E00BF536D /* IConversationProtocol.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1469, 677}}";
+			sepNavSelRange = "{365, 158}";
+			sepNavVisRange = "{0, 536}";
+		};
+	};
 	1C69503E12B0FE8E00BF536D /* IConversationProtocolDelegate.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1469, 683}}";
@@ -2390,9 +2397,9 @@
 	};
 	1C69506312B0FF5E00BF536D /* PlatformSpecific.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1469, 806}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1379}";
+			sepNavIntBoundsRect = "{{0, 0}, {1469, 728}}";
+			sepNavSelRange = "{796, 20}";
+			sepNavVisRange = "{0, 1371}";
 		};
 	};
 	1C69506712B0FF8F00BF536D /* Image.h */ = {
@@ -3960,7 +3967,7 @@
 		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
 		name = "MSNP12ConversationManagerProtocol.cpp: 90";
 		rLen = 0;
-		rLoc = 3093;
+		rLoc = 2609;
 		rType = 0;
 		vrLen = 1864;
 		vrLoc = 1817;
@@ -3970,7 +3977,7 @@
 		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
 		name = "MSNP12ConversationManagerProtocol.cpp: 68";
 		rLen = 0;
-		rLoc = 2071;
+		rLoc = 2133;
 		rType = 0;
 		vrLen = 1832;
 		vrLoc = 1239;
@@ -3998,15 +4005,15 @@
 	1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1469, 677}}";
-			sepNavSelRange = "{297, 0}";
-			sepNavVisRange = "{0, 546}";
+			sepNavSelRange = "{632, 79}";
+			sepNavVisRange = "{0, 1063}";
 		};
 	};
 	1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1469, 677}}";
-			sepNavSelRange = "{379, 0}";
-			sepNavVisRange = "{0, 442}";
+			sepNavSelRange = "{800, 0}";
+			sepNavVisRange = "{0, 1198}";
 		};
 	};
 	1CCCE6EB12EF0E31001E7255 /* XCBuildMessageTextBookmark */ = {
@@ -4033,7 +4040,7 @@
 		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
 		name = "MSNP12ConversationManagerProtocol.cpp: 79";
 		rLen = 0;
-		rLoc = 2517;
+		rLoc = 2354;
 		rType = 0;
 		vrLen = 2182;
 		vrLoc = 1817;
@@ -4082,7 +4089,7 @@
 		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
 		name = "MSNP12ConversationManagerProtocol.cpp: 106";
 		rLen = 0;
-		rLoc = 3525;
+		rLoc = 3041;
 		rType = 0;
 		vrLen = 2137;
 		vrLoc = 1820;
@@ -4092,7 +4099,7 @@
 		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
 		name = "MSNP12ConversationProtocol.h: 13";
 		rLen = 0;
-		rLoc = 297;
+		rLoc = 340;
 		rType = 0;
 		vrLen = 546;
 		vrLoc = 0;
@@ -4147,6 +4154,976 @@
 		vrLoc = 0;
 	};
 	1CCCE6FE12EF0E5B001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE6FF12EF116D001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69507912B0FFC400BF536D /* Conversation.h */;
+		name = "Conversation.h: 26";
+		rLen = 0;
+		rLoc = 501;
+		rType = 0;
+		vrLen = 829;
+		vrLoc = 0;
+	};
+	1CCCE70012EF116D001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 13";
+		rLen = 0;
+		rLoc = 340;
+		rType = 0;
+		vrLen = 546;
+		vrLoc = 0;
+	};
+	1CCCE70112EF116D001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 16";
+		rLen = 0;
+		rLoc = 379;
+		rType = 0;
+		vrLen = 442;
+		vrLoc = 0;
+	};
+	1CCCE70212EF116D001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 106";
+		rLen = 0;
+		rLoc = 3041;
+		rType = 0;
+		vrLen = 2137;
+		vrLoc = 1820;
+	};
+	1CCCE70312EF116D001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 92";
+		rLen = 0;
+		rLoc = 2354;
+		rType = 0;
+		vrLen = 2142;
+		vrLoc = 1889;
+	};
+	1CCCE70412EF116D001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE70512EF116D001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2076;
+		vrLoc = 0;
+	};
+	1CCCE70612EF116D001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE70712EF11BF001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 95";
+		rLen = 0;
+		rLoc = 2601;
+		rType = 0;
+		vrLen = 2244;
+		vrLoc = 1889;
+	};
+	1CCCE70812EF11BF001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE70912EF11BF001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2076;
+		vrLoc = 0;
+	};
+	1CCCE70A12EF11BF001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE70F12EF1893001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C61931112EDEDA900307652 /* SBServerConnection.h */;
+		name = "SBServerConnection.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 464;
+		vrLoc = 0;
+	};
+	1CCCE71012EF1893001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 13";
+		rLen = 0;
+		rLoc = 340;
+		rType = 0;
+		vrLen = 546;
+		vrLoc = 0;
+	};
+	1CCCE71112EF1893001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 16";
+		rLen = 0;
+		rLoc = 379;
+		rType = 0;
+		vrLen = 442;
+		vrLoc = 0;
+	};
+	1CCCE71212EF1893001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69506312B0FF5E00BF536D /* PlatformSpecific.h */;
+		name = "PlatformSpecific.h: 35";
+		rLen = 20;
+		rLoc = 796;
+		rType = 0;
+		vrLen = 1371;
+		vrLoc = 0;
+	};
+	1CCCE71312EF1893001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 93";
+		rLen = 0;
+		rLoc = 2354;
+		rType = 0;
+		vrLen = 2235;
+		vrLoc = 1718;
+	};
+	1CCCE71412EF1893001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 93";
+		rLen = 0;
+		rLoc = 2354;
+		rType = 0;
+		vrLen = 2192;
+		vrLoc = 2102;
+	};
+	1CCCE71512EF1893001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE71612EF1893001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2102;
+		vrLoc = 0;
+	};
+	1CCCE71712EF1893001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE71812EF1954001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 93";
+		rLen = 0;
+		rLoc = 2354;
+		rType = 0;
+		vrLen = 2192;
+		vrLoc = 2102;
+	};
+	1CCCE71912EF1954001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503D12B0FE8E00BF536D /* IConversationProtocol.h */;
+		name = "IConversationProtocol.h: 20";
+		rLen = 158;
+		rLoc = 365;
+		rType = 0;
+		vrLen = 536;
+		vrLoc = 0;
+	};
+	1CCCE71A12EF1954001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 16";
+		rLen = 0;
+		rLoc = 379;
+		rType = 0;
+		vrLen = 442;
+		vrLoc = 0;
+	};
+	1CCCE71B12EF1954001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 13";
+		rLen = 0;
+		rLoc = 340;
+		rType = 0;
+		vrLen = 546;
+		vrLoc = 0;
+	};
+	1CCCE71C12EF1954001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 21";
+		rLen = 0;
+		rLoc = 812;
+		rType = 0;
+		vrLen = 700;
+		vrLoc = 0;
+	};
+	1CCCE71D12EF1954001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE71E12EF1954001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2102;
+		vrLoc = 0;
+	};
+	1CCCE71F12EF1954001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE72012EF1A49001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 21";
+		rLen = 0;
+		rLoc = 812;
+		rType = 0;
+		vrLen = 700;
+		vrLoc = 0;
+	};
+	1CCCE72112EF1A49001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 16";
+		rLen = 0;
+		rLoc = 379;
+		rType = 0;
+		vrLen = 442;
+		vrLoc = 0;
+	};
+	1CCCE72212EF1A49001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 29";
+		rLen = 0;
+		rLoc = 1196;
+		rType = 0;
+		vrLen = 752;
+		vrLoc = 0;
+	};
+	1CCCE72312EF1A49001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE72412EF1A49001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2102;
+		vrLoc = 0;
+	};
+	1CCCE72512EF1A49001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE72812EF1B97001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 29";
+		rLen = 0;
+		rLoc = 1196;
+		rType = 0;
+		vrLen = 752;
+		vrLoc = 0;
+	};
+	1CCCE72912EF1B97001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 14";
+		rLen = 0;
+		rLoc = 340;
+		rType = 0;
+		vrLen = 807;
+		vrLoc = 0;
+	};
+	1CCCE72A12EF1B97001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AD12EDDD9200307652 /* MSNP12ConversationManagerProtocol.h */;
+		name = "MSNP12ConversationManagerProtocol.h: 38";
+		rLen = 0;
+		rLoc = 1237;
+		rType = 0;
+		vrLen = 1340;
+		vrLoc = 0;
+	};
+	1CCCE72B12EF1B97001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 104";
+		rLen = 118;
+		rLoc = 3366;
+		rType = 0;
+		vrLen = 1979;
+		vrLoc = 1634;
+	};
+	1CCCE72C12EF1B97001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 104";
+		rLen = 118;
+		rLoc = 3366;
+		rType = 0;
+		vrLen = 1979;
+		vrLoc = 1634;
+	};
+	1CCCE72D12EF1B97001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE72E12EF1B97001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2102;
+		vrLoc = 0;
+	};
+	1CCCE72F12EF1B97001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE73012EF1C38001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 123";
+		rLen = 26;
+		rLoc = 4245;
+		rType = 0;
+		vrLen = 2002;
+		vrLoc = 2744;
+	};
+	1CCCE73112EF1C38001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 14";
+		rLen = 0;
+		rLoc = 340;
+		rType = 0;
+		vrLen = 807;
+		vrLoc = 0;
+	};
+	1CCCE73212EF1C38001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 31";
+		rLen = 0;
+		rLoc = 1052;
+		rType = 0;
+		vrLen = 916;
+		vrLoc = 0;
+	};
+	1CCCE73312EF1C38001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE73412EF1C38001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2102;
+		vrLoc = 0;
+	};
+	1CCCE73512EF1C38001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE73612EF1C6F001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 24";
+		rLen = 0;
+		rLoc = 584;
+		rType = 0;
+		vrLen = 911;
+		vrLoc = 0;
+	};
+	1CCCE73712EF1C6F001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 22";
+		rLen = 100;
+		rLoc = 528;
+		rType = 0;
+		vrLen = 916;
+		vrLoc = 0;
+	};
+	1CCCE73812EF1C6F001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 22";
+		rLen = 0;
+		rLoc = 589;
+		rType = 0;
+		vrLen = 948;
+		vrLoc = 0;
+	};
+	1CCCE73912EF1C6F001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE73A12EF1C6F001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2102;
+		vrLoc = 0;
+	};
+	1CCCE73B12EF1C6F001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE73C12EF1CA1001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 22";
+		rLen = 32;
+		rLoc = 557;
+		rType = 0;
+		vrLen = 948;
+		vrLoc = 0;
+	};
+	1CCCE73D12EF1CA1001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 29";
+		rLen = 0;
+		rLoc = 684;
+		rType = 0;
+		vrLen = 943;
+		vrLoc = 0;
+	};
+	1CCCE73E12EF1CA1001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 24";
+		rLen = 0;
+		rLoc = 584;
+		rType = 0;
+		vrLen = 996;
+		vrLoc = 0;
+	};
+	1CCCE73F12EF1CA1001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE74012EF1CA1001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2102;
+		vrLoc = 0;
+	};
+	1CCCE74112EF1CA1001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE74212EF1D77001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 24";
+		rLen = 0;
+		rLoc = 584;
+		rType = 0;
+		vrLen = 996;
+		vrLoc = 0;
+	};
+	1CCCE74312EF1D77001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 123";
+		rLen = 26;
+		rLoc = 4245;
+		rType = 0;
+		vrLen = 2002;
+		vrLoc = 2744;
+	};
+	1CCCE74412EF1D77001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 124";
+		rLen = 0;
+		rLoc = 4431;
+		rType = 0;
+		vrLen = 2044;
+		vrLoc = 2744;
+	};
+	1CCCE74512EF1D77001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE74612EF1D77001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2102;
+		vrLoc = 0;
+	};
+	1CCCE74712EF1D77001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE74812EF2292001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 95";
+		rLen = 0;
+		rLoc = 3039;
+		rType = 0;
+		vrLen = 2057;
+		vrLoc = 1922;
+	};
+	1CCCE74912EF2292001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 22";
+		rLen = 32;
+		rLoc = 557;
+		rType = 0;
+		vrLen = 948;
+		vrLoc = 0;
+	};
+	1CCCE74A12EF2292001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 33";
+		rLen = 0;
+		rLoc = 1052;
+		rType = 0;
+		vrLen = 980;
+		vrLoc = 0;
+	};
+	1CCCE74B12EF2292001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE74C12EF2292001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2102;
+		vrLoc = 0;
+	};
+	1CCCE74D12EF2292001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE74E12EF26A1001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 25";
+		rLen = 79;
+		rLoc = 632;
+		rType = 0;
+		vrLen = 1063;
+		vrLoc = 0;
+	};
+	1CCCE74F12EF26A1001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 36";
+		rLen = 0;
+		rLoc = 844;
+		rType = 0;
+		vrLen = 1139;
+		vrLoc = 0;
+	};
+	1CCCE75012EF26A1001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE75112EF26A1001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2102;
+		vrLoc = 0;
+	};
+	1CCCE75212EF26A1001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE75512EF26FB001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E212EF0BAD001E7255 /* MSNP12ConversationProtocol.h */;
+		name = "MSNP12ConversationProtocol.h: 25";
+		rLen = 79;
+		rLoc = 632;
+		rType = 0;
+		vrLen = 1063;
+		vrLoc = 0;
+	};
+	1CCCE75612EF26FB001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 34";
+		rLen = 0;
+		rLoc = 800;
+		rType = 0;
+		vrLen = 1198;
+		vrLoc = 0;
+	};
+	1CCCE75712EF26FB001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 34";
+		rLen = 0;
+		rLoc = 800;
+		rType = 0;
+		vrLen = 1198;
+		vrLoc = 0;
+	};
+	1CCCE75812EF26FB001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE75912EF26FB001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2102;
+		vrLoc = 0;
+	};
+	1CCCE75A12EF26FB001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE75D12EF2727001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 14";
+		rLen = 0;
+		rLoc = 343;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE75E12EF2727001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 14";
+		rLen = 0;
+		rLoc = 298;
+		rType = 0;
+		vrLen = 1604;
+		vrLoc = 0;
+	};
+	1CCCE75F12EF2727001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AD12EDDD9200307652 /* MSNP12ConversationManagerProtocol.h */;
+		name = "MSNP12ConversationManagerProtocol.h: 38";
+		rLen = 0;
+		rLoc = 1237;
+		rType = 0;
+		vrLen = 1340;
+		vrLoc = 0;
+	};
+	1CCCE76012EF2727001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AD12EDDD9200307652 /* MSNP12ConversationManagerProtocol.h */;
+		name = "MSNP12ConversationManagerProtocol.h: 19";
+		rLen = 0;
+		rLoc = 507;
+		rType = 0;
+		vrLen = 1380;
+		vrLoc = 0;
+	};
+	1CCCE76112EF2741001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CCCE6E312EF0BAD001E7255 /* MSNP12ConversationProtocol.cpp */;
+		name = "MSNP12ConversationProtocol.cpp: 34";
+		rLen = 0;
+		rLoc = 800;
+		rType = 0;
+		vrLen = 1198;
+		vrLoc = 0;
+	};
+	1CCCE76212EF2741001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 98";
+		rLen = 0;
+		rLoc = 3218;
+		rType = 0;
+		vrLen = 1980;
+		vrLoc = 1991;
+	};
+	1CCCE76312EF2741001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE76412EF2741001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2066;
+		vrLoc = 0;
+	};
+	1CCCE76512EF2741001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
+		name = "MSNP12ContactListProtocol.cpp: 173";
+		rLen = 28;
+		rLoc = 5188;
+		rType = 0;
+		vrLen = 2183;
+		vrLoc = 3978;
+	};
+	1CCCE76812EF27DA001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 98";
+		rLen = 0;
+		rLoc = 3250;
+		rType = 0;
+		vrLen = 2012;
+		vrLoc = 1991;
+	};
+	1CCCE76912EF27DA001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C69503C12B0FE8E00BF536D /* IConversationManagerProtocolDelegate.h */;
+		name = "IConversationManagerProtocolDelegate.h: 22";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 784;
+		vrLoc = 0;
+	};
+	1CCCE76A12EF27DA001E7255 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C6192AC12EDDD9200307652 /* MSNP12ConversationManagerProtocol.cpp */;
+		name = "MSNP12ConversationManagerProtocol.cpp: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2066;
+		vrLoc = 0;
+	};
+	1CCCE76B12EF27DA001E7255 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1C69501D12B0FE2F00BF536D /* MSNP12ContactListProtocol.cpp */;
 		name = "MSNP12ContactListProtocol.cpp: 173";
@@ -4828,6 +5805,103 @@
 			1CCCE6FC12EF0E5B001E7255 /* PBXTextBookmark */ = 1CCCE6FC12EF0E5B001E7255 /* PBXTextBookmark */;
 			1CCCE6FD12EF0E5B001E7255 /* PBXTextBookmark */ = 1CCCE6FD12EF0E5B001E7255 /* PBXTextBookmark */;
 			1CCCE6FE12EF0E5B001E7255 /* PBXTextBookmark */ = 1CCCE6FE12EF0E5B001E7255 /* PBXTextBookmark */;
+			1CCCE6FF12EF116D001E7255 /* PBXTextBookmark */ = 1CCCE6FF12EF116D001E7255 /* PBXTextBookmark */;
+			1CCCE70012EF116D001E7255 /* PBXTextBookmark */ = 1CCCE70012EF116D001E7255 /* PBXTextBookmark */;
+			1CCCE70112EF116D001E7255 /* PBXTextBookmark */ = 1CCCE70112EF116D001E7255 /* PBXTextBookmark */;
+			1CCCE70212EF116D001E7255 /* PBXTextBookmark */ = 1CCCE70212EF116D001E7255 /* PBXTextBookmark */;
+			1CCCE70312EF116D001E7255 /* PBXTextBookmark */ = 1CCCE70312EF116D001E7255 /* PBXTextBookmark */;
+			1CCCE70412EF116D001E7255 /* PBXTextBookmark */ = 1CCCE70412EF116D001E7255 /* PBXTextBookmark */;
+			1CCCE70512EF116D001E7255 /* PBXTextBookmark */ = 1CCCE70512EF116D001E7255 /* PBXTextBookmark */;
+			1CCCE70612EF116D001E7255 /* PBXTextBookmark */ = 1CCCE70612EF116D001E7255 /* PBXTextBookmark */;
+			1CCCE70712EF11BF001E7255 /* PBXTextBookmark */ = 1CCCE70712EF11BF001E7255 /* PBXTextBookmark */;
+			1CCCE70812EF11BF001E7255 /* PBXTextBookmark */ = 1CCCE70812EF11BF001E7255 /* PBXTextBookmark */;
+			1CCCE70912EF11BF001E7255 /* PBXTextBookmark */ = 1CCCE70912EF11BF001E7255 /* PBXTextBookmark */;
+			1CCCE70A12EF11BF001E7255 /* PBXTextBookmark */ = 1CCCE70A12EF11BF001E7255 /* PBXTextBookmark */;
+			1CCCE70F12EF1893001E7255 /* PBXTextBookmark */ = 1CCCE70F12EF1893001E7255 /* PBXTextBookmark */;
+			1CCCE71012EF1893001E7255 /* PBXTextBookmark */ = 1CCCE71012EF1893001E7255 /* PBXTextBookmark */;
+			1CCCE71112EF1893001E7255 /* PBXTextBookmark */ = 1CCCE71112EF1893001E7255 /* PBXTextBookmark */;
+			1CCCE71212EF1893001E7255 /* PBXTextBookmark */ = 1CCCE71212EF1893001E7255 /* PBXTextBookmark */;
+			1CCCE71312EF1893001E7255 /* PBXTextBookmark */ = 1CCCE71312EF1893001E7255 /* PBXTextBookmark */;
+			1CCCE71412EF1893001E7255 /* PBXTextBookmark */ = 1CCCE71412EF1893001E7255 /* PBXTextBookmark */;
+			1CCCE71512EF1893001E7255 /* PBXTextBookmark */ = 1CCCE71512EF1893001E7255 /* PBXTextBookmark */;
+			1CCCE71612EF1893001E7255 /* PBXTextBookmark */ = 1CCCE71612EF1893001E7255 /* PBXTextBookmark */;
+			1CCCE71712EF1893001E7255 /* PBXTextBookmark */ = 1CCCE71712EF1893001E7255 /* PBXTextBookmark */;
+			1CCCE71812EF1954001E7255 /* PBXTextBookmark */ = 1CCCE71812EF1954001E7255 /* PBXTextBookmark */;
+			1CCCE71912EF1954001E7255 /* PBXTextBookmark */ = 1CCCE71912EF1954001E7255 /* PBXTextBookmark */;
+			1CCCE71A12EF1954001E7255 /* PBXTextBookmark */ = 1CCCE71A12EF1954001E7255 /* PBXTextBookmark */;
+			1CCCE71B12EF1954001E7255 /* PBXTextBookmark */ = 1CCCE71B12EF1954001E7255 /* PBXTextBookmark */;
+			1CCCE71C12EF1954001E7255 /* PBXTextBookmark */ = 1CCCE71C12EF1954001E7255 /* PBXTextBookmark */;
+			1CCCE71D12EF1954001E7255 /* PBXTextBookmark */ = 1CCCE71D12EF1954001E7255 /* PBXTextBookmark */;
+			1CCCE71E12EF1954001E7255 /* PBXTextBookmark */ = 1CCCE71E12EF1954001E7255 /* PBXTextBookmark */;
+			1CCCE71F12EF1954001E7255 /* PBXTextBookmark */ = 1CCCE71F12EF1954001E7255 /* PBXTextBookmark */;
+			1CCCE72012EF1A49001E7255 /* PBXTextBookmark */ = 1CCCE72012EF1A49001E7255 /* PBXTextBookmark */;
+			1CCCE72112EF1A49001E7255 /* PBXTextBookmark */ = 1CCCE72112EF1A49001E7255 /* PBXTextBookmark */;
+			1CCCE72212EF1A49001E7255 /* PBXTextBookmark */ = 1CCCE72212EF1A49001E7255 /* PBXTextBookmark */;
+			1CCCE72312EF1A49001E7255 /* PBXTextBookmark */ = 1CCCE72312EF1A49001E7255 /* PBXTextBookmark */;
+			1CCCE72412EF1A49001E7255 /* PBXTextBookmark */ = 1CCCE72412EF1A49001E7255 /* PBXTextBookmark */;
+			1CCCE72512EF1A49001E7255 /* PBXTextBookmark */ = 1CCCE72512EF1A49001E7255 /* PBXTextBookmark */;
+			1CCCE72812EF1B97001E7255 /* PBXTextBookmark */ = 1CCCE72812EF1B97001E7255 /* PBXTextBookmark */;
+			1CCCE72912EF1B97001E7255 /* PBXTextBookmark */ = 1CCCE72912EF1B97001E7255 /* PBXTextBookmark */;
+			1CCCE72A12EF1B97001E7255 /* PBXTextBookmark */ = 1CCCE72A12EF1B97001E7255 /* PBXTextBookmark */;
+			1CCCE72B12EF1B97001E7255 /* PBXTextBookmark */ = 1CCCE72B12EF1B97001E7255 /* PBXTextBookmark */;
+			1CCCE72C12EF1B97001E7255 /* PBXTextBookmark */ = 1CCCE72C12EF1B97001E7255 /* PBXTextBookmark */;
+			1CCCE72D12EF1B97001E7255 /* PBXTextBookmark */ = 1CCCE72D12EF1B97001E7255 /* PBXTextBookmark */;
+			1CCCE72E12EF1B97001E7255 /* PBXTextBookmark */ = 1CCCE72E12EF1B97001E7255 /* PBXTextBookmark */;
+			1CCCE72F12EF1B97001E7255 /* PBXTextBookmark */ = 1CCCE72F12EF1B97001E7255 /* PBXTextBookmark */;
+			1CCCE73012EF1C38001E7255 /* PBXTextBookmark */ = 1CCCE73012EF1C38001E7255 /* PBXTextBookmark */;
+			1CCCE73112EF1C38001E7255 /* PBXTextBookmark */ = 1CCCE73112EF1C38001E7255 /* PBXTextBookmark */;
+			1CCCE73212EF1C38001E7255 /* PBXTextBookmark */ = 1CCCE73212EF1C38001E7255 /* PBXTextBookmark */;
+			1CCCE73312EF1C38001E7255 /* PBXTextBookmark */ = 1CCCE73312EF1C38001E7255 /* PBXTextBookmark */;
+			1CCCE73412EF1C38001E7255 /* PBXTextBookmark */ = 1CCCE73412EF1C38001E7255 /* PBXTextBookmark */;
+			1CCCE73512EF1C38001E7255 /* PBXTextBookmark */ = 1CCCE73512EF1C38001E7255 /* PBXTextBookmark */;
+			1CCCE73612EF1C6F001E7255 /* PBXTextBookmark */ = 1CCCE73612EF1C6F001E7255 /* PBXTextBookmark */;
+			1CCCE73712EF1C6F001E7255 /* PBXTextBookmark */ = 1CCCE73712EF1C6F001E7255 /* PBXTextBookmark */;
+			1CCCE73812EF1C6F001E7255 /* PBXTextBookmark */ = 1CCCE73812EF1C6F001E7255 /* PBXTextBookmark */;
+			1CCCE73912EF1C6F001E7255 /* PBXTextBookmark */ = 1CCCE73912EF1C6F001E7255 /* PBXTextBookmark */;
+			1CCCE73A12EF1C6F001E7255 /* PBXTextBookmark */ = 1CCCE73A12EF1C6F001E7255 /* PBXTextBookmark */;
+			1CCCE73B12EF1C6F001E7255 /* PBXTextBookmark */ = 1CCCE73B12EF1C6F001E7255 /* PBXTextBookmark */;
+			1CCCE73C12EF1CA1001E7255 /* PBXTextBookmark */ = 1CCCE73C12EF1CA1001E7255 /* PBXTextBookmark */;
+			1CCCE73D12EF1CA1001E7255 /* PBXTextBookmark */ = 1CCCE73D12EF1CA1001E7255 /* PBXTextBookmark */;
+			1CCCE73E12EF1CA1001E7255 /* PBXTextBookmark */ = 1CCCE73E12EF1CA1001E7255 /* PBXTextBookmark */;
+			1CCCE73F12EF1CA1001E7255 /* PBXTextBookmark */ = 1CCCE73F12EF1CA1001E7255 /* PBXTextBookmark */;
+			1CCCE74012EF1CA1001E7255 /* PBXTextBookmark */ = 1CCCE74012EF1CA1001E7255 /* PBXTextBookmark */;
+			1CCCE74112EF1CA1001E7255 /* PBXTextBookmark */ = 1CCCE74112EF1CA1001E7255 /* PBXTextBookmark */;
+			1CCCE74212EF1D77001E7255 /* PBXTextBookmark */ = 1CCCE74212EF1D77001E7255 /* PBXTextBookmark */;
+			1CCCE74312EF1D77001E7255 /* PBXTextBookmark */ = 1CCCE74312EF1D77001E7255 /* PBXTextBookmark */;
+			1CCCE74412EF1D77001E7255 /* PBXTextBookmark */ = 1CCCE74412EF1D77001E7255 /* PBXTextBookmark */;
+			1CCCE74512EF1D77001E7255 /* PBXTextBookmark */ = 1CCCE74512EF1D77001E7255 /* PBXTextBookmark */;
+			1CCCE74612EF1D77001E7255 /* PBXTextBookmark */ = 1CCCE74612EF1D77001E7255 /* PBXTextBookmark */;
+			1CCCE74712EF1D77001E7255 /* PBXTextBookmark */ = 1CCCE74712EF1D77001E7255 /* PBXTextBookmark */;
+			1CCCE74812EF2292001E7255 /* PBXTextBookmark */ = 1CCCE74812EF2292001E7255 /* PBXTextBookmark */;
+			1CCCE74912EF2292001E7255 /* PBXTextBookmark */ = 1CCCE74912EF2292001E7255 /* PBXTextBookmark */;
+			1CCCE74A12EF2292001E7255 /* PBXTextBookmark */ = 1CCCE74A12EF2292001E7255 /* PBXTextBookmark */;
+			1CCCE74B12EF2292001E7255 /* PBXTextBookmark */ = 1CCCE74B12EF2292001E7255 /* PBXTextBookmark */;
+			1CCCE74C12EF2292001E7255 /* PBXTextBookmark */ = 1CCCE74C12EF2292001E7255 /* PBXTextBookmark */;
+			1CCCE74D12EF2292001E7255 /* PBXTextBookmark */ = 1CCCE74D12EF2292001E7255 /* PBXTextBookmark */;
+			1CCCE74E12EF26A1001E7255 /* PBXTextBookmark */ = 1CCCE74E12EF26A1001E7255 /* PBXTextBookmark */;
+			1CCCE74F12EF26A1001E7255 /* PBXTextBookmark */ = 1CCCE74F12EF26A1001E7255 /* PBXTextBookmark */;
+			1CCCE75012EF26A1001E7255 /* PBXTextBookmark */ = 1CCCE75012EF26A1001E7255 /* PBXTextBookmark */;
+			1CCCE75112EF26A1001E7255 /* PBXTextBookmark */ = 1CCCE75112EF26A1001E7255 /* PBXTextBookmark */;
+			1CCCE75212EF26A1001E7255 /* PBXTextBookmark */ = 1CCCE75212EF26A1001E7255 /* PBXTextBookmark */;
+			1CCCE75512EF26FB001E7255 /* PBXTextBookmark */ = 1CCCE75512EF26FB001E7255 /* PBXTextBookmark */;
+			1CCCE75612EF26FB001E7255 /* PBXTextBookmark */ = 1CCCE75612EF26FB001E7255 /* PBXTextBookmark */;
+			1CCCE75712EF26FB001E7255 /* PBXTextBookmark */ = 1CCCE75712EF26FB001E7255 /* PBXTextBookmark */;
+			1CCCE75812EF26FB001E7255 /* PBXTextBookmark */ = 1CCCE75812EF26FB001E7255 /* PBXTextBookmark */;
+			1CCCE75912EF26FB001E7255 /* PBXTextBookmark */ = 1CCCE75912EF26FB001E7255 /* PBXTextBookmark */;
+			1CCCE75A12EF26FB001E7255 /* PBXTextBookmark */ = 1CCCE75A12EF26FB001E7255 /* PBXTextBookmark */;
+			1CCCE75D12EF2727001E7255 /* PBXTextBookmark */ = 1CCCE75D12EF2727001E7255 /* PBXTextBookmark */;
+			1CCCE75E12EF2727001E7255 /* PBXTextBookmark */ = 1CCCE75E12EF2727001E7255 /* PBXTextBookmark */;
+			1CCCE75F12EF2727001E7255 /* PBXTextBookmark */ = 1CCCE75F12EF2727001E7255 /* PBXTextBookmark */;
+			1CCCE76012EF2727001E7255 /* PBXTextBookmark */ = 1CCCE76012EF2727001E7255 /* PBXTextBookmark */;
+			1CCCE76112EF2741001E7255 /* PBXTextBookmark */ = 1CCCE76112EF2741001E7255 /* PBXTextBookmark */;
+			1CCCE76212EF2741001E7255 /* PBXTextBookmark */ = 1CCCE76212EF2741001E7255 /* PBXTextBookmark */;
+			1CCCE76312EF2741001E7255 /* PBXTextBookmark */ = 1CCCE76312EF2741001E7255 /* PBXTextBookmark */;
+			1CCCE76412EF2741001E7255 /* PBXTextBookmark */ = 1CCCE76412EF2741001E7255 /* PBXTextBookmark */;
+			1CCCE76512EF2741001E7255 /* PBXTextBookmark */ = 1CCCE76512EF2741001E7255 /* PBXTextBookmark */;
+			1CCCE76812EF27DA001E7255 /* PBXTextBookmark */ = 1CCCE76812EF27DA001E7255 /* PBXTextBookmark */;
+			1CCCE76912EF27DA001E7255 /* PBXTextBookmark */ = 1CCCE76912EF27DA001E7255 /* PBXTextBookmark */;
+			1CCCE76A12EF27DA001E7255 /* PBXTextBookmark */ = 1CCCE76A12EF27DA001E7255 /* PBXTextBookmark */;
+			1CCCE76B12EF27DA001E7255 /* PBXTextBookmark */ = 1CCCE76B12EF27DA001E7255 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 1C41475111EF3701003A48F8 /* Source Control */;
 		userBuildSettings = {

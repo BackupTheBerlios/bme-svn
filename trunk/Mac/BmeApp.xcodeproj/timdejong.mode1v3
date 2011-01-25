@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1CCCE6FC12EF0E5B001E7255</string>
+						<string>1CCCE76912EF27DA001E7255</string>
 						<key>history</key>
 						<array>
 							<string>1CCCE6EB12EF0E31001E7255</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1CCCE6FD12EF0E5B001E7255</string>
+						<string>1CCCE76A12EF27DA001E7255</string>
 						<key>history</key>
 						<array>
 							<string>1C61931F12EDEF1200307652</string>
@@ -296,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1CCCE6FE12EF0E5B001E7255</string>
+						<string>1CCCE76B12EF27DA001E7255</string>
 						<key>history</key>
 						<array>
 							<string>1C61932012EDEF1200307652</string>
@@ -404,15 +404,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>98</integer>
-									<integer>87</integer>
-									<integer>48</integer>
-									<integer>7</integer>
-									<integer>1</integer>
-									<integer>0</integer>
-								</array>
-								<array>
-									<integer>99</integer>
+									<integer>97</integer>
 									<integer>87</integer>
 									<integer>48</integer>
 									<integer>7</integer>
@@ -421,7 +413,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 889}, {368, 998}}</string>
+							<string>{{0, 776}, {368, 998}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -458,7 +450,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Conversation.h</string>
+								<string>MSNP12ConversationManagerProtocol.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -466,11 +458,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Conversation.h</string>
+										<string>MSNP12ConversationManagerProtocol.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1CCCE6F912EF0E5B001E7255</string>
+										<string>1CCCE76812EF27DA001E7255</string>
 										<key>history</key>
 										<array>
 											<string>1C4148F411EF512F003A48F8</string>
@@ -492,7 +484,6 @@
 											<string>1C6951D312B1010900BF536D</string>
 											<string>1C6951D412B1010900BF536D</string>
 											<string>1C6951D612B1010900BF536D</string>
-											<string>1C6951D712B1010900BF536D</string>
 											<string>1C6951D812B1010900BF536D</string>
 											<string>1C6951D912B1010900BF536D</string>
 											<string>1C6951DA12B1010900BF536D</string>
@@ -569,17 +560,19 @@
 											<string>1C61931712EDEF1200307652</string>
 											<string>1C61931C12EDEF1200307652</string>
 											<string>1CCCE6D512EF0A75001E7255</string>
-											<string>1CCCE6D612EF0A75001E7255</string>
 											<string>1CCCE6D712EF0A75001E7255</string>
 											<string>1CCCE6D912EF0A75001E7255</string>
 											<string>1CCCE6DA12EF0A75001E7255</string>
 											<string>1CCCE6DB12EF0A75001E7255</string>
 											<string>1CCCE6F312EF0E5B001E7255</string>
-											<string>1CCCE6F412EF0E5B001E7255</string>
-											<string>1CCCE6F512EF0E5B001E7255</string>
-											<string>1CCCE6F612EF0E5B001E7255</string>
-											<string>1CCCE6F712EF0E5B001E7255</string>
-											<string>1CCCE6F812EF0E5B001E7255</string>
+											<string>1CCCE6FF12EF116D001E7255</string>
+											<string>1CCCE70F12EF1893001E7255</string>
+											<string>1CCCE71212EF1893001E7255</string>
+											<string>1CCCE71912EF1954001E7255</string>
+											<string>1CCCE72A12EF1B97001E7255</string>
+											<string>1CCCE75512EF26FB001E7255</string>
+											<string>1CCCE76112EF2741001E7255</string>
+											<string>1CCCE74812EF2292001E7255</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -780,8 +773,8 @@
 		<string>1C41474F11EF3701003A48F8</string>
 		<string>1C514BB212DDD27500CFD3B9</string>
 		<string>1C6192CB12EDE38A00307652</string>
-		<string>/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/Mac/BmeApp.xcodeproj</string>
 		<string>1CCCE6FA12EF0E5B001E7255</string>
+		<string>/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/Mac/BmeApp.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>4 121 1920 1057 0 0 1920 1178 </string>
@@ -807,7 +800,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>IConversationManagerProtocolDelegate.h</string>
+								<string>MSNP12ConversationManagerProtocol.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

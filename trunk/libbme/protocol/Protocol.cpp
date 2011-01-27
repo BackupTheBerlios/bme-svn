@@ -38,7 +38,7 @@ ContactList* Protocol::GetContactList()
 	return new ContactList(this->GetContactListProtocol());
 }
 
-ConversationManager* Protocol::GetConversationManager()
+ConversationManager* Protocol::GetConversationManager(User* user)
 {
-	return new ConversationManager(this->GetConversationManagerProtocol());
+	return new ConversationManager(user, this->GetConversationManagerProtocol());
 }

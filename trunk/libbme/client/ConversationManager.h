@@ -18,12 +18,13 @@
 class ConversationManager : public IConversationManagerProtocolDelegate
 {
 public:
-	ConversationManager(IConversationManagerProtocol *conversationProtocol);
+	ConversationManager(User* user, IConversationManagerProtocol *conversationProtocol);
 	virtual ~ConversationManager();
 	
 	void StartConversation(Contact* contact);
 	void EndConversation(Conversation* conversation);
-	
+	virtual void SetUser(User* user);
+		
 	std::vector<Conversation*> ActiveConversations();
 	//IConversationManagerProtocolDelegate methods
 	void UserConversationStarted(Contact* withContact, IConversationProtocol* conversationProtocol);
@@ -31,6 +32,7 @@ public:
 	void ConversationEnded(Conversation* conversation);
 	
 private:
+	User* m_user;
 	IConversationManagerProtocol* m_conversationManagerProtocol;
 	std::vector<Conversation*> m_conversations;
 };

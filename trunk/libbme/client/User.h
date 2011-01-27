@@ -23,6 +23,8 @@ public:
 	User(IUserProtocol* userProtocol);
 	virtual ~User();
 	
+	virtual std::string Passport();
+	
 	virtual std::string Name();
 	virtual void SetName(std::string username);
 	

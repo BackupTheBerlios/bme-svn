@@ -12,6 +12,7 @@
 #include "Conversation.h"
 #include "SBServerConnection.h"
 #include "PlatformSpecific.h"
+#include "MSNP12ConversationProtocol.h"
 
 MSNP12ConversationManagerProtocol::MSNP12ConversationManagerProtocol()
 									:	IConversationManagerProtocol()

@@ -15,8 +15,11 @@
 #include "IUserProtocol.h"
 #include "MSNP12UserProtocol.h"
 #include "MSNP12ContactListProtocol.h"
+//#include "MSNP12ConversationManagerProtocol.h"
 #include "IProtocolDelegate.h"
 #include "NSServerConnection.h"
+
+class MSNP12ConversationManagerProtocol;
 
 class MSNP12Protocol : public Protocol, public IProtocolDelegate, public IServerConnectionListener
 {
@@ -42,6 +45,7 @@ private:
 	NSServerConnection* m_connection; 
 	MSNP12UserProtocol* m_userProtocol;
 	MSNP12ContactListProtocol* m_contactListProtocol;
+	MSNP12ConversationManagerProtocol* m_conversationManagerProtocol; 
 	bool m_isAuthenticating;
 };
 

@@ -10,10 +10,12 @@
 #define MSNP12_CONVERSATION_PROTOCOL_H
 
 #include <map>
-#include "IConversationProtocol.h"
 #include "SBServerConnection.h"
-#include "IConversationProtocolDelegate.h"
+#include "IConversationProtocol.h"
+//#include "IConversationProtocolDelegate.h"
 #include "ProtocolHandler.h"
+
+class IConversationProtocolDelegate;
 
 class MSNP12ConversationProtocol : public IConversationProtocol, public ProtocolHandler
 {

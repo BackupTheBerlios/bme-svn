@@ -16,7 +16,8 @@
 #include "Contact.h"
 #include "Conversation.h"
 #include "ProtocolMessage.h"
-#include "MSNP12ConversationProtocol.h"
+
+class MSNP12ConversationProtocol;
 
 class MSNP12ConversationManagerProtocol : public ProtocolHandler, public IConversationManagerProtocol
 {

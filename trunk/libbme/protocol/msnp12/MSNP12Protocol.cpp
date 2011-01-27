@@ -12,6 +12,7 @@
 #include "ProtocolMessage.h"
 #include "PlatformSpecific.h"
 #include "MSNP12PingHandler.h"
+#include "MSNP12ConversationManagerProtocol.h"
 
 MSNP12Protocol::MSNP12Protocol()
 					:	Protocol(),
@@ -19,6 +20,7 @@ MSNP12Protocol::MSNP12Protocol()
 {
 	m_userProtocol = new MSNP12UserProtocol();
 	m_contactListProtocol = new MSNP12ContactListProtocol();
+	m_conversationManagerProtocol = new MSNP12ConversationManagerProtocol();
 	m_connection = new NSServerConnection(PlatformSpecific::GetConnectionManager());
 	m_connection->AddServerConnectionListener(this);
 }
@@ -72,7 +74,7 @@ IContactListProtocol* MSNP12Protocol::GetContactListProtocol()
 
 IConversationManagerProtocol* MSNP12Protocol::GetConversationManagerProtocol()
 {
-	return NULL;
+	return m_conversationManagerProtocol;
 }
 
 void MSNP12Protocol::AuthenticationCompleted()

@@ -25,6 +25,7 @@ BmeClient::BmeClient(Protocol* protocol)
 {
 	m_user = m_protocol->GetUser();
 	m_contactList = m_protocol->GetContactList();
+	m_conversationManager = m_protocol->GetConversationManager(m_user);
 }
 
 BmeClient::~BmeClient()

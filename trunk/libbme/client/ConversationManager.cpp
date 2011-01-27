@@ -8,9 +8,12 @@
  */
 
 #include "ConversationManager.h"
+#include "IConversationProtocol.h"
 
-ConversationManager::ConversationManager(IConversationManagerProtocol *conversationProtocol)
-						:	m_conversationManagerProtocol(conversationProtocol)
+ConversationManager::ConversationManager(User* user, IConversationManagerProtocol *conversationProtocol)
+						:	IConversationManagerProtocolDelegate(),
+							m_user(user),
+							m_conversationManagerProtocol(conversationProtocol)
 {	
 	m_conversationManagerProtocol->SetConversationManagerProtocolDelegate(this);
 }
@@ -29,6 +32,11 @@ void ConversationManager::EndConversation(Conversation* conversation)
 	m_conversationManagerProtocol->EndConversation(conversation);
 }
 
+void ConversationManager::SetUser(User* user)
+{
+	m_user = user;
+}
+
 std::vector<Conversation*> ConversationManager::ActiveConversations()
 {
 	return m_conversations;
@@ -38,7 +46,7 @@ void ConversationManager::UserConversationStarted(Contact* withContact, IConvers
 {
 	Conversation* conversation = new Conversation(conversationProtocol);
 	m_conversations.push_back(conversation);
-	//conversation->StartSession( );
+	conversationProtocol->StartSession(m_user->Passport());
 	//inform UI
 }
 
@@ -46,7 +54,7 @@ void ConversationManager::InvitedToConversation(std::string invitedByPassport, I
 {
 	Conversation* conversation = new Conversation(conversationProtocol);
 	m_conversations.push_back(conversation);
-	//conversation->AnswerInvitation( );
+	conversationProtocol->AnswerInvitation(m_user->Passport());
 	//inform UI
 }
 

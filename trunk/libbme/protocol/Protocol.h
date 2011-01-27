@@ -32,7 +32,7 @@ public:
 		
 	virtual User* GetUser();
 	virtual ContactList* GetContactList();
-	virtual ConversationManager* GetConversationManager();	
+	virtual ConversationManager* GetConversationManager(User* user);	
 	
 protected:
 	//the classes to interact with the different parts of the protocol

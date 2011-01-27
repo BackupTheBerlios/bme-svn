@@ -23,6 +23,11 @@ User::~User()
 	delete m_userProtocol;
 }
 
+std::string User::Passport()
+{
+	return m_userProtocol->Username();
+}
+
 std::string User::Name()
 {
 	return m_username;

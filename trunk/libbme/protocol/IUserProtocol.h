@@ -20,6 +20,7 @@ public:
 	IUserProtocol() {};
 	virtual ~IUserProtocol() {};
 	
+	virtual std::string Username() = 0;
 	virtual void SetInitialStatus(Status* status) = 0;
 	virtual void SetStatus(Status* status) = 0;
 	virtual void SetDisplayName(std::string displayName) = 0;

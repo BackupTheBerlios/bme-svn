@@ -23,7 +23,10 @@ public:
 	
 	virtual bool IsHandlerForMessage(ProtocolMessage* message);
 	virtual void HandleMessage(ProtocolMessage* message);
-	virtual void StartLogin(std::string username, std::string password);
+	
+	std::string Username();
+	
+	virtual void StartLogin();
 	virtual void Logout();
 	virtual void SetLoginDetails(std::string username, std::string password);
 	virtual void SendInitialPresence();

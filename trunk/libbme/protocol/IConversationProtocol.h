@@ -9,7 +9,9 @@
 #ifndef I_CONTACT_LIST_PROTOCOL_H
 #define I_CONTACT_LIST_PROTOCOL_H
 
-#include "IConversationProtocolDelegate.h"
+//#include "IConversationProtocolDelegate.h"
+
+class IConversationProtocolDelegate;
 
 class IConversationProtocol
 {
@@ -22,7 +24,7 @@ public:
 	virtual void AnswerInvitation(std::string userPassport) = 0;
 	virtual void InviteContactToSession(std::string contactPassport) = 0;
 	
-	virtual void SetConversationProtocolDelegate(IConversationProtocolDelegate* userProtocolDelegate) = 0;
+	virtual void SetConversationProtocolDelegate(IConversationProtocolDelegate* conversationProtocolDelegate) = 0;
 	virtual IConversationProtocolDelegate* Delegate() = 0;
 };
 

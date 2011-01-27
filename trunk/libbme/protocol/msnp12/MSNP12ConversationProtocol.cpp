@@ -9,6 +9,7 @@
 
 #include "MSNP12ConversationProtocol.h"
 #include "ProtocolConstants.h"
+#include "IConversationProtocolDelegate.h"
 
 MSNP12ConversationProtocol::MSNP12ConversationProtocol(SBServerConnection* sbServerConnection)
 								:	IConversationProtocol(),

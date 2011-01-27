@@ -139,7 +139,7 @@ void MSNP12UserProtocol::HandleMessage(ProtocolMessage* message)
 				serverConnection->Close();
 				//connect to Notification Server, reconnect to different server!
 				serverConnection->Connect(nsServerAddress,nsPort);
-				StartLogin(m_username, m_password);				
+				StartLogin();				
 			}
 		}		
 	}
@@ -239,6 +239,11 @@ void MSNP12UserProtocol::HandleMessage(ProtocolMessage* message)
 	}
 }
 
+std::string MSNP12UserProtocol::Username()
+{
+	return m_username;
+}
+
 void MSNP12UserProtocol::SendInitialPresence()
 {
 	/*ProtocolMessage* pingMessage = new ProtocolMessage(NotificationMessages::K_CLIENT_PING);
@@ -264,7 +269,7 @@ void MSNP12UserProtocol::SendInitialPresence()
 }
 
 	//figure out what to do with this one
-void MSNP12UserProtocol::StartLogin(std::string username, std::string password)
+void MSNP12UserProtocol::StartLogin()
 {
 	//send first command message(VER)
 	ProtocolMessage* message = new ProtocolMessage(NotificationMessages::K_PROTOCOLS_SUPPORTED);

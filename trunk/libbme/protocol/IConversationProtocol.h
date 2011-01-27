@@ -17,6 +17,11 @@ public:
 	IConversationProtocol() {};
 	virtual ~IConversationProtocol() {};
 	
+	virtual void StartSession(std::string userPassport) = 0;
+	virtual void EndSession() = 0;
+	virtual void AnswerInvitation(std::string userPassport) = 0;
+	virtual void InviteContactToSession(std::string contactPassport) = 0;
+	
 	virtual void SetConversationProtocolDelegate(IConversationProtocolDelegate* userProtocolDelegate) = 0;
 	virtual IConversationProtocolDelegate* Delegate() = 0;
 };

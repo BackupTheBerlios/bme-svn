@@ -9,8 +9,8 @@
 #ifndef CONVERSATION_H
 #define CONVERSATION_H
 
+#include <vector>
 #include "IConversationProtocolDelegate.h"
-
 #include "ConversationItem.h"
 #include "IUIConversationListener.h"
 #include "Contact.h"
@@ -23,6 +23,7 @@ public:
 	Conversation(IConversationProtocol* conversationProtocol);
 	virtual ~Conversation();
 	
+	void Close();
 	void AddContact(Contact* contact);
 	void AddConversationItem(ConversationItem* conversationItem);
 	
@@ -43,6 +44,7 @@ public:
 	
 private:
 	IConversationProtocol* m_conversationProtocol;
+	std::vector<ConversationItem*> m_conversationItems;
 };
 
 #endif

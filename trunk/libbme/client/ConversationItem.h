@@ -22,6 +22,7 @@ public:
 	
 private:
 	std::string m_itemText;
+	bool m_acknowledged;
 };
 
 #endif

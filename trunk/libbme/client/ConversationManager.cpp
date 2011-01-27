@@ -38,6 +38,7 @@ void ConversationManager::UserConversationStarted(Contact* withContact, IConvers
 {
 	Conversation* conversation = new Conversation(conversationProtocol);
 	m_conversations.push_back(conversation);
+	//conversation->StartSession( );
 	//inform UI
 }
 
@@ -45,6 +46,7 @@ void ConversationManager::InvitedToConversation(std::string invitedByPassport, I
 {
 	Conversation* conversation = new Conversation(conversationProtocol);
 	m_conversations.push_back(conversation);
+	//conversation->AnswerInvitation( );
 	//inform UI
 }
 

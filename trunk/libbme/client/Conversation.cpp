@@ -20,6 +20,31 @@ Conversation::Conversation(IConversationProtocol* conversationProtocol)
 Conversation::~Conversation()
 {
 	delete m_conversationProtocol;
+	//delete all the conversation items for this Conversation
+	typedef std::vector<ConversationItem*>::iterator CI;
+	for (CI c = m_conversationItems.begin(); c != m_conversationItems.end(); ++c)
+	{
+		ConversationItem* convItem = *c;
+		delete convItem;
+	}
+}
+
+void Conversation::Close()
+{
+	m_conversationProtocol->EndSession();
+}
+
+void Conversation::AddContact(Contact* contact)
+{
+	m_conversationProtocol->InviteContactToSession(contact->Passport());
+}
+
+void Conversation::AddConversationItem(ConversationItem* conversationItem)
+{
+	//add the conversation item (message) to this conversation
+	m_conversationItems.push_back(conversationItem);
+	//send the conversation item to the server
+	//m_conversationProtocol->
 }
 
 //IConversationProtocolDelegate methods

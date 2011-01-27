@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1C3ECC9212F1BB4700ECAACF</string>
+						<string>1C3ECCB512F1BF1E00ECAACF</string>
 						<key>history</key>
 						<array>
 							<string>1CCCE7AB12EF37DF001E7255</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1C3ECC9312F1BB4700ECAACF</string>
+						<string>1C3ECCB612F1BF1E00ECAACF</string>
 						<key>history</key>
 						<array>
 							<string>1CCCE7AC12EF37DF001E7255</string>
@@ -364,16 +364,15 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>99</integer>
-									<integer>87</integer>
-									<integer>48</integer>
+									<integer>39</integer>
+									<integer>19</integer>
 									<integer>7</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 958}, {368, 998}}</string>
+							<string>{{0, 390}, {368, 998}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -410,7 +409,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MSNP12ConversationProtocol.cpp</string>
+								<string>Conversation.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -418,11 +417,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MSNP12ConversationProtocol.cpp</string>
+										<string>Conversation.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1C3ECC9112F1BB4700ECAACF</string>
+										<string>1C3ECCB412F1BF1E00ECAACF</string>
 										<key>history</key>
 										<array>
 											<string>1C4148F411EF512F003A48F8</string>
@@ -492,7 +491,6 @@
 											<string>1C514B7412DDCDEA00CFD3B9</string>
 											<string>1C514BD212DDD40B00CFD3B9</string>
 											<string>1C514BDE12DDD46300CFD3B9</string>
-											<string>1C514BF012DDD5DE00CFD3B9</string>
 											<string>1C514BF112DDD5DE00CFD3B9</string>
 											<string>1C514BFD12DDD64700CFD3B9</string>
 											<string>1C514BFE12DDD64700CFD3B9</string>
@@ -500,11 +498,8 @@
 											<string>1C29CB6312DF65920007B5B4</string>
 											<string>1C6192B712EDE38A00307652</string>
 											<string>1C6192B912EDE38A00307652</string>
-											<string>1C6192BA12EDE38A00307652</string>
 											<string>1C6192BE12EDE38A00307652</string>
 											<string>1C6192C012EDE38A00307652</string>
-											<string>1C6192C312EDE38A00307652</string>
-											<string>1C6192C512EDE38A00307652</string>
 											<string>1C6192C712EDE38A00307652</string>
 											<string>1C6192C812EDE38A00307652</string>
 											<string>1CCCE71212EF1893001E7255</string>
@@ -516,26 +511,31 @@
 											<string>1CCCE77212EF2E1F001E7255</string>
 											<string>1CCCE77312EF2E1F001E7255</string>
 											<string>1CCCE7A612EF37DF001E7255</string>
-											<string>1CCCE7A712EF37DF001E7255</string>
 											<string>1CCCE7A912EF37DF001E7255</string>
 											<string>1C3ECC2612F19DDA00ECAACF</string>
 											<string>1C3ECC3112F19EB400ECAACF</string>
-											<string>1C3ECC3B12F19FB200ECAACF</string>
-											<string>1C3ECC6012F1B55400ECAACF</string>
 											<string>1C3ECC6112F1B55400ECAACF</string>
 											<string>1C3ECC6312F1B55400ECAACF</string>
-											<string>1C3ECC6412F1B55400ECAACF</string>
 											<string>1C3ECC6912F1B55400ECAACF</string>
 											<string>1C3ECC6A12F1B55400ECAACF</string>
 											<string>1C3ECC6B12F1B55400ECAACF</string>
 											<string>1C3ECC6C12F1B55400ECAACF</string>
 											<string>1C3ECC6D12F1B55400ECAACF</string>
 											<string>1C3ECC7812F1B83100ECAACF</string>
-											<string>1C3ECC8112F1BAB900ECAACF</string>
-											<string>1C3ECC8212F1BAB900ECAACF</string>
-											<string>1C3ECC8312F1BAB900ECAACF</string>
-											<string>1C3ECC8412F1BAB900ECAACF</string>
-											<string>1C3ECC8512F1BAB900ECAACF</string>
+											<string>1C3ECC9812F1BC1D00ECAACF</string>
+											<string>1C3ECC9912F1BC1D00ECAACF</string>
+											<string>1C3ECC9E12F1BC1D00ECAACF</string>
+											<string>1C3ECCA912F1BF1E00ECAACF</string>
+											<string>1C3ECCAA12F1BF1E00ECAACF</string>
+											<string>1C3ECCAB12F1BF1E00ECAACF</string>
+											<string>1C3ECCAC12F1BF1E00ECAACF</string>
+											<string>1C3ECCAD12F1BF1E00ECAACF</string>
+											<string>1C3ECCAE12F1BF1E00ECAACF</string>
+											<string>1C3ECCAF12F1BF1E00ECAACF</string>
+											<string>1C3ECCB012F1BF1E00ECAACF</string>
+											<string>1C3ECCB112F1BF1E00ECAACF</string>
+											<string>1C3ECCB212F1BF1E00ECAACF</string>
+											<string>1C3ECCB312F1BF1E00ECAACF</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

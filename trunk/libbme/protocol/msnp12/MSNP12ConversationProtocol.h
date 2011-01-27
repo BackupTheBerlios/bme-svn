@@ -9,6 +9,7 @@
 #ifndef MSNP12_CONVERSATION_PROTOCOL_H
 #define MSNP12_CONVERSATION_PROTOCOL_H
 
+#include <map>
 #include "IConversationProtocol.h"
 #include "SBServerConnection.h"
 #include "IConversationProtocolDelegate.h"
@@ -26,6 +27,7 @@ public:
 	void StartSession(std::string userPassport);
 	void EndSession();
 	void AnswerInvitation(std::string userPassport);
+	void InviteContactToSession(std::string contactPassport);
 	
 	void SetAuthenticationString(std::string authenticationString);
 	std::string AuthenticationString();
@@ -48,6 +50,7 @@ public:
 private:
 	SBServerConnection* m_sbServerConnection;
 	IConversationProtocolDelegate* m_conversationProtocolDelegate;
+	std::map<uint32_t, std::string> m_invitedContacts;
 	
 	std::string m_authenticationString;
 	std::string m_switchBoardId;

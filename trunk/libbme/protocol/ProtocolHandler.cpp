@@ -32,10 +32,13 @@ void ProtocolHandler::SendCommandMessage(ProtocolMessage* message)
 	m_serverConnection->SendCommandMessage(message);
 }
 
-void ProtocolHandler::SendCommandMessageTrId(ProtocolMessage* message)
+uint32_t ProtocolHandler::SendCommandMessageTrId(ProtocolMessage* message)
 {
-	message->SetTrId(ProtocolMessage::CurrentTrId());
+	uint32_t trId = ProtocolMessage::CurrentTrId();
+	message->SetTrId(trId);
 	this->SendCommandMessage(message);
+	
+	return trId;
 }
 
 void ProtocolHandler::SetProtocolDelegate(IProtocolDelegate* protocolDelegate)

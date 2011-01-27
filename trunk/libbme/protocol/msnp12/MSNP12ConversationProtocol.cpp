@@ -50,6 +50,15 @@ void MSNP12ConversationProtocol::AnswerInvitation(std::string userPassport)
 	SendCommandMessageTrId(answerInvitationMessage);
 }
 
+void MSNP12ConversationProtocol::InviteContactToSession(std::string contactPassport)
+{
+	ProtocolMessage* inviteContactMessage = new ProtocolMessage(SwitchboardMessages::K_ANSWER_SB_SESSION);
+	inviteContactMessage->AddParam(contactPassport);
+	
+	uint32_t trId = SendCommandMessageTrId(inviteContactMessage);
+	m_invitedContacts[trId] = contactPassport;
+}
+
 void MSNP12ConversationProtocol::SetAuthenticationString(std::string authenticationString)
 {
 	m_authenticationString = authenticationString;
@@ -154,6 +163,21 @@ void MSNP12ConversationProtocol::HandleIROMessage(ProtocolMessage* message)
 
 void MSNP12ConversationProtocol::HandleCALMessage(ProtocolMessage* message)
 {
+	//if the invitation was successful we get a CAL message reply from the server with a field RINGING
+	std::string ringing = message->GetParam(0);
+	if (ringing == "RINGING")
+	{
+		//find out to which contact passport this CAL message belongs
+		uint32_t trId = message->TrId();
+		std::map<uint32_t, std::string>::iterator it = m_invitedContacts.find(trId); 
+	
+		if (it != m_invitedContacts.end())
+		{
+			std::string contactPassport = (*it).second;
+			this->Delegate()->RingingContact(contactPassport);
+			m_invitedContacts.erase(it);
+		}
+	}
 }
 
 void MSNP12ConversationProtocol::HandleJOIMessage(ProtocolMessage* message)

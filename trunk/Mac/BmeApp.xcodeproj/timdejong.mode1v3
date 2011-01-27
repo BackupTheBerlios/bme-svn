@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1C3ECC4B12F1A0CA00ECAACF</string>
+						<string>1C3ECC9212F1BB4700ECAACF</string>
 						<key>history</key>
 						<array>
 							<string>1CCCE7AB12EF37DF001E7255</string>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>1C3ECC4C12F1A0CA00ECAACF</string>
+						<string>1C3ECC9312F1BB4700ECAACF</string>
 						<key>history</key>
 						<array>
 							<string>1CCCE7AC12EF37DF001E7255</string>
@@ -276,46 +276,6 @@
 				<false/>
 				<key>RubberWindowFrame</key>
 				<string>1935 232 1226 968 1920 176 1280 1024 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>1C514BB212DDD27500CFD3B9</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>MSNP12ContactListProtocol.cpp</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>1C514BB312DDD27500CFD3B9</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>MSNP12ContactListProtocol.cpp</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>1C3ECC4D12F1A0CA00ECAACF</string>
-						<key>history</key>
-						<array>
-							<string>1CCCE7AD12EF37DF001E7255</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1226, 927}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>240 163 1226 968 0 0 1920 1178 </string>
 			</dict>
 		</dict>
 	</array>
@@ -404,7 +364,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>60</integer>
+									<integer>99</integer>
+									<integer>87</integer>
 									<integer>48</integer>
 									<integer>7</integer>
 									<integer>1</integer>
@@ -412,7 +373,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 598}, {368, 998}}</string>
+							<string>{{0, 958}, {368, 998}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -431,7 +392,7 @@
 							<real>368</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>1 121 1920 1057 0 0 1920 1178 </string>
+						<string>-9 121 1920 1057 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -449,7 +410,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>IConversationProtocolDelegate.h</string>
+								<string>MSNP12ConversationProtocol.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -457,11 +418,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>IConversationProtocolDelegate.h</string>
+										<string>MSNP12ConversationProtocol.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1C3ECC4A12F1A0CA00ECAACF</string>
+										<string>1C3ECC9112F1BB4700ECAACF</string>
 										<key>history</key>
 										<array>
 											<string>1C4148F411EF512F003A48F8</string>
@@ -540,41 +501,41 @@
 											<string>1C6192B712EDE38A00307652</string>
 											<string>1C6192B912EDE38A00307652</string>
 											<string>1C6192BA12EDE38A00307652</string>
-											<string>1C6192BB12EDE38A00307652</string>
 											<string>1C6192BE12EDE38A00307652</string>
 											<string>1C6192C012EDE38A00307652</string>
 											<string>1C6192C312EDE38A00307652</string>
 											<string>1C6192C512EDE38A00307652</string>
 											<string>1C6192C712EDE38A00307652</string>
 											<string>1C6192C812EDE38A00307652</string>
-											<string>1C61931612EDEF1200307652</string>
-											<string>1CCCE6D912EF0A75001E7255</string>
-											<string>1CCCE6DB12EF0A75001E7255</string>
-											<string>1CCCE6FF12EF116D001E7255</string>
 											<string>1CCCE71212EF1893001E7255</string>
 											<string>1CCCE76C12EF2E1F001E7255</string>
-											<string>1CCCE76D12EF2E1F001E7255</string>
 											<string>1CCCE76E12EF2E1F001E7255</string>
 											<string>1CCCE76F12EF2E1F001E7255</string>
 											<string>1CCCE77012EF2E1F001E7255</string>
 											<string>1CCCE77112EF2E1F001E7255</string>
 											<string>1CCCE77212EF2E1F001E7255</string>
 											<string>1CCCE77312EF2E1F001E7255</string>
-											<string>1CCCE79B12EF32CC001E7255</string>
 											<string>1CCCE7A612EF37DF001E7255</string>
 											<string>1CCCE7A712EF37DF001E7255</string>
-											<string>1CCCE7A812EF37DF001E7255</string>
 											<string>1CCCE7A912EF37DF001E7255</string>
-											<string>1C3ECBDE12F1946200ECAACF</string>
-											<string>1C3ECBE112F1946200ECAACF</string>
-											<string>1C3ECBE212F1946200ECAACF</string>
 											<string>1C3ECC2612F19DDA00ECAACF</string>
 											<string>1C3ECC3112F19EB400ECAACF</string>
 											<string>1C3ECC3B12F19FB200ECAACF</string>
-											<string>1C3ECC3C12F19FB200ECAACF</string>
-											<string>1C3ECC4212F1A08600ECAACF</string>
-											<string>1C3ECC4812F1A0CA00ECAACF</string>
-											<string>1C3ECC4912F1A0CA00ECAACF</string>
+											<string>1C3ECC6012F1B55400ECAACF</string>
+											<string>1C3ECC6112F1B55400ECAACF</string>
+											<string>1C3ECC6312F1B55400ECAACF</string>
+											<string>1C3ECC6412F1B55400ECAACF</string>
+											<string>1C3ECC6912F1B55400ECAACF</string>
+											<string>1C3ECC6A12F1B55400ECAACF</string>
+											<string>1C3ECC6B12F1B55400ECAACF</string>
+											<string>1C3ECC6C12F1B55400ECAACF</string>
+											<string>1C3ECC6D12F1B55400ECAACF</string>
+											<string>1C3ECC7812F1B83100ECAACF</string>
+											<string>1C3ECC8112F1BAB900ECAACF</string>
+											<string>1C3ECC8212F1BAB900ECAACF</string>
+											<string>1C3ECC8312F1BAB900ECAACF</string>
+											<string>1C3ECC8412F1BAB900ECAACF</string>
+											<string>1C3ECC8512F1BAB900ECAACF</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -588,7 +549,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1530, 703}}</string>
 								<key>RubberWindowFrame</key>
-								<string>1 121 1920 1057 0 0 1920 1178 </string>
+								<string>-9 121 1920 1057 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -608,7 +569,7 @@
 								<key>Frame</key>
 								<string>{{0, 708}, {1530, 308}}</string>
 								<key>RubberWindowFrame</key>
-								<string>1 121 1920 1057 0 0 1920 1178 </string>
+								<string>-9 121 1920 1057 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -774,13 +735,12 @@
 	<array>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C41474F11EF3701003A48F8</string>
-		<string>1C514BB212DDD27500CFD3B9</string>
 		<string>1C6192CB12EDE38A00307652</string>
 		<string>1CCCE6FA12EF0E5B001E7255</string>
 		<string>/Volumes/Personal-2/Projects/ThinkPractice/Desktop/bme/trunk/Mac/BmeApp.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>1 121 1920 1057 0 0 1920 1178 </string>
+	<string>-9 121 1920 1057 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -796,12 +756,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>MSNP12ConversationProtocol.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

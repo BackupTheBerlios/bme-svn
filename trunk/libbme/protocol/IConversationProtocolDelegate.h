@@ -21,6 +21,7 @@ public:
 	virtual void ConversationStarted() = 0;
 	virtual void ContactJoinedConversation(std::string participantPassport) = 0;
 	
+	virtual void RingingContact(std::string contactPassport) = 0;
 	virtual void ContactLeftConversation(std::string participantPassport) = 0;
 	virtual void IdleConversationClosed() = 0;
 	

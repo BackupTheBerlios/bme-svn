@@ -31,6 +31,10 @@ void Conversation::ContactJoinedConversation(std::string participantPassport)
 {
 }
 
+void Conversation::RingingContact(std::string contactPassport)
+{
+}
+
 void Conversation::ContactLeftConversation(std::string participantPassport)
 {
 }

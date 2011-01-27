@@ -25,7 +25,7 @@ public:
 	virtual void HandleMessage(ProtocolMessage* message) = 0;
 	
 	virtual void SendCommandMessage(ProtocolMessage* message);	
-	virtual void SendCommandMessageTrId(ProtocolMessage* message);
+	virtual uint32_t SendCommandMessageTrId(ProtocolMessage* message);
 	
 	virtual void SetProtocolDelegate(IProtocolDelegate* protocolDelegate);
 	virtual IProtocolDelegate* ProtocolDelegate();

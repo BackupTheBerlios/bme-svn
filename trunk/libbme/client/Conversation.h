@@ -30,6 +30,7 @@ public:
 	virtual void ConversationStarted();
 	virtual void ContactJoinedConversation(std::string participantPassport);
 	
+	virtual void RingingContact(std::string contactPassport);
 	virtual void ContactLeftConversation(std::string participantPassport);
 	virtual void IdleConversationClosed();
 	

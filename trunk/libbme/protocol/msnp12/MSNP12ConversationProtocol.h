@@ -24,6 +24,7 @@ public:
 	virtual void HandleMessage(ProtocolMessage* message);
 	
 	void StartSession(std::string userPassport);
+	void EndSession();
 	void AnswerInvitation(std::string userPassport);
 	
 	void SetAuthenticationString(std::string authenticationString);
@@ -35,6 +36,15 @@ public:
 	virtual void SetConversationProtocolDelegate(IConversationProtocolDelegate* userProtocolDelegate);
 	virtual IConversationProtocolDelegate* Delegate();
 	
+public:
+	virtual void HandleUSRMessage(ProtocolMessage* message);
+	virtual void HandleANSMessage(ProtocolMessage* message);
+	virtual void HandleIROMessage(ProtocolMessage* message);
+	virtual void HandleCALMessage(ProtocolMessage* message);
+	virtual void HandleJOIMessage(ProtocolMessage* message);
+	virtual void HandleBYEMessage(ProtocolMessage* message);
+	virtual void HandleMSGMessage(ProtocolMessage* message);
+		
 private:
 	SBServerConnection* m_sbServerConnection;
 	IConversationProtocolDelegate* m_conversationProtocolDelegate;

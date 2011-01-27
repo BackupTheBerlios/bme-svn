@@ -25,11 +25,21 @@ public:
 	
 	void AddContact(Contact* contact);
 	void AddConversationItem(ConversationItem* conversationItem);
-		
+	
+	//IConversationProtocolDelegate methods
+	virtual void ConversationStarted();
+	virtual void ContactJoinedConversation(std::string participantPassport);
+	
+	virtual void ContactLeftConversation(std::string participantPassport);
+	virtual void IdleConversationClosed();
+	
+	virtual void JoinedExistingConversation();
+	virtual void ContactAlreadyInConversation(uint32_t participantNumber, uint32_t totalNumberOfParticipants, std::string participantPassport);
+	
 	//UIListeners
 	void AddUIListener(IUIConversationListener* uiConversationListener);
-	bool RemoveUIListener(IUIConversationListener* uiConversationListener);
-
+	bool RemoveUIListener(IUIConversationListener* uiConversationListener);	
+	
 private:
 	IConversationProtocol* m_conversationProtocol;
 };
